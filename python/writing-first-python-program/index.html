@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" id="arve" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Writing Your First Python Program - Python - The Hello World Program</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="apple-touch-icon" href="https://thehelloworldprogram.com/apple-touch-icon.png"><meta name="description" content="You are about to embark upon an adventure writing your first Python program. The journey of a thousand miles begins with a single step. So let’s begin!"><link rel="publisher" href="https://plus.google.com/+Thehelloworldprogram"><meta property="og:locale" content="en_US"><meta property="og:title" content="Writing Your First Python Program - Python - The Hello World Program"><meta property="og:description" content="You are about to embark upon an adventure writing your first Python program. The journey of a thousand miles begins with a single step. So let’s begin!"><meta property="og:url" content="https://thehelloworldprogram.com/python/writing-first-python-program/"><meta property="og:site_name" content="The Hello World Program"><meta property="article:author" content="https://www.facebook.com/jared.nielsen.75"><meta property="article:tag" content="ada lovelace"><meta property="article:tag" content="charles babbage"><meta property="article:tag" content="hello world"><meta property="article:tag" content="idle"><meta property="article:tag" content="installation"><meta property="article:tag" content="jacquard"><meta property="article:tag" content="python"><meta property="article:section" content="Python"><meta property="article:published_time" content="2014-05-31T17:43:58+00:00"><meta property="article:modified_time" content="2014-12-08T20:02:37+00:00"><meta property="og:updated_time" content="2014-12-08T20:02:37+00:00"><meta property="og:image" content="https://thehelloworldprogram.com/app/uploads/2014/05/Jacquard.loom_.cards_.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="You are about to embark upon an adventure writing your first Python program. The journey of a thousand miles begins with a single step. So let’s begin!"><meta name="twitter:title" content="Writing Your First Python Program - Python - The Hello World Program"><meta name="twitter:site" content="@helloworldshow"><meta name="twitter:image" content="https://thehelloworldprogram.com/app/uploads/2014/05/20140531_python_bytes01.02-1.jpg"><meta name="twitter:creator" content="@jarednielsen"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","url":"https://thehelloworldprogram.com/","sameAs":["https://www.facebook.com/HelloWorldProgram","https://instagram.com/helloworldprogram/","https://plus.google.com/+Thehelloworldprogram","https://www.youtube.com/user/helloworldprogram","https://www.pinterest.com/helloworldshow/","https://twitter.com/helloworldshow"],"@id":"https://thehelloworldprogram.com/#organization","name":"The Hello World Program","logo":"https://thehelloworldprogram.com/app/uploads/2014/09/pressrelease-820x460.jpg"}</script><link rel="dns-prefetch" href="//s.w.org"><script>
+		/**
+  * based on domready (c) Dustin Diaz 2014 - License MIT
+  * https://github.com/ded/domready
+  */
+advanced_ads_ready = ( function() {
+  var fns = [], listener
+    , doc = typeof document === 'object' && document
+    , hack = doc && doc.documentElement.doScroll
+    , domContentLoaded = 'DOMContentLoaded'
+    , loaded = doc && (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState)
+
+  if (!loaded && doc){
+    listener = function () {
+	  doc.removeEventListener(domContentLoaded, listener)
+	  window.removeEventListener( "load", listener );
+	  loaded = 1
+	  while (listener = fns.shift()) listener()
+	}
+	  
+	doc.addEventListener(domContentLoaded, listener )
+	window.addEventListener( 'load', listener );
+  }
+
+  return function (fn) {
+    loaded ? setTimeout(fn, 0) : fns.push(fn)
+  }
+} )();
+</script><link rel="stylesheet" id="wp-block-library-css" href="https://thehelloworldprogram.com/wp/wp-includes/css/dist/block-library/style.css" type="text/css" media="all"><link rel="stylesheet" id="open-sans-font-css" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C700%2C400italic%2C700italic&ver=1.0" type="text/css" media="all"><link rel="stylesheet" id="fontawesome-css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4.3.0" type="text/css" media="all"><link rel="stylesheet" id="highlight-css" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/styles/default.min.css?ver=9.14.2" type="text/css" media="screen"><link rel="stylesheet" id="app-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/app.css" type="text/css" media="all"><link rel="stylesheet" id="print-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/print.css" type="text/css" media="print"><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js?ver=2.1.4"></script><script type="text/javascript">
+/* <![CDATA[ */
+var gadwpUAEventsData = {"options":{"event_tracking":"1","event_downloads":"zip|mp3|mpeg|pdf|doc*|ppt*|xls*|jpeg|png|gif|tiff","event_bouncerate":"1","aff_tracking":0,"event_affiliates":"\/out\/","hash_tracking":0,"root_domain":"thehelloworldprogram.test","event_timeout":100,"event_precision":0,"event_formsubmit":0,"ga_pagescrolldepth_tracking":0}};
+/* ]]> */
+</script><script type="text/javascript" src="https://thehelloworldprogram.com/app/plugins/google-analytics-dashboard-for-wp/front/js/tracking-analytics-events.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/modernizr.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/highlight.min.js?ver=1"></script><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33032781-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script></head><body class="post-template-default single single-post postid-1771 single-format-standard">
+	
+	<header id="header" class="hide-for-small-only"><div class="row">
+			<div class="small-16 medium-12 columns small-only-text-center">
+				<div class="logo">
+					<a href="https://thehelloworldprogram.com/">
+						The <span class="logo-mid">Hello World</span> Program
+					</a>
+				</div>
+			</div>
+			<div class="medium-4 columns hide-for-small-only">
+				<ul id="social-header" class="button-group right"><li>
+						<a class="button small rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank" title="Subscribe to our RSS Feed">
+							<i class="fa fa-rss fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank" title="Follow us on Twitter">
+							<i class="fa fa-twitter fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank" title="Subscribe to our youtube channel">
+							<i class="fa fa-youtube fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank" title="Follow us on Facebook">
+							<i class="fa fa-facebook fa-fw"></i>
+						</a>
+					</li>
+				</ul></div>
+		</div>
+		<div class="row">
+			<div class="medium-13 large-12 columns">
+				<nav id="nav"><ul id="menu-primary" class=""><li id="menu-item-1640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li id="menu-item-1560" class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1562" class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1559" class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li id="menu-item-1561" class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul></nav></div>
+		</div>
+	</header><div id="parallax" data-parallax-speed="10" class="off-canvas-wrap" data-offcanvas><div id="wrapper" class="inner-wrap">
+		
+		<nav class="tab-bar show-for-small-only"><div class="left-small">
+				<a href="#mobile-nav" role="button" aria-expanded="true" aria-controls="mobile-nav" class="left-off-canvas-toggle menu-icon">
+					<span></span>
+				</a>
+			</div>
+			<div class="right tab-bar-section">
+				<div class="logo title"><a href="https://thehelloworldprogram.com/">The <span class="logo-mid">Hello World</span> Program</a></div>
+			</div>
+		</nav><nav class="left-off-canvas-menu" id="mobile-nav"><ul class="off-canvas-list"><li><label>Look around</label></li>
+			</ul><ul id="menu-primary-1" class="off-canvas-list"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul><ul class="off-canvas-list"><li><label>Connect with us!</label></li>
+				<li>
+					<a class="rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank">
+						<i class="fa fa-rss fa-fw"></i> RSS Feed					</a>
+				</li>
+				<li>
+					<a class="twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank">
+						<i class="fa fa-twitter fa-fw"></i> Twitter
+					</a>
+				</li>
+				<li>
+					<a class="youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank">
+						<i class="fa fa-youtube fa-fw"></i> YouTube
+					</a>
+				</li>
+				<li>
+					<a class="facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank">
+						<i class="fa fa-facebook fa-fw"></i> Facebook
+					</a>
+				</li>
+			</ul></nav><a class="exit-off-canvas"></a>
+		
+		<div class="row">
+			<div id="main" class="medium-11 large-12 columns">
+						
+			<article class="section section-python"><h1 class="section-title">Writing Your First Python Program</h1>
+				<div class="section-content">
+											
+													<p class="text-center"><img width="900" height="500" src="https://thehelloworldprogram.com/app/uploads/2014/05/20140531_python_bytes01.02-1-900x500.jpg" class="featured-image wp-post-image" alt="Writing Your First Python Program" title="Writing Your First Python Program" srcset="https://thehelloworldprogram.com/app/uploads/2014/05/20140531_python_bytes01.02-1.jpg 900w, https://thehelloworldprogram.com/app/uploads/2014/05/20140531_python_bytes01.02-1-460x256.jpg 460w" sizes="(max-width: 900px) 100vw, 900px"></p>
+												<p>You are about to embark upon an adventure. Python is an ideal starting point for your expedition into computer science. <a title="Why Python Should Be The First Programming Language You Learn" href="https://thehelloworldprogram.com/python/why-python-should-be-the-first-programming-language-you-learn/">It might be the first, and last, programming language you need to learn.</a> The journey of a thousand miles begins with a single step. So let’s begin! If you are just joining us, you may want to read our previous post, <a title="And Now For Something Completely Different… An Introduction to the Python Programming Language" href="https://thehelloworldprogram.com/python/now-something-completely-different/">“An Introduction To The Python Programming Langauge.”</a></p>
+<h2>It’s… Python!</h2>
+<p>You are going to write your first Python program. But first, what’s a program? In a nutshell, a program is a sequence of instructions, like directions, recipes, or rules for a game. But a program isn’t necessarily issued in a language. An important moment in the history of computing was the development of the Jacquard loom. It used punched cards, the programs, to coordinate the design of textiles, thus speeding up the manufacturing process.</p>
+<p><img class="alignleft wp-image-1778 size-full" src="https://thehelloworldprogram.com/app/uploads/2014/05/Jacquard.loom_.cards_.jpg" alt="Punched cards, Jacquard loom" width="249" height="333"><img class="alignleft wp-image-1779 size-full" src="https://thehelloworldprogram.com/app/uploads/2014/05/Jacquard.loom_.hooks_.jpg" alt="Punched cards, Jacquard loom" width="249" height="333"></p>
+<p>Another important moment in the history of computing was the collaboration between Charles Babbage and Ada Lovelace. Babbage designed, though never built, the Analytical Engine, a mechanical computer. Lovelace wrote what is considered the first computer program for the Analytical Engine, making her the first computer programmer.</p>
+<h2>Installing Python 3 and IDLE</h2>
+<p>There are two versions of Python currently in use, often designated as 2.x and 3.x depending on which subversion you are using. The future is Python 3, so that’s what we will be working with throughout these tutorials. At some point in your adventures in programming, you will eventually encounter Python 2. Don’t worry. There are some important differences that you will learn about as you proceed, but for the most part they are the same.<br>
+If you are running Apple or Linux, you already have Python 2.7 installed. You will need to install Python 3. Some versions of Windows are bundled with Python, but you will also need to install Python 3.</p>
+<p>Python 3 is very easy to install in Linux. In a Terminal, run:</p>
+<pre class="lang:sh decode:true">sudo apt-get install python3 idle3</pre>
+<p>This will install both Python 3 and IDLE 3.</p>
+<p>For Windows and Apple, I refer you to the official documentation where you will find detailed instructions: <a href="https://www.python.org/download">https://www.python.org/download</a></p>
+<h3>Starting IDLE</h3>
+<p>IDLE stands for “Integrated DeveLopment Environment”. You will encounter numerous Integrated Development Environments in your programming career, though outside of Python, they are referred to as IDE’s. IDLE is a cheeky homage to Monty Python member Eric Idle.</p>
+<p>If you’re on Windows, select IDLE from the Start Menu.</p>
+<p>If you’re on Apple, you can find IDLE in Applications > Python 3.</p>
+<p>If you’re on Linux, select IDLE from Menu > Programming > IDLE (using Python-3.4).</p>
+<p>For, both Apple and Linux, in the terminal, you can run:</p>
+<pre class="lang:sh decode:true">idle3</pre>
+<p>When you first run IDLE, you are presented with a screen that looks like this:</p>
+<p><img class="aligncenter size-full wp-image-1781" src="https://thehelloworldprogram.com/app/uploads/2014/05/20140531_python_bytes01.02idle.png" alt="IDLE" width="669" height="678" srcset="https://thehelloworldprogram.com/app/uploads/2014/05/20140531_python_bytes01.02idle.png 669w, https://thehelloworldprogram.com/app/uploads/2014/05/20140531_python_bytes01.02idle-460x466.png 460w" sizes="(max-width: 669px) 100vw, 669px"></p>
+<p>This is the Python Shell. Those three arrows are called chevrons.</p>
+<pre class="lang:python decode:true">>>></pre>
+<p>They signify the interpreter prompt, where you will enter commands.</p>
+<p>Without further ado…</p>
+<h2>Your First Program</h2>
+<p>The classic first program is “Hello, World!” Let’s adhere to tradition. Type in the following and press Enter:</p>
+<pre class="lang:python decode:true">print("Hello, World!")</pre>
+<p>It may not seem like much, but the world is now at your fingertips. Say ‘Hello’ again. Then join us in the next lesson: <a title="Writing, Saving and Running Python Programs with IDLE" href="https://thehelloworldprogram.com/python/python-program-idle/">saving and running files in IDLE</a>.</p>
+									</div>
+			</article><div class="section-noheader">
+<div class="row">
+	<div class="large-8 columns text-center">
+		<div class="arve-wrapper" data-mode="normal" data-provider="youtube" id="arve-bsXqCi4zp-s" style="max-width:915px;" itemscope itemtype="http://schema.org/VideoObject"><div class="arve-embed-container" style="padding-bottom:56.250000%"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="arve-iframe fitvidsignore" frameborder="0" name sandbox="allow-scripts allow-same-origin allow-presentation allow-popups" scrolling="no" src="https://www.youtube-nocookie.com/embed/bsXqCi4zp-s?iv_load_policy=3&modestbranding=1&rel=0&autohide=1&playsinline=1&autoplay=0" width="480" height="270"></iframe></div></div>	</div>
+	<div class="large-8 columns">
+		<h2>Hands-on Computer Science</h2>
+		<p>Learn computer science, programming, and web development with us, your educational and entertaining super friends.</p>
+		<a href="http://www.youtube.com/subscription_center?add_user=helloworldprogram" class="button primary expand no-bottom-margin">
+			<i class="fa fa-youtube fa-fw"></i>			
+			Subscribe to our YouTube Channel
+		</a>
+	</div>
+</div>
+</div>
+            <div class="section-noheader">
+                <div class="row">
+                    <div class="medium-6 large-4 columns">
+                        <p class="hidden-for-small-only"><a href="https://thehelloworldprogram.com/author/jared/">
+                            <img src="https://thehelloworldprogram.com/app/uploads/2015/06/jared-300x300.jpg" width="250" height="250" alt="Jared" class="avatar avatar-250 wp-user-avatar wp-user-avatar-250 alignnone photo"></a></p>
+                    </div>
+                    <div class="medium-10 large-12 columns">
+                        <p>
+                            <em>Writing Your First Python Program </em>
+                                                            was posted by Jared                            
+                            on <time datetime="2014-05-31" itemprop="datePublished">May 31st, 2014</time>.
+                            Jared likes to make things. He really wants you to watch The Hello World Program so you can learn the skills you need to build an awesome future. His contributions to the show include puppetry, 3D animation, doodling and speaking in a bad British accent. And yes, that is a fox sitting on his face.                        </p>
+                    </div>
+                </div>
+            </div>
+
+							<article id="recommended" class="section section-python"><div class="section-title">Recommended for You</div>
+					<div class="section-content">
+						<div class="yarpp-related">
+	<ul class="small-block-grid-2 large-block-grid-4 recommended-posts"><li>
+					<a href="https://thehelloworldprogram.com/python/poetry-corner-song-of-myself/" title="Poetry Corner with Guido: Song of Myself">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2012/12/hello-world-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Poetry Corner with Guido: Song of Myself" title="Poetry Corner with Guido: Song of Myself"><span>Poetry Corner with Guido: Song…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/python/why-python-should-be-the-first-programming-language-you-learn/" title="Why Python Should Be The First Programming Language You Learn">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2013/06/20140620_python_bytes_why_apollo_python-1-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Why Python Should Be The First Programming Language You Learn" title="Why Python Should Be The First Programming Language You Learn"><span>Why Python Should Be The…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/python/python-bytes-order-of-operations/" title="Python Bytes: Order of Operations">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2013/06/pybyte3-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Python Bytes: Order of Operations" title="Python Bytes: Order of Operations"><span>Python Bytes: Order of Operations</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/python/python-strings-characters/" title="print(“Python Strings & Characters”)">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/09/20140910_python4.1_strings-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of print(“Python Strings & Characters”)" title="print(“Python Strings & Characters”)"><span>print(“Python Strings & Characters”)</span>
+					</a>
+				</li>
+						</ul></div>
+					</div>
+				</article></div>
+					<aside id="sidebar" class="medium-5 large-4 columns"><ul class="small-block-grid-1"><li id="advads_ad_widget-2" class="widget thehe-widget"><div class="widget-content">
+	<p class="text-center">
+		<a href="https://gumroad.com/l/tilhtmlj4f">
+			<img src="https://thehelloworldprogram.com/app/uploads/2015/07/tilhtmlj4f_small.jpg"></a>
+	</p>
+	<p>
+		<strong>TIL HTML J4F</strong>
+		Learn how to build a game board with the table element, make sandwiches with forms, conquer dragons with semantic elements, link to exotic locations, and build up a robot's self esteem with structural markup in this beginner friendly introduction to the essential web development language.
+	</p>
+	<a href="https://gumroad.com/l/tilhtmlj4f" class="button primary expand">
+		<i class="fa fa-shopping-cart fa-fw"></i>
+		Get It Now!
+	</a>
+</div></li>	</ul></aside></div>
+		<footer id="footer" class="row"><div class="small-16 columns">
+				<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4"><li>
+                        <div class="footer-header">
+                            <i class="fa fa-newspaper-o"></i>
+                            Newsletter                        </div>
+                        
+                        <form action="http://thehelloworldprogram.us3.list-manage.com/subscribe/post?u=f392891df22d1bda9bbe37b4c&id=ed5550f168" method="post" class="newsletter" target="_blank" data-abide>
+                            
+                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_f392891df22d1bda9bbe37b4c_ed5550f168" value=""></div>
+
+                            <p>Stay up to date on the latest videos and tutorials with our monthly newsletter</p>
+                            <div class="row collapse">
+                                <div class="small-16 medium-10 large-11 columns">
+                                    <input class="no-bottom-margin" type="email" value="" placeholder="Email Address" name="EMAIL" required><small class="error">The email entered is invalid</small>
+                                </div>
+                                <div class="small-16 medium-6 large-5 columns">
+                                    <input type="submit" class="button primary postfix no-bottom-margin" value="Sign Up" name="subscribe" id="mc-embedded-subscribe"></div>
+                            </div>
+                        </form>
+                        
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-book"></i>
+							Tutorials						</div>
+						<nav id="footnav"><ul id="menu-footer" class=""><li id="menu-item-1564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1564"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1567"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1568"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+<li id="menu-item-1569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1569"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+</ul></nav></li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-info-circle"></i>
+							About Us						</div>
+						<p>The Hello World Program and all associated <a target="_blank" href="http://www.dototot.com">educational videos and tutorials</a> were created by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.dototot.com" property="cc:attributionName" rel="cc:attributionURL" target="_blank">Dototot</a> and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-envelope-o"></i>
+							Get in Touch						</div>
+						<p>
+							Questions? Comments? Suggestions? Send us an email!							<br><a href="mailto:i%6ef%6f@th%65%68ell%6f%77orldp%72%6f%67ram%2ec%6f%6d">info@thehelloworldprogram.com</a>
+						</p>
+					</li>
+				</ul></div>
+		</footer></div></div>
+	<link rel="stylesheet" id="advanced-responsive-video-embedder-css" href="https://thehelloworldprogram.com/app/plugins/advanced-responsive-video-embedder/public/arve.css" type="text/css" media="all"><link rel="stylesheet" id="yarppRelatedCss-css" href="https://thehelloworldprogram.com/app/plugins/yet-another-related-posts-plugin/style/related.css" type="text/css" media="all"><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/fastclick.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/placeholder.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/foundation.min.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/jquery.cookie/jquery.cookie.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/js/app.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/plugins/advanced-responsive-video-embedder/public/arve.js"></script></body></html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" id="arve" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Convert Video and Audio for HTML5 with avconv - Web Development - The Hello World Program</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="apple-touch-icon" href="https://thehelloworldprogram.com/apple-touch-icon.png"><meta name="description" content="Convert Video and Audio for HTML5 with avconv and other computer science, programming, and web development videos and tutorials."><link rel="publisher" href="https://plus.google.com/+Thehelloworldprogram"><meta property="og:locale" content="en_US"><meta property="og:title" content="Convert Video and Audio for HTML5 with avconv - Web Development - The Hello World Program"><meta property="og:description" content="Convert Video and Audio for HTML5 with avconv and other computer science, programming, and web development videos and tutorials."><meta property="og:url" content="https://thehelloworldprogram.com/web-development/encode-video-and-audio-for-html5-with-avconv/"><meta property="og:site_name" content="The Hello World Program"><meta property="article:author" content="https://www.facebook.com/jayarnielsen"><meta property="article:tag" content="avconv"><meta property="article:tag" content="html5"><meta property="article:section" content="Web Development"><meta property="article:published_time" content="2015-05-30T19:19:16+00:00"><meta property="article:modified_time" content="2015-06-23T15:17:20+00:00"><meta property="og:updated_time" content="2015-06-23T15:17:20+00:00"><meta property="og:image" content="https://thehelloworldprogram.com/app/uploads/2015/05/foxjump.jpg"><meta property="og:image:width" content="1300"><meta property="og:image:height" content="719"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="Convert Video and Audio for HTML5 with avconv and other computer science, programming, and web development videos and tutorials."><meta name="twitter:title" content="Convert Video and Audio for HTML5 with avconv - Web Development - The Hello World Program"><meta name="twitter:site" content="@helloworldshow"><meta name="twitter:image" content="https://thehelloworldprogram.com/app/uploads/2015/05/foxjump.jpg"><meta name="twitter:creator" content="@jayarnielsen"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","url":"https://thehelloworldprogram.com/","sameAs":["https://www.facebook.com/HelloWorldProgram","https://instagram.com/helloworldprogram/","https://plus.google.com/+Thehelloworldprogram","https://www.youtube.com/user/helloworldprogram","https://www.pinterest.com/helloworldshow/","https://twitter.com/helloworldshow"],"@id":"https://thehelloworldprogram.com/#organization","name":"The Hello World Program","logo":"https://thehelloworldprogram.com/app/uploads/2014/09/pressrelease-820x460.jpg"}</script><link rel="dns-prefetch" href="//s.w.org"><script>
+		/**
+  * based on domready (c) Dustin Diaz 2014 - License MIT
+  * https://github.com/ded/domready
+  */
+advanced_ads_ready = ( function() {
+  var fns = [], listener
+    , doc = typeof document === 'object' && document
+    , hack = doc && doc.documentElement.doScroll
+    , domContentLoaded = 'DOMContentLoaded'
+    , loaded = doc && (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState)
+
+  if (!loaded && doc){
+    listener = function () {
+	  doc.removeEventListener(domContentLoaded, listener)
+	  window.removeEventListener( "load", listener );
+	  loaded = 1
+	  while (listener = fns.shift()) listener()
+	}
+	  
+	doc.addEventListener(domContentLoaded, listener )
+	window.addEventListener( 'load', listener );
+  }
+
+  return function (fn) {
+    loaded ? setTimeout(fn, 0) : fns.push(fn)
+  }
+} )();
+</script><link rel="stylesheet" id="wp-block-library-css" href="https://thehelloworldprogram.com/wp/wp-includes/css/dist/block-library/style.css" type="text/css" media="all"><link rel="stylesheet" id="open-sans-font-css" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C700%2C400italic%2C700italic&ver=1.0" type="text/css" media="all"><link rel="stylesheet" id="fontawesome-css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4.3.0" type="text/css" media="all"><link rel="stylesheet" id="highlight-css" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/styles/default.min.css?ver=9.14.2" type="text/css" media="screen"><link rel="stylesheet" id="app-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/app.css" type="text/css" media="all"><link rel="stylesheet" id="print-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/print.css" type="text/css" media="print"><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js?ver=2.1.4"></script><script type="text/javascript">
+/* <![CDATA[ */
+var gadwpUAEventsData = {"options":{"event_tracking":"1","event_downloads":"zip|mp3|mpeg|pdf|doc*|ppt*|xls*|jpeg|png|gif|tiff","event_bouncerate":"1","aff_tracking":0,"event_affiliates":"\/out\/","hash_tracking":0,"root_domain":"thehelloworldprogram.test","event_timeout":100,"event_precision":0,"event_formsubmit":0,"ga_pagescrolldepth_tracking":0}};
+/* ]]> */
+</script><script type="text/javascript" src="https://thehelloworldprogram.com/app/plugins/google-analytics-dashboard-for-wp/front/js/tracking-analytics-events.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/modernizr.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/highlight.min.js?ver=1"></script><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33032781-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script></head><body class="post-template-default single single-post postid-2255 single-format-standard">
+	
+	<header id="header" class="hide-for-small-only"><div class="row">
+			<div class="small-16 medium-12 columns small-only-text-center">
+				<div class="logo">
+					<a href="https://thehelloworldprogram.com/">
+						The <span class="logo-mid">Hello World</span> Program
+					</a>
+				</div>
+			</div>
+			<div class="medium-4 columns hide-for-small-only">
+				<ul id="social-header" class="button-group right"><li>
+						<a class="button small rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank" title="Subscribe to our RSS Feed">
+							<i class="fa fa-rss fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank" title="Follow us on Twitter">
+							<i class="fa fa-twitter fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank" title="Subscribe to our youtube channel">
+							<i class="fa fa-youtube fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank" title="Follow us on Facebook">
+							<i class="fa fa-facebook fa-fw"></i>
+						</a>
+					</li>
+				</ul></div>
+		</div>
+		<div class="row">
+			<div class="medium-13 large-12 columns">
+				<nav id="nav"><ul id="menu-primary" class=""><li id="menu-item-1640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li id="menu-item-1560" class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1562" class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1559" class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li id="menu-item-1561" class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul></nav></div>
+		</div>
+	</header><div id="parallax" data-parallax-speed="10" class="off-canvas-wrap" data-offcanvas><div id="wrapper" class="inner-wrap">
+		
+		<nav class="tab-bar show-for-small-only"><div class="left-small">
+				<a href="#mobile-nav" role="button" aria-expanded="true" aria-controls="mobile-nav" class="left-off-canvas-toggle menu-icon">
+					<span></span>
+				</a>
+			</div>
+			<div class="right tab-bar-section">
+				<div class="logo title"><a href="https://thehelloworldprogram.com/">The <span class="logo-mid">Hello World</span> Program</a></div>
+			</div>
+		</nav><nav class="left-off-canvas-menu" id="mobile-nav"><ul class="off-canvas-list"><li><label>Look around</label></li>
+			</ul><ul id="menu-primary-1" class="off-canvas-list"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul><ul class="off-canvas-list"><li><label>Connect with us!</label></li>
+				<li>
+					<a class="rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank">
+						<i class="fa fa-rss fa-fw"></i> RSS Feed					</a>
+				</li>
+				<li>
+					<a class="twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank">
+						<i class="fa fa-twitter fa-fw"></i> Twitter
+					</a>
+				</li>
+				<li>
+					<a class="youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank">
+						<i class="fa fa-youtube fa-fw"></i> YouTube
+					</a>
+				</li>
+				<li>
+					<a class="facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank">
+						<i class="fa fa-facebook fa-fw"></i> Facebook
+					</a>
+				</li>
+			</ul></nav><a class="exit-off-canvas"></a>
+		
+		<div class="row">
+			<div id="main" class="medium-11 large-12 columns">
+						
+			<article class="section section-web-development"><h1 class="section-title">Convert Video and Audio for HTML5 with avconv</h1>
+				<div class="section-content">
+											
+													<p class="text-center"><img width="920" height="500" src="https://thehelloworldprogram.com/app/uploads/2015/05/foxjump-920x500.jpg" class="featured-image wp-post-image" alt="Convert Video and Audio for HTML5 with avconv" title="Convert Video and Audio for HTML5 with avconv"></p>
+												<p>We talked briefly about the various formats needed to embed video and audio in a web page in the previous tutorial, <a href="https://thehelloworldprogram.com/web-development/html-audio-video-media-players/">HTML5 Audio and Video Media Players</a>. To satisfy as many modern browsers as possible, we have to encode our media in multiple formats. There are dozens of codecs and containers for audio and video. Each container can contain many different types and combinations of codecs.</p><div class="thehe-post-content-top" id="thehe-427896544"><div class="panel callout radius">
+    <div class="row">
+        <div class="medium-6 columns text-center">
+            <a href="https://gumroad.com/l/tilhtmlj4f">
+                <img src="https://thehelloworldprogram.com/app/uploads/2015/07/tilhtmlj4f_small.jpg"></a>
+        </div>
+        <div class="medium-10 columns">
+            <h3>TIL HTML J4F, And So Can You!</h3>
+            <p>Read <em>Convert Video and Audio for HTML5 with avconv</em> and 16 other revised and expanded HTML tutorials on the go with our convenient E-book (available in PDF, EPUB, and MOBI).</p>
+            <p>Learn how to build a game board with the table element, make sandwiches with forms, conquer dragons with semantic elements, link to exotic locations, and build up a robot's self esteem with structural markup in this beginner friendly introduction to the essential web development language.</p>
+            <a class="button primary expand no-bottom-margin" href="https://gumroad.com/l/tilhtmlj4f">
+                <i class="fa fa-download fa-fw"></i>
+                Download the Complete E-book Now!
+            </a>
+        </div>
+    </div>
+</div></div>
+<p>We’ll be using a super amazing audio and video conversion program called avconv. It’s a command-line utility available for Linux, Mac, and Windows. Be not afraid of the command line, avconv is actually quite easy once you get the hang of the syntax.</p>
+<p>If you don’t have avconv installed and you are fortunate enough to be running a Linux distro with the apt package manager, open up terminal and type in the following command.</p>
+<pre>sudo apt-get install libav-tools</pre>
+<p>For the rest of you, visit <a href="http://www.libav.org/download.html">www.libav.org/download.html</a> for installation instructions.</p>
+<h2>Basic avconv Syntax</h2>
+<p>Avconv is pretty smart. It can guess most parameters based on information it scrapes from your input file and the file extension of your output file. Because of this, the only parameters you absolutely must have in an avconv command are input file and output file. The input file is specified with the -i flag, and the output file is the very last parameter (no flag necessary).</p>
+<pre>avconv -i quickfox.mkv quickfox.mp4</pre>
+<p>For web audio and video, it is critically important to use the right combination of containers and codecs. If we let avconv do the guesswork, it may make the wrong assumptions about our output file. We can tell avconv exactly what codecs to use with the -c:a and -c:v flags for audio and video respectively.</p>
+<pre>avconv -i quickfox.mkv -c:a libvorbis -c:v libx264 quickfox.mp4</pre>
+<p>Seeing as most devices are capapable of recording 1080p video, there’s a good chance you will want to scale your video before putting it in your website. We can specify any size we want with the -s:v flag, but avconv comes with several presets. Of these, the ones I find useful are hd480 (852×480), hd720 (1280×720), and hd1080 (1920×1080).</p>
+<pre>avconv -i quickfox.mkv -s:v 852x480 quickfox.mp4
+avconv -i quickfox.mkv -s:v hd480 quickfox.mp4</pre>
+<p>One last thing to consider is the output quality for our media. avconv defaults to medium or low quality output depending on the codec, so it’s a good idea to override the quality settings to meet your desired result. This is where avconv gets confusing, because every codec handles quality settings a little differently.</p>
+<p><img src="https://thehelloworldprogram.com/app/uploads/2015/05/shocked-just-shocked-920x548.jpg" alt="shocked just shocked" width="915" height="545"></p>
+<h2>Video Encoding</h2>
+<p>The following table outlines the various media containers and codecs we need for our video element to work properly.</p>
+<table width="100%" cellspacing="0" cellpadding="4"><colgroup><col width="85*"><col width="85*"><col width="85*"></colgroup><tbody><tr valign="top"><th width="33%">Container</th>
+<th width="33%">Video Codec</th>
+<th width="33%">Audio Codec</th>
+</tr><tr valign="top"><td width="33%">mp4</td>
+<td width="33%">H.264</td>
+<td width="33%">AAC</td>
+</tr><tr valign="top"><td width="33%">webm</td>
+<td width="33%">vp8</td>
+<td width="33%">vorbis</td>
+</tr><tr valign="top"><td width="33%">ogv</td>
+<td width="33%">theora</td>
+<td width="33%">vorbis</td>
+</tr></tbody></table><h3>Encode an mp4 video with x264 and aac</h3>
+<p>Lets focus on the mp4 container first. We need to use the x264 and aac codecs. x264 is the open source equivalent of h264, possibly the most popular video codec around. Unless you compiled avconv yourself, you probably don’t have a (stable) aac encoder. No problem, there is an “experimental” aac encoder built in that works just fine, but we have to tell avconv it’s okay to use it with the -strict experimental flag.</p>
+<p>Quality of the video is set with the -crf flag and quality of the audio is set with the -b:a option. The -crf option accepts a value from 0 to 51 where 0 is lossless, 23 is default, and 51 is total rubbish. A value of 18-28 is considered “sane” with 18 being “visually lossless”. The -b:a option accepts a bitrate value. Bitrate is a bit outside the scope of this tutorial, but suffice it to say that 128k, 256k, and 320k are considered low, medium, and high quality respectively. See what I mean about conversion quality being confusing? That’s not even the worst of it.</p>
+<pre>avconv -i quickfox.mkv -c:v libx264 -crf 28 -c:a aac -b:a 256k -strict experimental quickfox.mp4</pre>
+<h3>Encode a webm video with vp8 and vorbis</h3>
+<p>One down two more to go. Next up, a webm video with vp8 and vorbis codecs. The vp8 codec is similar to x264 in that it accepts a -crf option with a range of 0-63 (0 being best quality and 63 being unwatchable). To get the best results with vp8, we also need to set the -b:v option. This is the target bitrate for the video in megabytes (M) or kilobytes (K). A higher value will generate a higher quality video. For our vorbis codec, we need to set the -qscale flag to a value in the range of 0-10, where 10 is best quality.</p>
+<pre>avconv -i quickfox.mkv -c:v libvpx -crf 10 -b:v 1M -c:a libvorbis -qscale:a 7 quickfox.webm</pre>
+<h3>Encode an ogv Video with theora and vorbis</h3>
+<p>Our final video will use the ogv container with theora and vorbis codecs. Theora is pretty straightforward. Like the vorbis codec, we just need to set the -qscale:v option to something in the range of 0-10 with ten being the highest quality and 5-7 considered a good starting point.</p>
+<pre>avconv -i quickfox.mkv -c:v libtheora -qscale:v 7 -c:a libvorbis -qscale:a 7 quickfox.ogv</pre>
+<h2>Audio Encoding</h2>
+<p>The following table outlines the various media containers and codecs we need for our audio element to work properly.</p>
+<table width="100%" cellspacing="0" cellpadding="4"><colgroup><col width="128*"><col width="128*"></colgroup><tbody><tr valign="top"><th width="50%">Container</th>
+<th width="50%">Audio Codec</th>
+</tr><tr valign="top"><td width="50%">mp3</td>
+<td width="50%">mpeg</td>
+</tr><tr valign="top"><td width="50%">ogg</td>
+<td width="50%">vorbis</td>
+</tr></tbody></table><h3>Encode an mp3 Audio File with libmp3lame</h3>
+<p>We could explicitly tell avconv to use the libmp3lame codec with the -c option, but it’s really not necessary. The program will assume that you want to use that codec based on the file extension of the output file. So all we need to specify the quality. We can set the bitrate exactly with the -b option, but this is considered wasteful because -qscale with a value of 0-3 produces “transparent” results. Here’s a bit of a challenging quirk: the -qscale option for mp3 files accepts a value of 0-10 where 0 is high quality and 10 is low quality.</p>
+<pre>avconv -i foxsays.flac -qscale 3 foxsays.mp3</pre>
+<h3>Encode an ogg Audio File with libvorbis</h3>
+<p>Encoding an ogg audio file is the same as encoding an ogv video file. Again, we could specify the libvorbis codec with the -c option, but we’ll let avconv work its magic again and choose the codec based on the output file extension. That means all we need to set is the -qscale option. Remember that -qscale for ogg works opposite of mp3. It accepts a range of 0-10 where 10 is the highest quality and 0 is the lowest quality.</p>
+<pre>Avconv -i foxsays.flac -qscale 7 foxsays.ogg</pre>
+<p>Aside from some quirks with quality settings, converting videos with avconv is a snap. If you ever get lost, check the libav wiki (<a href="https://wiki.libav.org/">wiki.libav.org</a>) for help.</p>
+									</div>
+			</article><div class="section-noheader">
+<h2>Conquer HTML with Daisy's Web Development Diary!</h2>
+<div class="row">
+	<div class="large-7 columns text-center">
+		<a href="https://gumroad.com/l/daisy">
+			<img src="https://thehelloworldprogram.com/app/uploads/2015/06/daisy.gif"></a>
+	</div>
+	<div class="large-9 columns">
+		<p>Defeating dragons, exploring the depths of the ocean, and advising robots about dating are just a few of the many adventures in Daisy's Web Development Diary. Explore the foundational web language, HTML. Learn how to build a game board with the table element, create forms for ordering sandwiches, link to exotic locations, and more.</p>
+<a href="https://gumroad.com/l/daisy" class="button small primary expand no-bottom-margin">
+	<i class="fa fa-shopping-cart fa-fw"></i>			
+	Get It Now!
+</a>	
+
+</div>
+</div>
+</div>
+            <div class="section-noheader">
+                <div class="row">
+                    <div class="medium-6 large-4 columns">
+                        <p class="hidden-for-small-only"><a href="https://thehelloworldprogram.com/author/jay/">
+                            <img src="http://1.gravatar.com/avatar/dbf86d4bb96f2df787e051bb74ab9732?s=250&d=mm&r=g" width="250" height="250" alt="" class="avatar avatar-250 wp-user-avatar wp-user-avatar-250 photo avatar-default"></a></p>
+                    </div>
+                    <div class="medium-10 large-12 columns">
+                        <p>
+                            <em>Convert Video and Audio for HTML5 with avconv </em>
+                                                            was posted by Jay                            
+                            on <time datetime="2015-05-30" itemprop="datePublished">May 30th, 2015</time>.
+                            Jay is one of the three humans that run the behind-the-scene affairs of The Hello World Program.  He is interested in spreading the good robot word over the vast Inter-webs.  His contributions to the show include editing, web programming, design, and music composition.                        </p>
+                    </div>
+                </div>
+            </div>
+
+							<article id="recommended" class="section section-web-development"><div class="section-title">Recommended for You</div>
+					<div class="section-content">
+						<div class="yarpp-related">
+	<ul class="small-block-grid-2 large-block-grid-4 recommended-posts"><li>
+					<a href="https://thehelloworldprogram.com/web-development/technology-behind-web-applications/" title="An Introduction to the Technology Behind Web Applications">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/03/webtechstamps-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of An Introduction to the Technology Behind Web Applications" title="An Introduction to the Technology Behind Web Applications"><span>An Introduction to the Technology…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/semantic-html-markup/" title="Say What You Mean with Semantic HTML Markup">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/06/thumbnail-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Say What You Mean with Semantic HTML Markup" title="Say What You Mean with Semantic HTML Markup"><span>Say What You Mean with…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/html-forms-inputs-buttons-fieldsets-legends/" title="Build an HTML Sandwich with Forms, Inputs, and Buttons">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/06/thumbnail5-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Build an HTML Sandwich with Forms, Inputs, and Buttons" title="Build an HTML Sandwich with Forms, Inputs, and Buttons"><span>Build an HTML Sandwich with…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/html-form-elements/" title="HTML Form Elements">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/06/featuredphish-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of HTML Form Elements" title="HTML Form Elements"><span>HTML Form Elements</span>
+					</a>
+				</li>
+						</ul></div>
+					</div>
+				</article></div>
+					<aside id="sidebar" class="medium-5 large-4 columns"><ul class="small-block-grid-1"><li id="advads_ad_widget-2" class="widget thehe-widget"><div class="widget-content">
+	<p class="text-center">
+		<a href="https://gum.co/daisy">
+			<img src="https://thehelloworldprogram.com/app/uploads/2015/06/daisy-web-dev.png" alt="Superusers: The Legendary GNU/Linux Show" title="Superusers: The Legendary GNU/Linux Show"></a>
+	</p>
+	<p>
+		<strong>Daisy's Web Development Diary: Learn HTML</strong>
+		 - Learn how to build a game board with the table element, create forms for ordering sandwiches, link to exotic locations, and more. Begin your web programming journey today!
+	</p>
+	<a href="https://gum.co/daisy" class="button primary expand">
+		<i class="fa fa-shopping-cart fa-fw"></i>
+		Get It Now!
+	</a>
+</div></li>	</ul></aside></div>
+		<footer id="footer" class="row"><div class="small-16 columns">
+				<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4"><li>
+                        <div class="footer-header">
+                            <i class="fa fa-newspaper-o"></i>
+                            Newsletter                        </div>
+                        
+                        <form action="http://thehelloworldprogram.us3.list-manage.com/subscribe/post?u=f392891df22d1bda9bbe37b4c&id=ed5550f168" method="post" class="newsletter" target="_blank" data-abide>
+                            
+                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_f392891df22d1bda9bbe37b4c_ed5550f168" value=""></div>
+
+                            <p>Stay up to date on the latest videos and tutorials with our monthly newsletter</p>
+                            <div class="row collapse">
+                                <div class="small-16 medium-10 large-11 columns">
+                                    <input class="no-bottom-margin" type="email" value="" placeholder="Email Address" name="EMAIL" required><small class="error">The email entered is invalid</small>
+                                </div>
+                                <div class="small-16 medium-6 large-5 columns">
+                                    <input type="submit" class="button primary postfix no-bottom-margin" value="Sign Up" name="subscribe" id="mc-embedded-subscribe"></div>
+                            </div>
+                        </form>
+                        
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-book"></i>
+							Tutorials						</div>
+						<nav id="footnav"><ul id="menu-footer" class=""><li id="menu-item-1564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1564"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1567"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1568"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+<li id="menu-item-1569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1569"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+</ul></nav></li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-info-circle"></i>
+							About Us						</div>
+						<p>The Hello World Program and all associated <a target="_blank" href="http://www.dototot.com">educational videos and tutorials</a> were created by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.dototot.com" property="cc:attributionName" rel="cc:attributionURL" target="_blank">Dototot</a> and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-envelope-o"></i>
+							Get in Touch						</div>
+						<p>
+							Questions? Comments? Suggestions? Send us an email!							<br><a href="mailto:in%66%6f%40th%65he%6cloworld%70r%6fg%72%61m%2ec%6f%6d">info@thehelloworldprogram.com</a>
+						</p>
+					</li>
+				</ul></div>
+		</footer></div></div>
+	<link rel="stylesheet" id="yarppRelatedCss-css" href="https://thehelloworldprogram.com/app/plugins/yet-another-related-posts-plugin/style/related.css" type="text/css" media="all"><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/fastclick.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/placeholder.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/foundation.min.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/jquery.cookie/jquery.cookie.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/js/app.js"></script></body></html>

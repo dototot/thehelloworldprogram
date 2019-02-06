@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" id="arve" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Three Undeniable Reasons to Use Free, Open Source Software - Computer Science - The Hello World Program</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="apple-touch-icon" href="https://thehelloworldprogram.com/apple-touch-icon.png"><meta name="description" content="Free, open source software(or FOSS) is software that respects your freedoms and makes its source code available. Chances are you're already using free, open-source software without even knowing it. In case you need more convincing, here are three undeniable reasons why you should start using FOSS now."><link rel="publisher" href="https://plus.google.com/+Thehelloworldprogram"><meta property="og:locale" content="en_US"><meta property="og:title" content="Three Undeniable Reasons to Use Free, Open Source Software - Computer Science - The Hello World Program"><meta property="og:description" content="Free, open source software(or FOSS) is software that respects your freedoms and makes its source code available. Chances are you're already using free, open-source software without even knowing it. In case you need more convincing, here are three undeniable reasons why you should start using FOSS now."><meta property="og:url" content="https://thehelloworldprogram.com/computer-science/three-great-reasons-to-use-free-open-source-software/"><meta property="og:site_name" content="The Hello World Program"><meta property="article:author" content="https://www.facebook.com/jared.nielsen.75"><meta property="article:section" content="Computer Science"><meta property="article:published_time" content="2013-07-15T20:47:38+00:00"><meta property="article:modified_time" content="2014-10-01T11:53:22+00:00"><meta property="og:updated_time" content="2014-10-01T11:53:22+00:00"><meta property="og:image" content="https://thehelloworldprogram.com/app/uploads/2013/07/20130715_whyOpenSource1.jpg"><meta property="og:image:width" content="960"><meta property="og:image:height" content="569"><meta property="og:image:alt" content="Blender, a free, open-source 3D modelling and animation software"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="Free, open source software(or FOSS) is software that respects your freedoms and makes its source code available. Chances are you're already using free, open-source software without even knowing it. In case you need more convincing, here are three undeniable reasons why you should start using FOSS now."><meta name="twitter:title" content="Three Undeniable Reasons to Use Free, Open Source Software - Computer Science - The Hello World Program"><meta name="twitter:site" content="@helloworldshow"><meta name="twitter:image" content="https://thehelloworldprogram.com/app/uploads/2013/07/20130715_whyOpenSource1.jpg"><meta name="twitter:creator" content="@jarednielsen"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","url":"https://thehelloworldprogram.com/","sameAs":["https://www.facebook.com/HelloWorldProgram","https://instagram.com/helloworldprogram/","https://plus.google.com/+Thehelloworldprogram","https://www.youtube.com/user/helloworldprogram","https://www.pinterest.com/helloworldshow/","https://twitter.com/helloworldshow"],"@id":"https://thehelloworldprogram.com/#organization","name":"The Hello World Program","logo":"https://thehelloworldprogram.com/app/uploads/2014/09/pressrelease-820x460.jpg"}</script><link rel="dns-prefetch" href="//s.w.org"><script>
+		/**
+  * based on domready (c) Dustin Diaz 2014 - License MIT
+  * https://github.com/ded/domready
+  */
+advanced_ads_ready = ( function() {
+  var fns = [], listener
+    , doc = typeof document === 'object' && document
+    , hack = doc && doc.documentElement.doScroll
+    , domContentLoaded = 'DOMContentLoaded'
+    , loaded = doc && (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState)
+
+  if (!loaded && doc){
+    listener = function () {
+	  doc.removeEventListener(domContentLoaded, listener)
+	  window.removeEventListener( "load", listener );
+	  loaded = 1
+	  while (listener = fns.shift()) listener()
+	}
+	  
+	doc.addEventListener(domContentLoaded, listener )
+	window.addEventListener( 'load', listener );
+  }
+
+  return function (fn) {
+    loaded ? setTimeout(fn, 0) : fns.push(fn)
+  }
+} )();
+</script><link rel="stylesheet" id="wp-block-library-css" href="https://thehelloworldprogram.com/wp/wp-includes/css/dist/block-library/style.css" type="text/css" media="all"><link rel="stylesheet" id="open-sans-font-css" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C700%2C400italic%2C700italic&ver=1.0" type="text/css" media="all"><link rel="stylesheet" id="fontawesome-css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4.3.0" type="text/css" media="all"><link rel="stylesheet" id="highlight-css" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/styles/default.min.css?ver=9.14.2" type="text/css" media="screen"><link rel="stylesheet" id="app-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/app.css" type="text/css" media="all"><link rel="stylesheet" id="print-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/print.css" type="text/css" media="print"><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js?ver=2.1.4"></script><script type="text/javascript">
+/* <![CDATA[ */
+var gadwpUAEventsData = {"options":{"event_tracking":"1","event_downloads":"zip|mp3|mpeg|pdf|doc*|ppt*|xls*|jpeg|png|gif|tiff","event_bouncerate":"1","aff_tracking":0,"event_affiliates":"\/out\/","hash_tracking":0,"root_domain":"thehelloworldprogram.test","event_timeout":100,"event_precision":0,"event_formsubmit":0,"ga_pagescrolldepth_tracking":0}};
+/* ]]> */
+</script><script type="text/javascript" src="https://thehelloworldprogram.com/app/plugins/google-analytics-dashboard-for-wp/front/js/tracking-analytics-events.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/modernizr.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/highlight.min.js?ver=1"></script><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33032781-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script></head><body class="post-template-default single single-post postid-767 single-format-standard">
+	
+	<header id="header" class="hide-for-small-only"><div class="row">
+			<div class="small-16 medium-12 columns small-only-text-center">
+				<div class="logo">
+					<a href="https://thehelloworldprogram.com/">
+						The <span class="logo-mid">Hello World</span> Program
+					</a>
+				</div>
+			</div>
+			<div class="medium-4 columns hide-for-small-only">
+				<ul id="social-header" class="button-group right"><li>
+						<a class="button small rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank" title="Subscribe to our RSS Feed">
+							<i class="fa fa-rss fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank" title="Follow us on Twitter">
+							<i class="fa fa-twitter fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank" title="Subscribe to our youtube channel">
+							<i class="fa fa-youtube fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank" title="Follow us on Facebook">
+							<i class="fa fa-facebook fa-fw"></i>
+						</a>
+					</li>
+				</ul></div>
+		</div>
+		<div class="row">
+			<div class="medium-13 large-12 columns">
+				<nav id="nav"><ul id="menu-primary" class=""><li id="menu-item-1640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li id="menu-item-1560" class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1562" class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1559" class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li id="menu-item-1561" class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul></nav></div>
+		</div>
+	</header><div id="parallax" data-parallax-speed="10" class="off-canvas-wrap" data-offcanvas><div id="wrapper" class="inner-wrap">
+		
+		<nav class="tab-bar show-for-small-only"><div class="left-small">
+				<a href="#mobile-nav" role="button" aria-expanded="true" aria-controls="mobile-nav" class="left-off-canvas-toggle menu-icon">
+					<span></span>
+				</a>
+			</div>
+			<div class="right tab-bar-section">
+				<div class="logo title"><a href="https://thehelloworldprogram.com/">The <span class="logo-mid">Hello World</span> Program</a></div>
+			</div>
+		</nav><nav class="left-off-canvas-menu" id="mobile-nav"><ul class="off-canvas-list"><li><label>Look around</label></li>
+			</ul><ul id="menu-primary-1" class="off-canvas-list"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul><ul class="off-canvas-list"><li><label>Connect with us!</label></li>
+				<li>
+					<a class="rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank">
+						<i class="fa fa-rss fa-fw"></i> RSS Feed					</a>
+				</li>
+				<li>
+					<a class="twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank">
+						<i class="fa fa-twitter fa-fw"></i> Twitter
+					</a>
+				</li>
+				<li>
+					<a class="youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank">
+						<i class="fa fa-youtube fa-fw"></i> YouTube
+					</a>
+				</li>
+				<li>
+					<a class="facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank">
+						<i class="fa fa-facebook fa-fw"></i> Facebook
+					</a>
+				</li>
+			</ul></nav><a class="exit-off-canvas"></a>
+		
+		<div class="row">
+			<div id="main" class="medium-11 large-12 columns">
+						
+			<article class="section section-computer-science"><h1 class="section-title">Three Undeniable Reasons to Use Free, Open Source Software</h1>
+				<div class="section-content">
+											
+													<p class="text-center"><img width="920" height="500" src="https://thehelloworldprogram.com/app/uploads/2013/07/20130715_whyOpenSource1-920x500.jpg" class="featured-image wp-post-image" alt="Three Undeniable Reasons to Use Free, Open Source Software" title="Three Undeniable Reasons to Use Free, Open Source Software"></p>
+												<p>Free, open source software(or FOSS) is software that respects your freedoms and makes its source code available. Chances are you’re already using free, open-source software without even knowing it. In case you need more convincing, here are three undeniable reasons why you should start using FOSS now.</p>
+<h2>It’s Free</h2>
+<p>This one’s a no-brainer. Save your hard-earned Washington’s for the really important things in life. Like ice cream. It’s hard to argue with free. Or ice cream. But beyond its unbeatable price is the issue of accessibility. Many people use free, open-source software simply because they can’t afford or are uncomfortable using cracked proprietary packages. If and when you are using a proprietary software, file format or codec you are limiting access of your work to only those who also own(or have stolen) the rights.</p>
+<p>It gets better. FOSS extends even as deep as your operating system. There is an abundance of GNU/Linux distributions available that are equal, if not superior to, anything you might pay for. And they are all free. Not only are they free, but you are free to do what you want with them. Modify, customize, tweak, redistribute… the sky is the limit.</p>
+<p>It is true, though, that not all free software is free. It’s free as in speech, not as in root beer. But as an average user, it would be a rare situation to find yourself paying for something.</p>
+<h2>It Builds Community</h2>
+<p>Free, open-source software encourages diversity and sharing which in turn builds community. FOSS is developed through the free exchange of ideas and information. The more people share and communicate, the better the software will be.</p>
+<p>Free, open-source software creates more choice for consumers. Proprietary software is often released under the “one-size-fits-all” philosophy. This makes sense from a business point of view when trying to maximize profits. But individuals approach software with their individual needs and want specific features that may or may not be included in a proprietary package. Because free, open-source software is open, anyone can and will customize it and add to its feature-set. It’s written to be extended. Even if you’re not a developer, you can generally contact one and suggest a new feature. If it’s a good idea, it will probably find its way into the source code.</p>
+<p>Furthermore, free, open-source software is educational. Because it’s open, because anyone can look at it, anyone can learn from it.</p>
+<h2>It’s trustworthy</h2>
+<p>There are sometimes thousands of volunteers contributing to an application. Because of this there is an emphasis on quality and the development process can happen very quickly. With proprietary software you have to trust the claims of the vendor. Only their developers know what’s going on under the hood. Because the code is not subject to communal scrutiny, it’s probably not as good as it could be.</p>
+<p>Also, if a proprietary software distributor goes belly up so does the software. Because no one technically owns FOSS its longevity is guaranteed. A software will only disappear as soon as no one is maintaining it. When that happens, you won’t mind. You will have moved on to something else long before then.</p>
+<p>FOSS is safe, too. For example, Internet Explorer has historically been a very vulnerable piece of software for spyware, malware, viruses and other attacks. This sort of thing happens much less with free, open-source options such as Mozilla’s Firefox.</p>
+<p>Here are some links to our favorite free, open-source software packages. I’m sure you’ll agree that FOSS is amazing.</p>
+<ul><li>Our favorite browser is <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>.</li>
+<li>For an office suite, try <a href="https://www.libreoffice.org/" target="_blank">LibreOffice</a>.</li>
+<li>For image manipulation, <a href="http://www.gimp.org/" target="_blank">GIMP</a> and <a href="http://inkscape.org/" target="_blank">Inkscape</a> are on par with Photoshop and Illustrator.</li>
+<li>We use <a href="http://www.blender.org/" target="_blank">Blender</a> for our animations. It has a steep learning curve but that’s because it’s super powerful.</li>
+<li>Our favorite GNU/Linux flavor(at the time of this writing) is <a href="http://www.linuxmint.com/" target="_blank">Mint</a>.</li>
+</ul></div>
+			</article><div class="section-noheader">
+<div class="row">
+	<div class="large-8 columns text-center">
+		<div class="arve-wrapper" data-mode="normal" data-provider="youtube" id="arve-bsXqCi4zp-s" style="max-width:915px;" itemscope itemtype="http://schema.org/VideoObject"><div class="arve-embed-container" style="padding-bottom:56.250000%"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="arve-iframe fitvidsignore" frameborder="0" name sandbox="allow-scripts allow-same-origin allow-presentation allow-popups" scrolling="no" src="https://www.youtube-nocookie.com/embed/bsXqCi4zp-s?iv_load_policy=3&modestbranding=1&rel=0&autohide=1&playsinline=1&autoplay=0" width="480" height="270"></iframe></div></div>	</div>
+	<div class="large-8 columns">
+		<h2>Hands-on Computer Science</h2>
+		<p>Learn computer science, programming, and web development with us, your educational and entertaining super friends.</p>
+		<a href="http://www.youtube.com/subscription_center?add_user=helloworldprogram" class="button primary expand no-bottom-margin">
+			<i class="fa fa-youtube fa-fw"></i>			
+			Subscribe to our YouTube Channel
+		</a>
+	</div>
+</div>
+</div>
+            <div class="section-noheader">
+                <div class="row">
+                    <div class="medium-6 large-4 columns">
+                        <p class="hidden-for-small-only"><a href="https://thehelloworldprogram.com/author/jared/">
+                            <img src="https://thehelloworldprogram.com/app/uploads/2015/06/jared-300x300.jpg" width="250" height="250" alt="Jared" class="avatar avatar-250 wp-user-avatar wp-user-avatar-250 alignnone photo"></a></p>
+                    </div>
+                    <div class="medium-10 large-12 columns">
+                        <p>
+                            <em>Three Undeniable Reasons to Use Free, Open Source Software </em>
+                                                            was posted by Jared                            
+                            on <time datetime="2013-07-15" itemprop="datePublished">July 15th, 2013</time>.
+                            Jared likes to make things. He really wants you to watch The Hello World Program so you can learn the skills you need to build an awesome future. His contributions to the show include puppetry, 3D animation, doodling and speaking in a bad British accent. And yes, that is a fox sitting on his face.                        </p>
+                    </div>
+                </div>
+            </div>
+
+							<article id="recommended" class="section section-computer-science"><div class="section-title">Recommended for You</div>
+					<div class="section-content">
+						<div class="yarpp-related">
+	<ul class="small-block-grid-2 large-block-grid-4 recommended-posts"><li>
+					<a href="https://thehelloworldprogram.com/computer-science/what-is-a-robot/" title="What is a Robot?">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2012/06/maxresdefault-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of What is a Robot?" title="What is a Robot?"><span>What is a Robot?</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/computer-science/what-is-a-vector-graphic/" title="What is a Vector Graphic?">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2012/07/whatisvector-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of What is a Vector Graphic?" title="What is a Vector Graphic?"><span>What is a Vector Graphic?</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/computer-science/what-is-computer-science/" title="What is Computer Science?">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2015/11/Compsci-1-Thumb-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of What is Computer Science?" title="What is Computer Science?"><span>What is Computer Science?</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/computer-science/how-does-a-computer-work/" title="How Does a Computer Work?">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2016/02/thumbnail-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of How Does a Computer Work?" title="How Does a Computer Work?"><span>How Does a Computer Work?</span>
+					</a>
+				</li>
+						</ul></div>
+					</div>
+				</article></div>
+					<aside id="sidebar" class="medium-5 large-4 columns"><ul class="small-block-grid-1"><li id="advads_ad_widget-2" class="widget thehe-widget"><div class="widget-content">
+	<p class="text-center">
+		<a href="https://gumroad.com/l/tilhtmlj4f">
+			<img src="https://thehelloworldprogram.com/app/uploads/2015/07/tilhtmlj4f_small.jpg"></a>
+	</p>
+	<p>
+		<strong>TIL HTML J4F</strong>
+		Learn how to build a game board with the table element, make sandwiches with forms, conquer dragons with semantic elements, link to exotic locations, and build up a robot's self esteem with structural markup in this beginner friendly introduction to the essential web development language.
+	</p>
+	<a href="https://gumroad.com/l/tilhtmlj4f" class="button primary expand">
+		<i class="fa fa-shopping-cart fa-fw"></i>
+		Get It Now!
+	</a>
+</div></li>	</ul></aside></div>
+		<footer id="footer" class="row"><div class="small-16 columns">
+				<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4"><li>
+                        <div class="footer-header">
+                            <i class="fa fa-newspaper-o"></i>
+                            Newsletter                        </div>
+                        
+                        <form action="http://thehelloworldprogram.us3.list-manage.com/subscribe/post?u=f392891df22d1bda9bbe37b4c&id=ed5550f168" method="post" class="newsletter" target="_blank" data-abide>
+                            
+                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_f392891df22d1bda9bbe37b4c_ed5550f168" value=""></div>
+
+                            <p>Stay up to date on the latest videos and tutorials with our monthly newsletter</p>
+                            <div class="row collapse">
+                                <div class="small-16 medium-10 large-11 columns">
+                                    <input class="no-bottom-margin" type="email" value="" placeholder="Email Address" name="EMAIL" required><small class="error">The email entered is invalid</small>
+                                </div>
+                                <div class="small-16 medium-6 large-5 columns">
+                                    <input type="submit" class="button primary postfix no-bottom-margin" value="Sign Up" name="subscribe" id="mc-embedded-subscribe"></div>
+                            </div>
+                        </form>
+                        
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-book"></i>
+							Tutorials						</div>
+						<nav id="footnav"><ul id="menu-footer" class=""><li id="menu-item-1564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1564"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1567"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1568"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+<li id="menu-item-1569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1569"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+</ul></nav></li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-info-circle"></i>
+							About Us						</div>
+						<p>The Hello World Program and all associated <a target="_blank" href="http://www.dototot.com">educational videos and tutorials</a> were created by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.dototot.com" property="cc:attributionName" rel="cc:attributionURL" target="_blank">Dototot</a> and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-envelope-o"></i>
+							Get in Touch						</div>
+						<p>
+							Questions? Comments? Suggestions? Send us an email!							<br><a href="mailto:info@thehe%6clow%6f%72%6c%64%70%72%6fg%72%61m.co%6d">info@thehelloworldprogram.com</a>
+						</p>
+					</li>
+				</ul></div>
+		</footer></div></div>
+	<link rel="stylesheet" id="advanced-responsive-video-embedder-css" href="https://thehelloworldprogram.com/app/plugins/advanced-responsive-video-embedder/public/arve.css" type="text/css" media="all"><link rel="stylesheet" id="yarppRelatedCss-css" href="https://thehelloworldprogram.com/app/plugins/yet-another-related-posts-plugin/style/related.css" type="text/css" media="all"><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/fastclick.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/placeholder.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/foundation.min.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/jquery.cookie/jquery.cookie.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/js/app.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/plugins/advanced-responsive-video-embedder/public/arve.js"></script></body></html>

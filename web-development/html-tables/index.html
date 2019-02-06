@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" id="arve" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>All Your HTML Tables are Belong to Us! - Web Development - The Hello World Program</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="apple-touch-icon" href="https://thehelloworldprogram.com/apple-touch-icon.png"><meta property="og:video" content="http://www.youtube.com/v/?version=3&autohide=1"><meta property="og:video:type" content="application/x-shockwave-flash"><meta property="og:video:width" content="1280"><meta property="og:video:height" content="720"><meta propert="twitter:player" content="https://www.youtube.com/embed/"><meta property="twitter:player:width" content="1280"><meta property="twitter:player:height" content="720"><meta name="description" content="Learn how to build a simple grid and organize tabular data with the HTML table, tr, td, and th elements."><link rel="publisher" href="https://plus.google.com/+Thehelloworldprogram"><meta property="og:locale" content="en_US"><meta property="og:type" content="video"><meta property="og:title" content="All Your HTML Tables are Belong to Us! - Web Development - The Hello World Program"><meta property="og:description" content="Learn how to build a simple grid and organize tabular data with the HTML table, tr, td, and th elements."><meta property="og:url" content="https://thehelloworldprogram.com/web-development/html-tables/"><meta property="og:site_name" content="The Hello World Program"><meta property="article:tag" content="HTML"><meta property="article:section" content="Web Development"><meta property="article:published_time" content="2014-07-02T16:30:44+00:00"><meta property="article:modified_time" content="2015-06-10T17:55:07+00:00"><meta property="og:updated_time" content="2015-06-10T17:55:07+00:00"><meta property="og:image" content="https://thehelloworldprogram.com/app/uploads/2014/06/thumbnail4.jpg"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="576"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="Learn how to build a simple grid and organize tabular data with the HTML table, tr, td, and th elements."><meta name="twitter:title" content="All Your HTML Tables are Belong to Us! - Web Development - The Hello World Program"><meta name="twitter:site" content="@helloworldshow"><meta name="twitter:image" content="https://thehelloworldprogram.com/app/uploads/2014/06/thumbnail4.jpg"><meta name="twitter:creator" content="@helloworldshow"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","url":"https://thehelloworldprogram.com/","sameAs":["https://www.facebook.com/HelloWorldProgram","https://instagram.com/helloworldprogram/","https://plus.google.com/+Thehelloworldprogram","https://www.youtube.com/user/helloworldprogram","https://www.pinterest.com/helloworldshow/","https://twitter.com/helloworldshow"],"@id":"https://thehelloworldprogram.com/#organization","name":"The Hello World Program","logo":"https://thehelloworldprogram.com/app/uploads/2014/09/pressrelease-820x460.jpg"}</script><link rel="dns-prefetch" href="//s.w.org"><script>
+		/**
+  * based on domready (c) Dustin Diaz 2014 - License MIT
+  * https://github.com/ded/domready
+  */
+advanced_ads_ready = ( function() {
+  var fns = [], listener
+    , doc = typeof document === 'object' && document
+    , hack = doc && doc.documentElement.doScroll
+    , domContentLoaded = 'DOMContentLoaded'
+    , loaded = doc && (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState)
+
+  if (!loaded && doc){
+    listener = function () {
+	  doc.removeEventListener(domContentLoaded, listener)
+	  window.removeEventListener( "load", listener );
+	  loaded = 1
+	  while (listener = fns.shift()) listener()
+	}
+	  
+	doc.addEventListener(domContentLoaded, listener )
+	window.addEventListener( 'load', listener );
+  }
+
+  return function (fn) {
+    loaded ? setTimeout(fn, 0) : fns.push(fn)
+  }
+} )();
+</script><link rel="stylesheet" id="wp-block-library-css" href="https://thehelloworldprogram.com/wp/wp-includes/css/dist/block-library/style.css" type="text/css" media="all"><link rel="stylesheet" id="open-sans-font-css" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C700%2C400italic%2C700italic&ver=1.0" type="text/css" media="all"><link rel="stylesheet" id="fontawesome-css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4.3.0" type="text/css" media="all"><link rel="stylesheet" id="highlight-css" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/styles/default.min.css?ver=9.14.2" type="text/css" media="screen"><link rel="stylesheet" id="app-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/app.css" type="text/css" media="all"><link rel="stylesheet" id="print-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/print.css" type="text/css" media="print"><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js?ver=2.1.4"></script><script type="text/javascript">
+/* <![CDATA[ */
+var gadwpUAEventsData = {"options":{"event_tracking":"1","event_downloads":"zip|mp3|mpeg|pdf|doc*|ppt*|xls*|jpeg|png|gif|tiff","event_bouncerate":"1","aff_tracking":0,"event_affiliates":"\/out\/","hash_tracking":0,"root_domain":"thehelloworldprogram.test","event_timeout":100,"event_precision":0,"event_formsubmit":0,"ga_pagescrolldepth_tracking":0}};
+/* ]]> */
+</script><script type="text/javascript" src="https://thehelloworldprogram.com/app/plugins/google-analytics-dashboard-for-wp/front/js/tracking-analytics-events.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/modernizr.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/highlight.min.js?ver=1"></script><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33032781-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script></head><body class="post-template-default single single-post postid-1870 single-format-video">
+	
+	<header id="header" class="hide-for-small-only"><div class="row">
+			<div class="small-16 medium-12 columns small-only-text-center">
+				<div class="logo">
+					<a href="https://thehelloworldprogram.com/">
+						The <span class="logo-mid">Hello World</span> Program
+					</a>
+				</div>
+			</div>
+			<div class="medium-4 columns hide-for-small-only">
+				<ul id="social-header" class="button-group right"><li>
+						<a class="button small rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank" title="Subscribe to our RSS Feed">
+							<i class="fa fa-rss fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank" title="Follow us on Twitter">
+							<i class="fa fa-twitter fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank" title="Subscribe to our youtube channel">
+							<i class="fa fa-youtube fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank" title="Follow us on Facebook">
+							<i class="fa fa-facebook fa-fw"></i>
+						</a>
+					</li>
+				</ul></div>
+		</div>
+		<div class="row">
+			<div class="medium-13 large-12 columns">
+				<nav id="nav"><ul id="menu-primary" class=""><li id="menu-item-1640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li id="menu-item-1560" class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1562" class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1559" class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li id="menu-item-1561" class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul></nav></div>
+		</div>
+	</header><div id="parallax" data-parallax-speed="10" class="off-canvas-wrap" data-offcanvas><div id="wrapper" class="inner-wrap">
+		
+		<nav class="tab-bar show-for-small-only"><div class="left-small">
+				<a href="#mobile-nav" role="button" aria-expanded="true" aria-controls="mobile-nav" class="left-off-canvas-toggle menu-icon">
+					<span></span>
+				</a>
+			</div>
+			<div class="right tab-bar-section">
+				<div class="logo title"><a href="https://thehelloworldprogram.com/">The <span class="logo-mid">Hello World</span> Program</a></div>
+			</div>
+		</nav><nav class="left-off-canvas-menu" id="mobile-nav"><ul class="off-canvas-list"><li><label>Look around</label></li>
+			</ul><ul id="menu-primary-1" class="off-canvas-list"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul><ul class="off-canvas-list"><li><label>Connect with us!</label></li>
+				<li>
+					<a class="rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank">
+						<i class="fa fa-rss fa-fw"></i> RSS Feed					</a>
+				</li>
+				<li>
+					<a class="twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank">
+						<i class="fa fa-twitter fa-fw"></i> Twitter
+					</a>
+				</li>
+				<li>
+					<a class="youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank">
+						<i class="fa fa-youtube fa-fw"></i> YouTube
+					</a>
+				</li>
+				<li>
+					<a class="facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank">
+						<i class="fa fa-facebook fa-fw"></i> Facebook
+					</a>
+				</li>
+			</ul></nav><a class="exit-off-canvas"></a>
+		
+		<div class="row">
+			<div id="main" class="medium-11 large-12 columns">
+						
+			<article class="section section-web-development"><h1 class="section-title">All Your HTML Tables are Belong to Us!</h1>
+				<div class="section-content">
+											
+						<div class="arve-wrapper" data-mode="normal" data-provider="youtube" id="arve-7F9X8c2Z3Bg" style="max-width:915px;" itemscope itemtype="http://schema.org/VideoObject"><div class="arve-embed-container" style="padding-bottom:56.250000%"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="arve-iframe fitvidsignore" frameborder="0" name sandbox="allow-scripts allow-same-origin allow-presentation allow-popups" scrolling="no" src="https://www.youtube-nocookie.com/embed/7F9X8c2Z3Bg?iv_load_policy=3&modestbranding=1&rel=0&autohide=1&playsinline=1&autoplay=0" width="480" height="270"></iframe></div></div>						<p></p><p>My favorite board game can easily be made with the HTML table element. Learn how to build grids with the table, tr, td, and th elements. Join Unique ID and I in an epic battle of wits!</p>
+
+													<ul class="accordion" data-accordion><li class="accordion-navigation">
+									<a href="#transcript">
+										<i class="fa fa-cc"></i>
+										Click here for the full video transcript
+									</a>
+									<div id="transcript" class="content">
+										<p>[intro music]</p>
+<p>>> DAISY: Hey foxy friends!</p>
+<p>>> UNIQUE ID: Hello world!</p>
+<p>>> DAISY: I invited ID over to play one of my favorite games, All Your Base!</p>
+<p>>> COMPUTER: Somebody set up us the board! Somebody set up us the board!</p>
+<p>>> NARRATOR: It’s electronic talking All Your Base! From Dototot. So real, it really talks!</p>
+<p>>> COMPUTER: We get signal!</p>
+<p>>> NARRATOR: We’re talking instant programming and voice recognition technology.</p>
+<p>>> KID: Main screen turn on!</p>
+<p>>> COMPUTER: How are you gentlemen?</p>
+<p>>> NARRATOR: Against the computer or opponent, your mission: capture all base.</p>
+<p>>> COMPUTER: All your base are belong to us!</p>
+<p>>> KID: Yeah! Now you’re talking!</p>
+<p>>> UNIQUE ID: Main screen turn on!</p>
+<p>>> DAISY: Um… I don’t have the electronic all your base.</p>
+<p>>> UNIQUE ID: What is this, cardboard? Counterfeiters have really lowered their standards.</p>
+<p>>> DAISY: I made this myself…</p>
+<p>>> UNIQUE ID: Oh, really? It’s… nice.</p>
+<p>>> DAISY: The rules of All Your Base are simple. ID and I have strategically placed our bases on a grid, and now we have to guess where each others bases are. The first one to capture all of their opponent’s bases wins.</p>
+<p>>> UNIQUE ID: Keep talking, I need more time to develop my strategy.</p>
+<p>>> DAISY: Alright, while ID is setting up, I’ll tell you about how I made this game board. This area here is called a grid. A grid is made up of rows and columns of cells. In HTML, we can make a grid with the table tag. Rows are made with the tr tag, and cells with the td tag. All your base is played on a 5 by 5 grid, but our html table would need to have 6 rows and 6 columns. That’s because these headings are also part of the table. Headings are made with the th tag. Usually headings appear on the top row of your table to describe the content in the columns, but sometimes they can be along the side to describe the content in the rows, like these. In this case, my table headers help find the location of my table cells. For instance, I placed my camp on the table cell D-1, which means it is found in the fourth cell of the first row. The rest of the game pieces are bigger than one table cell, so they’ll need to span multiple rows or columns. My fortress horizontally spans cells B-2 and C-2. This is done with the colspan attribute. Because this attribute makes one cell act like two cells, this row only has four td tags. Likewise, we can make a cell span multiple rows with the rowspan attribute. My station spans cells E-3 to E-5, so the td tag in E-3 needs the attribute rowspan equals 3. That means we need to take out one td tag from both rows 4 and 5 to accommodate the colspan.</p>
+<p>>> UNIQUE ID: Okay, I’m ready!</p>
+<p>>> DAISY: I’ll let you start.</p>
+<p>>> UNIQUE ID: D-1!</p>
+<p>>> DAISY: What!? You broke my camp! Grr! E-2.</p>
+<p>>> UNIQUE ID: Miss, B-2!</p>
+<p>>> DAISY: Hit! A-1</p>
+<p>>> UNIQUE ID: That’s a miss. C-2!</p>
+<p>>> DAISY: You capped my fortress! E-2, D-2, D-5!</p>
+<p>>> UNIQUE ID: Miss miss miss! You have no chance to survive, make your time! E-3, E-4, E-5!</p>
+<p>>> DAISY: All my base are belong to… you. But how? How did you do it?</p>
+<p>>> UNIQUE ID: It was easy. I could hear you talking about where you put your pieces. Want to play again?</p>
+<p>>> DAISY: No, this is an addictive product. I think it has become a problem. Lets dump it in a landfill and seal it up with cement.</p>
+<p>My favorite game is played on a simple grid, which we learned is easy to make with an HTML table.</p>
+<p>Next we’ll learn how to make complex forms with HTML. Think you’re ready for it?</p>
+<p>[outro music]</p>
+									</div>
+								</li>
+							</ul></div>
+			</article><div class="section-noheader">
+<div class="row">
+	<div class="large-8 columns text-center">
+		<div class="arve-wrapper" data-mode="normal" data-provider="youtube" id="arve-bsXqCi4zp-s" style="max-width:915px;" itemscope itemtype="http://schema.org/VideoObject"><div class="arve-embed-container" style="padding-bottom:56.250000%"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="arve-iframe fitvidsignore" frameborder="0" name sandbox="allow-scripts allow-same-origin allow-presentation allow-popups" scrolling="no" src="https://www.youtube-nocookie.com/embed/bsXqCi4zp-s?iv_load_policy=3&modestbranding=1&rel=0&autohide=1&playsinline=1&autoplay=0" width="480" height="270"></iframe></div></div>	</div>
+	<div class="large-8 columns">
+		<h2>Hands-on Computer Science</h2>
+		<p>Learn computer science, programming, and web development with us, your educational and entertaining super friends.</p>
+		<a href="http://www.youtube.com/subscription_center?add_user=helloworldprogram" class="button primary expand no-bottom-margin">
+			<i class="fa fa-youtube fa-fw"></i>			
+			Subscribe to our YouTube Channel
+		</a>
+	</div>
+</div>
+</div>
+            <div class="section-noheader">
+                <div class="row">
+                    <div class="medium-6 large-4 columns">
+                        <p class="hidden-for-small-only"><a href="https://thehelloworldprogram.com/author/dototot/">
+                            <img src="http://2.gravatar.com/avatar/b63e0a2c033787b701b50db752900197?s=250&d=mm&r=g" width="250" height="250" alt="" class="avatar avatar-250 wp-user-avatar wp-user-avatar-250 photo avatar-default"></a></p>
+                    </div>
+                    <div class="medium-10 large-12 columns">
+                        <p>
+                            <em>All Your HTML Tables are Belong to Us! </em>
+                                                            was produced by <a href="http://www.dototot.com">Dototot</a>
+                            
+                            on <time datetime="2014-07-02" itemprop="datePublished">July 2nd, 2014</time>.
+                            Dototot is a creative media company and think tank specializing in educational material.                        </p>
+                    </div>
+                </div>
+            </div>
+
+							<article id="recommended" class="section section-web-development"><div class="section-title">Recommended for You</div>
+					<div class="section-content">
+						<div class="yarpp-related">
+	<ul class="small-block-grid-2 large-block-grid-4 recommended-posts"><li>
+					<a href="https://thehelloworldprogram.com/web-development/technology-behind-web-applications/" title="An Introduction to the Technology Behind Web Applications">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/03/webtechstamps-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of An Introduction to the Technology Behind Web Applications" title="An Introduction to the Technology Behind Web Applications"><span>An Introduction to the Technology…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/ordered-unordered-description-lists-html/" title="How to Create Ordered, Unordered, and Description Lists in HTML">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/05/featlist-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of How to Create Ordered, Unordered, and Description Lists in HTML" title="How to Create Ordered, Unordered, and Description Lists in HTML"><span>How to Create Ordered, Unordered,…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/html-video-audio-elements/" title="The Quick Brown Fox Rocks Audio and Video with HTML">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/07/thumbnail-1-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of The Quick Brown Fox Rocks Audio and Video with HTML" title="The Quick Brown Fox Rocks Audio and Video with HTML"><span>The Quick Brown Fox Rocks…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/html-audio-video-media-players/" title="HTML5 Audio and Video Media Players">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/06/video-featured-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of HTML5 Audio and Video Media Players" title="HTML5 Audio and Video Media Players"><span>HTML5 Audio and Video Media…</span>
+					</a>
+				</li>
+						</ul></div>
+					</div>
+				</article></div>
+					<aside id="sidebar" class="medium-5 large-4 columns"><ul class="small-block-grid-1"><li id="advads_ad_widget-2" class="widget thehe-widget"><div class="widget-content">
+	<p class="text-center">
+		<a href="https://gum.co/daisy">
+			<img src="https://thehelloworldprogram.com/app/uploads/2015/06/daisy-web-dev.png" alt="Superusers: The Legendary GNU/Linux Show" title="Superusers: The Legendary GNU/Linux Show"></a>
+	</p>
+	<p>
+		<strong>Daisy's Web Development Diary: Learn HTML</strong>
+		 - Learn how to build a game board with the table element, create forms for ordering sandwiches, link to exotic locations, and more. Begin your web programming journey today!
+	</p>
+	<a href="https://gum.co/daisy" class="button primary expand">
+		<i class="fa fa-shopping-cart fa-fw"></i>
+		Get It Now!
+	</a>
+</div></li>	</ul></aside></div>
+		<footer id="footer" class="row"><div class="small-16 columns">
+				<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4"><li>
+                        <div class="footer-header">
+                            <i class="fa fa-newspaper-o"></i>
+                            Newsletter                        </div>
+                        
+                        <form action="http://thehelloworldprogram.us3.list-manage.com/subscribe/post?u=f392891df22d1bda9bbe37b4c&id=ed5550f168" method="post" class="newsletter" target="_blank" data-abide>
+                            
+                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_f392891df22d1bda9bbe37b4c_ed5550f168" value=""></div>
+
+                            <p>Stay up to date on the latest videos and tutorials with our monthly newsletter</p>
+                            <div class="row collapse">
+                                <div class="small-16 medium-10 large-11 columns">
+                                    <input class="no-bottom-margin" type="email" value="" placeholder="Email Address" name="EMAIL" required><small class="error">The email entered is invalid</small>
+                                </div>
+                                <div class="small-16 medium-6 large-5 columns">
+                                    <input type="submit" class="button primary postfix no-bottom-margin" value="Sign Up" name="subscribe" id="mc-embedded-subscribe"></div>
+                            </div>
+                        </form>
+                        
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-book"></i>
+							Tutorials						</div>
+						<nav id="footnav"><ul id="menu-footer" class=""><li id="menu-item-1564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1564"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1567"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1568"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+<li id="menu-item-1569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1569"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+</ul></nav></li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-info-circle"></i>
+							About Us						</div>
+						<p>The Hello World Program and all associated <a target="_blank" href="http://www.dototot.com">educational videos and tutorials</a> were created by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.dototot.com" property="cc:attributionName" rel="cc:attributionURL" target="_blank">Dototot</a> and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-envelope-o"></i>
+							Get in Touch						</div>
+						<p>
+							Questions? Comments? Suggestions? Send us an email!							<br><a href="mailto:%69nf%6f%40t%68ehe%6clowor%6c%64p%72o%67ram.c%6fm">info@thehelloworldprogram.com</a>
+						</p>
+					</li>
+				</ul></div>
+		</footer></div></div>
+	<link rel="stylesheet" id="advanced-responsive-video-embedder-css" href="https://thehelloworldprogram.com/app/plugins/advanced-responsive-video-embedder/public/arve.css" type="text/css" media="all"><link rel="stylesheet" id="yarppRelatedCss-css" href="https://thehelloworldprogram.com/app/plugins/yet-another-related-posts-plugin/style/related.css" type="text/css" media="all"><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/fastclick.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/placeholder.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/foundation.min.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/jquery.cookie/jquery.cookie.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/js/app.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/plugins/advanced-responsive-video-embedder/public/arve.js"></script></body></html>

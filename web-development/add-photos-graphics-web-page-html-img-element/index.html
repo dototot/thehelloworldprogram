@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" id="arve" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Add Photos and Graphics to a Web Page with the HTML img Element - Web Development - The Hello World Program</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="apple-touch-icon" href="https://thehelloworldprogram.com/apple-touch-icon.png"><meta name="description" content="Add Photos and Graphics to a Web Page with the HTML img Element and other computer science, programming, and web development videos and tutorials."><link rel="publisher" href="https://plus.google.com/+Thehelloworldprogram"><meta property="og:locale" content="en_US"><meta property="og:title" content="Add Photos and Graphics to a Web Page with the HTML img Element - Web Development - The Hello World Program"><meta property="og:description" content="Add Photos and Graphics to a Web Page with the HTML img Element and other computer science, programming, and web development videos and tutorials."><meta property="og:url" content="https://thehelloworldprogram.com/web-development/add-photos-graphics-web-page-html-img-element/"><meta property="og:site_name" content="The Hello World Program"><meta property="article:author" content="https://www.facebook.com/jayarnielsen"><meta property="article:tag" content="HTML"><meta property="article:section" content="Web Development"><meta property="article:published_time" content="2014-06-16T00:13:41+00:00"><meta property="article:modified_time" content="2014-06-21T17:30:37+00:00"><meta property="og:updated_time" content="2014-06-21T17:30:37+00:00"><meta property="og:image" content="https://thehelloworldprogram.com/app/uploads/2014/06/hotlinks.jpg"><meta property="og:image:width" content="900"><meta property="og:image:height" content="500"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="Add Photos and Graphics to a Web Page with the HTML img Element and other computer science, programming, and web development videos and tutorials."><meta name="twitter:title" content="Add Photos and Graphics to a Web Page with the HTML img Element - Web Development - The Hello World Program"><meta name="twitter:site" content="@helloworldshow"><meta name="twitter:image" content="https://thehelloworldprogram.com/app/uploads/2014/06/hotlinks.jpg"><meta name="twitter:creator" content="@jayarnielsen"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","url":"https://thehelloworldprogram.com/","sameAs":["https://www.facebook.com/HelloWorldProgram","https://instagram.com/helloworldprogram/","https://plus.google.com/+Thehelloworldprogram","https://www.youtube.com/user/helloworldprogram","https://www.pinterest.com/helloworldshow/","https://twitter.com/helloworldshow"],"@id":"https://thehelloworldprogram.com/#organization","name":"The Hello World Program","logo":"https://thehelloworldprogram.com/app/uploads/2014/09/pressrelease-820x460.jpg"}</script><link rel="dns-prefetch" href="//s.w.org"><script>
+		/**
+  * based on domready (c) Dustin Diaz 2014 - License MIT
+  * https://github.com/ded/domready
+  */
+advanced_ads_ready = ( function() {
+  var fns = [], listener
+    , doc = typeof document === 'object' && document
+    , hack = doc && doc.documentElement.doScroll
+    , domContentLoaded = 'DOMContentLoaded'
+    , loaded = doc && (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState)
+
+  if (!loaded && doc){
+    listener = function () {
+	  doc.removeEventListener(domContentLoaded, listener)
+	  window.removeEventListener( "load", listener );
+	  loaded = 1
+	  while (listener = fns.shift()) listener()
+	}
+	  
+	doc.addEventListener(domContentLoaded, listener )
+	window.addEventListener( 'load', listener );
+  }
+
+  return function (fn) {
+    loaded ? setTimeout(fn, 0) : fns.push(fn)
+  }
+} )();
+</script><link rel="stylesheet" id="wp-block-library-css" href="https://thehelloworldprogram.com/wp/wp-includes/css/dist/block-library/style.css" type="text/css" media="all"><link rel="stylesheet" id="open-sans-font-css" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C700%2C400italic%2C700italic&ver=1.0" type="text/css" media="all"><link rel="stylesheet" id="fontawesome-css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4.3.0" type="text/css" media="all"><link rel="stylesheet" id="highlight-css" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/styles/default.min.css?ver=9.14.2" type="text/css" media="screen"><link rel="stylesheet" id="app-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/app.css" type="text/css" media="all"><link rel="stylesheet" id="print-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/print.css" type="text/css" media="print"><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js?ver=2.1.4"></script><script type="text/javascript">
+/* <![CDATA[ */
+var gadwpUAEventsData = {"options":{"event_tracking":"1","event_downloads":"zip|mp3|mpeg|pdf|doc*|ppt*|xls*|jpeg|png|gif|tiff","event_bouncerate":"1","aff_tracking":0,"event_affiliates":"\/out\/","hash_tracking":0,"root_domain":"thehelloworldprogram.test","event_timeout":100,"event_precision":0,"event_formsubmit":0,"ga_pagescrolldepth_tracking":0}};
+/* ]]> */
+</script><script type="text/javascript" src="https://thehelloworldprogram.com/app/plugins/google-analytics-dashboard-for-wp/front/js/tracking-analytics-events.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/modernizr.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/highlight.min.js?ver=1"></script><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33032781-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script></head><body class="post-template-default single single-post postid-1916 single-format-standard">
+	
+	<header id="header" class="hide-for-small-only"><div class="row">
+			<div class="small-16 medium-12 columns small-only-text-center">
+				<div class="logo">
+					<a href="https://thehelloworldprogram.com/">
+						The <span class="logo-mid">Hello World</span> Program
+					</a>
+				</div>
+			</div>
+			<div class="medium-4 columns hide-for-small-only">
+				<ul id="social-header" class="button-group right"><li>
+						<a class="button small rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank" title="Subscribe to our RSS Feed">
+							<i class="fa fa-rss fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank" title="Follow us on Twitter">
+							<i class="fa fa-twitter fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank" title="Subscribe to our youtube channel">
+							<i class="fa fa-youtube fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank" title="Follow us on Facebook">
+							<i class="fa fa-facebook fa-fw"></i>
+						</a>
+					</li>
+				</ul></div>
+		</div>
+		<div class="row">
+			<div class="medium-13 large-12 columns">
+				<nav id="nav"><ul id="menu-primary" class=""><li id="menu-item-1640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li id="menu-item-1560" class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1562" class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1559" class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li id="menu-item-1561" class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul></nav></div>
+		</div>
+	</header><div id="parallax" data-parallax-speed="10" class="off-canvas-wrap" data-offcanvas><div id="wrapper" class="inner-wrap">
+		
+		<nav class="tab-bar show-for-small-only"><div class="left-small">
+				<a href="#mobile-nav" role="button" aria-expanded="true" aria-controls="mobile-nav" class="left-off-canvas-toggle menu-icon">
+					<span></span>
+				</a>
+			</div>
+			<div class="right tab-bar-section">
+				<div class="logo title"><a href="https://thehelloworldprogram.com/">The <span class="logo-mid">Hello World</span> Program</a></div>
+			</div>
+		</nav><nav class="left-off-canvas-menu" id="mobile-nav"><ul class="off-canvas-list"><li><label>Look around</label></li>
+			</ul><ul id="menu-primary-1" class="off-canvas-list"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul><ul class="off-canvas-list"><li><label>Connect with us!</label></li>
+				<li>
+					<a class="rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank">
+						<i class="fa fa-rss fa-fw"></i> RSS Feed					</a>
+				</li>
+				<li>
+					<a class="twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank">
+						<i class="fa fa-twitter fa-fw"></i> Twitter
+					</a>
+				</li>
+				<li>
+					<a class="youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank">
+						<i class="fa fa-youtube fa-fw"></i> YouTube
+					</a>
+				</li>
+				<li>
+					<a class="facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank">
+						<i class="fa fa-facebook fa-fw"></i> Facebook
+					</a>
+				</li>
+			</ul></nav><a class="exit-off-canvas"></a>
+		
+		<div class="row">
+			<div id="main" class="medium-11 large-12 columns">
+						
+			<article class="section section-web-development"><h1 class="section-title">Add Photos and Graphics to a Web Page with the HTML img Element</h1>
+				<div class="section-content">
+											
+													<p class="text-center"><img width="900" height="500" src="https://thehelloworldprogram.com/app/uploads/2014/06/hotlinks-900x500.jpg" class="featured-image wp-post-image" alt="Add Photos and Graphics to a Web Page with the HTML img Element" title="Add Photos and Graphics to a Web Page with the HTML img Element" srcset="https://thehelloworldprogram.com/app/uploads/2014/06/hotlinks.jpg 900w, https://thehelloworldprogram.com/app/uploads/2014/06/hotlinks-460x256.jpg 460w" sizes="(max-width: 900px) 100vw, 900px"></p>
+												<p>One thousand and one words is worth more than a picture, but not by much. Text certainly has its place in a web page, but sometimes a picture can convey a message much more quickly and effectively than a paragraph. With the HTML img element, including images on our web page is really no sweat. As we start adding more files to our web site, it’s important to stay organized. If you haven’t already, read up on <a title="Organizing Files and Folder Structure for Web Pages" href="https://thehelloworldprogram.com/web-development/creating-files-folder-structure-web-pages/">organizing files and folders for a web site</a>.</p><div class="thehe-post-content-top" id="thehe-1976017605"><div class="panel callout radius">
+    <div class="row">
+        <div class="medium-6 columns text-center">
+            <a href="https://gumroad.com/l/tilhtmlj4f">
+                <img src="https://thehelloworldprogram.com/app/uploads/2015/07/tilhtmlj4f_small.jpg"></a>
+        </div>
+        <div class="medium-10 columns">
+            <h3>TIL HTML J4F, And So Can You!</h3>
+            <p>Read <em>Add Photos and Graphics to a Web Page with the HTML img Element</em> and 16 other revised and expanded HTML tutorials on the go with our convenient E-book (available in PDF, EPUB, and MOBI).</p>
+            <p>Learn how to build a game board with the table element, make sandwiches with forms, conquer dragons with semantic elements, link to exotic locations, and build up a robot's self esteem with structural markup in this beginner friendly introduction to the essential web development language.</p>
+            <a class="button primary expand no-bottom-margin" href="https://gumroad.com/l/tilhtmlj4f">
+                <i class="fa fa-download fa-fw"></i>
+                Download the Complete E-book Now!
+            </a>
+        </div>
+    </div>
+</div></div>
+<p><img class="aligncenter size-large wp-image-1917" src="https://thehelloworldprogram.com/app/uploads/2014/06/folder-structure.jpg" alt="folder structure" width="800" height="386" srcset="https://thehelloworldprogram.com/app/uploads/2014/06/folder-structure.jpg 800w, https://thehelloworldprogram.com/app/uploads/2014/06/folder-structure-460x222.jpg 460w" sizes="(max-width: 800px) 100vw, 800px"></p>
+<p>You may choose to organize your website differently, but for the sake of this tutorial, I’ll assume that you have an index.html file and an img folder with a few images in your root directory. To include an image in our index.html page, all we need is the img element with the “src” attribute. The value of the “src” attribute is the path to the image file relative to the index.html page.</p>
+<pre class="lang:xhtml decode:true" title="index.html"><img src="img/robot.jpg" /></pre>
+<p>Hopefully you didn’t make the same mistake I did.</p>
+<p><img class="aligncenter size-full wp-image-1918" src="https://thehelloworldprogram.com/app/uploads/2014/06/img-no-set-width.jpg" alt="img no set width" width="900" height="490" srcset="https://thehelloworldprogram.com/app/uploads/2014/06/img-no-set-width.jpg 900w, https://thehelloworldprogram.com/app/uploads/2014/06/img-no-set-width-460x250.jpg 460w" sizes="(max-width: 900px) 100vw, 900px"></p>
+<p>I forgot to resize my image, so it’s way too big.</p>
+<h2>Listen up!</h2>
+<p>What I’m about to show you is not the proper way to resize images. We should resize images with an image manipulation program, like <a href="http://www.gimp.org/" target="_blank">GIMP</a>, before putting them on our web page. However, it is possible to resize an image with only HTML. You will undoubtedly come across this in the wild, so I’m showing you now for the sake of example. Do as I say, not as I do, and resize your images before putting them on your page. Do you feel significantly warned? Okay…</p>
+<pre class="lang:xhtml decode:true" title="index.html"><img src="img/robot.jpg" width="600" /></pre>
+<p>Using a specific pixel value with the width attribute, we can squash or stretch an image. Because we didn’t set a height, the image will be scaled proportionally.</p>
+<p><img class="aligncenter size-full wp-image-1919" src="https://thehelloworldprogram.com/app/uploads/2014/06/img-set-width.jpg" alt="img set width" width="900" height="398" srcset="https://thehelloworldprogram.com/app/uploads/2014/06/img-set-width.jpg 900w, https://thehelloworldprogram.com/app/uploads/2014/06/img-set-width-460x203.jpg 460w" sizes="(max-width: 900px) 100vw, 900px"></p>
+<p>Setting a custom height, we can squish the image disproportionately.</p>
+<pre class="lang:xhtml decode:true" title="index.html"><img src="img/robot.jpg" width="600" height="200" /></pre>
+<p><img class="aligncenter size-full wp-image-1920" src="https://thehelloworldprogram.com/app/uploads/2014/06/img-set-width-and-height.jpg" alt="img set width and height" width="900" height="299" srcset="https://thehelloworldprogram.com/app/uploads/2014/06/img-set-width-and-height.jpg 900w, https://thehelloworldprogram.com/app/uploads/2014/06/img-set-width-and-height-460x153.jpg 460w" sizes="(max-width: 900px) 100vw, 900px"></p>
+<p>As I said before, this isn’t the best way to resize images, because even though we only see a small thumbnail of the image, the entire image is being loaded by our web browser. Our website would take ages to load if we relied on this method for resizing images. That doesn’t mean the width and height attributes are worthless. Specifying the actual width and height of an image helps our web browser know how much space to allot on the page once the image is loaded. This prevents the content on your page from jumping about as images are loaded. With that said, lets try adding another image that is already properly resized.</p>
+<pre class="lang:xhtml decode:true" title="index.html"><img src="img/robot.jpg" width="600" height="200" />
+<img src="img/crab.png" width="600" height="350" alt="photo of a crab" title="My friend Kamaboko" /></pre>
+<p>I snuck in a few extra attributes on this one. The value of the alt attribute is often referred to as “alt text”. It should be a description of the image to be used when the picture cannot be seen. This is especially important for blind users who rely on screen readers to read the contents of a web page to them. Without alt text, they would have no idea what the picture was about.</p>
+<p>The title attribute provides an opportunity to share extra information with your users. Generally a web browser will display title text as a tooltip when a user hovers over the image with their mouse.</p>
+<p><img class="aligncenter size-full wp-image-1921" src="https://thehelloworldprogram.com/app/uploads/2014/06/img-displays-inline.jpg" alt="img displays inline" width="900" height="352" srcset="https://thehelloworldprogram.com/app/uploads/2014/06/img-displays-inline.jpg 900w, https://thehelloworldprogram.com/app/uploads/2014/06/img-displays-inline-460x180.jpg 460w" sizes="(max-width: 900px) 100vw, 900px"></p>
+<p>See how these images display next to each other? That’s because <a title="HTML Document Flow and Element Display Methods" href="https://thehelloworldprogram.com/web-development/html-document-flow-display-methods/" target="_blank">images are inline elements</a>. If we wanted them to be separated, we’d need to use a br tag, or wrap them in a block-level element. The figure element is a useful block-level element that can be used with the figcaption element to add captions to pictures.</p>
+<pre class="lang:xhtml decode:true" title="index.html"><img src="img/robot.jpg" width="600" height="200" />
+<figure>
+	<img src="img/crab.png" alt="photo of a crab" title="My friend Kamaboko" />
+	<figcaption>My friend Kamaboko</figcaption>
+</figure></pre>
+<p><img class="aligncenter size-full wp-image-1922" src="https://thehelloworldprogram.com/app/uploads/2014/06/img-with-figure-and-figcaption.jpg" alt="img with figure and figcaption" width="900" height="450" srcset="https://thehelloworldprogram.com/app/uploads/2014/06/img-with-figure-and-figcaption.jpg 900w, https://thehelloworldprogram.com/app/uploads/2014/06/img-with-figure-and-figcaption-460x230.jpg 460w" sizes="(max-width: 900px) 100vw, 900px"></p>
+<p>You probably noticed that our two images have different file extensions. jpg and png are the most commonly used image formats for the web, but they aren’t the only ones. We’ll get into those later when we cover image formats for the web, but for now just be aware that there are many kinds of images.</p>
+									</div>
+			</article><div class="section-noheader">
+<h2>Conquer HTML with Daisy's Web Development Diary!</h2>
+<div class="row">
+	<div class="large-7 columns text-center">
+		<a href="https://gumroad.com/l/daisy">
+			<img src="https://thehelloworldprogram.com/app/uploads/2015/06/daisy.gif"></a>
+	</div>
+	<div class="large-9 columns">
+		<p>Defeating dragons, exploring the depths of the ocean, and advising robots about dating are just a few of the many adventures in Daisy's Web Development Diary. Explore the foundational web language, HTML. Learn how to build a game board with the table element, create forms for ordering sandwiches, link to exotic locations, and more.</p>
+<a href="https://gumroad.com/l/daisy" class="button small primary expand no-bottom-margin">
+	<i class="fa fa-shopping-cart fa-fw"></i>			
+	Get It Now!
+</a>	
+
+</div>
+</div>
+</div>
+            <div class="section-noheader">
+                <div class="row">
+                    <div class="medium-6 large-4 columns">
+                        <p class="hidden-for-small-only"><a href="https://thehelloworldprogram.com/author/jay/">
+                            <img src="http://1.gravatar.com/avatar/dbf86d4bb96f2df787e051bb74ab9732?s=250&d=mm&r=g" width="250" height="250" alt="" class="avatar avatar-250 wp-user-avatar wp-user-avatar-250 photo avatar-default"></a></p>
+                    </div>
+                    <div class="medium-10 large-12 columns">
+                        <p>
+                            <em>Add Photos and Graphics to a Web Page with the HTML img Element </em>
+                                                            was posted by Jay                            
+                            on <time datetime="2014-06-15" itemprop="datePublished">June 15th, 2014</time>.
+                            Jay is one of the three humans that run the behind-the-scene affairs of The Hello World Program.  He is interested in spreading the good robot word over the vast Inter-webs.  His contributions to the show include editing, web programming, design, and music composition.                        </p>
+                    </div>
+                </div>
+            </div>
+
+							<article id="recommended" class="section section-web-development"><div class="section-title">Recommended for You</div>
+					<div class="section-content">
+						<div class="yarpp-related">
+	<ul class="small-block-grid-2 large-block-grid-4 recommended-posts"><li>
+					<a href="https://thehelloworldprogram.com/web-development/structural-html-markup/" title="Attract Hot Robots with Structural HTML Markup">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/05/thumbnail5-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Attract Hot Robots with Structural HTML Markup" title="Attract Hot Robots with Structural HTML Markup"><span>Attract Hot Robots with Structural…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/semantic-html-markup/" title="Say What You Mean with Semantic HTML Markup">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/06/thumbnail-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Say What You Mean with Semantic HTML Markup" title="Say What You Mean with Semantic HTML Markup"><span>Say What You Mean with…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/html-tables/" title="All Your HTML Tables are Belong to Us!">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/06/thumbnail4-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of All Your HTML Tables are Belong to Us!" title="All Your HTML Tables are Belong to Us!"><span>All Your HTML Tables are…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/html-form-elements/" title="HTML Form Elements">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/06/featuredphish-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of HTML Form Elements" title="HTML Form Elements"><span>HTML Form Elements</span>
+					</a>
+				</li>
+						</ul></div>
+					</div>
+				</article></div>
+					<aside id="sidebar" class="medium-5 large-4 columns"><ul class="small-block-grid-1"><li id="advads_ad_widget-2" class="widget thehe-widget"><div class="widget-content">
+	<p class="text-center">
+		<a href="https://gum.co/daisy">
+			<img src="https://thehelloworldprogram.com/app/uploads/2015/06/daisy-web-dev.png" alt="Superusers: The Legendary GNU/Linux Show" title="Superusers: The Legendary GNU/Linux Show"></a>
+	</p>
+	<p>
+		<strong>Daisy's Web Development Diary: Learn HTML</strong>
+		 - Learn how to build a game board with the table element, create forms for ordering sandwiches, link to exotic locations, and more. Begin your web programming journey today!
+	</p>
+	<a href="https://gum.co/daisy" class="button primary expand">
+		<i class="fa fa-shopping-cart fa-fw"></i>
+		Get It Now!
+	</a>
+</div></li>	</ul></aside></div>
+		<footer id="footer" class="row"><div class="small-16 columns">
+				<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4"><li>
+                        <div class="footer-header">
+                            <i class="fa fa-newspaper-o"></i>
+                            Newsletter                        </div>
+                        
+                        <form action="http://thehelloworldprogram.us3.list-manage.com/subscribe/post?u=f392891df22d1bda9bbe37b4c&id=ed5550f168" method="post" class="newsletter" target="_blank" data-abide>
+                            
+                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_f392891df22d1bda9bbe37b4c_ed5550f168" value=""></div>
+
+                            <p>Stay up to date on the latest videos and tutorials with our monthly newsletter</p>
+                            <div class="row collapse">
+                                <div class="small-16 medium-10 large-11 columns">
+                                    <input class="no-bottom-margin" type="email" value="" placeholder="Email Address" name="EMAIL" required><small class="error">The email entered is invalid</small>
+                                </div>
+                                <div class="small-16 medium-6 large-5 columns">
+                                    <input type="submit" class="button primary postfix no-bottom-margin" value="Sign Up" name="subscribe" id="mc-embedded-subscribe"></div>
+                            </div>
+                        </form>
+                        
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-book"></i>
+							Tutorials						</div>
+						<nav id="footnav"><ul id="menu-footer" class=""><li id="menu-item-1564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1564"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1567"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1568"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+<li id="menu-item-1569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1569"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+</ul></nav></li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-info-circle"></i>
+							About Us						</div>
+						<p>The Hello World Program and all associated <a target="_blank" href="http://www.dototot.com">educational videos and tutorials</a> were created by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.dototot.com" property="cc:attributionName" rel="cc:attributionURL" target="_blank">Dototot</a> and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-envelope-o"></i>
+							Get in Touch						</div>
+						<p>
+							Questions? Comments? Suggestions? Send us an email!							<br><a href="mailto:i%6efo@t%68e%68ellowo%72l%64%70rogra%6d%2eco%6d">info@thehelloworldprogram.com</a>
+						</p>
+					</li>
+				</ul></div>
+		</footer></div></div>
+	<link rel="stylesheet" id="yarppRelatedCss-css" href="https://thehelloworldprogram.com/app/plugins/yet-another-related-posts-plugin/style/related.css" type="text/css" media="all"><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/fastclick.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/placeholder.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/foundation.min.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/jquery.cookie/jquery.cookie.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/js/app.js"></script></body></html>

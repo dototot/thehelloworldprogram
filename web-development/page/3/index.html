@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" id="arve" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Learn Web Development - Page 3 of 3 - The Hello World Program</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="apple-touch-icon" href="https://thehelloworldprogram.com/apple-touch-icon.png"><link rel="publisher" href="https://plus.google.com/+Thehelloworldprogram"><meta property="og:locale" content="en_US"><meta property="og:title" content="Learn Web Development - Page 3 of 3 - The Hello World Program"><meta property="og:description" content="Learn the fundamental programming languages you need to build your own websites, apps, and games."><meta property="og:url" content="https://thehelloworldprogram.com/web-development/"><meta property="og:site_name" content="The Hello World Program"><meta property="og:image" content="https://thehelloworldprogram.com/app/themes/helloworldprogram/img/hello-group.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Learn Web Development - Page 3 of 3 - The Hello World Program"><meta name="twitter:site" content="@helloworldshow"><meta name="twitter:image" content="https://thehelloworldprogram.com/app/themes/helloworldprogram/img/hello-group.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","url":"https://thehelloworldprogram.com/","sameAs":["https://www.facebook.com/HelloWorldProgram","https://instagram.com/helloworldprogram/","https://plus.google.com/+Thehelloworldprogram","https://www.youtube.com/user/helloworldprogram","https://www.pinterest.com/helloworldshow/","https://twitter.com/helloworldshow"],"@id":"https://thehelloworldprogram.com/#organization","name":"The Hello World Program","logo":"https://thehelloworldprogram.com/app/uploads/2014/09/pressrelease-820x460.jpg"}</script><link rel="dns-prefetch" href="//s.w.org"><script>
+		/**
+  * based on domready (c) Dustin Diaz 2014 - License MIT
+  * https://github.com/ded/domready
+  */
+advanced_ads_ready = ( function() {
+  var fns = [], listener
+    , doc = typeof document === 'object' && document
+    , hack = doc && doc.documentElement.doScroll
+    , domContentLoaded = 'DOMContentLoaded'
+    , loaded = doc && (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState)
+
+  if (!loaded && doc){
+    listener = function () {
+	  doc.removeEventListener(domContentLoaded, listener)
+	  window.removeEventListener( "load", listener );
+	  loaded = 1
+	  while (listener = fns.shift()) listener()
+	}
+	  
+	doc.addEventListener(domContentLoaded, listener )
+	window.addEventListener( 'load', listener );
+  }
+
+  return function (fn) {
+    loaded ? setTimeout(fn, 0) : fns.push(fn)
+  }
+} )();
+</script><link rel="stylesheet" id="wp-block-library-css" href="https://thehelloworldprogram.com/wp/wp-includes/css/dist/block-library/style.css" type="text/css" media="all"><link rel="stylesheet" id="open-sans-font-css" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C700%2C400italic%2C700italic&ver=1.0" type="text/css" media="all"><link rel="stylesheet" id="fontawesome-css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4.3.0" type="text/css" media="all"><link rel="stylesheet" id="highlight-css" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/styles/default.min.css?ver=9.14.2" type="text/css" media="screen"><link rel="stylesheet" id="app-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/app.css" type="text/css" media="all"><link rel="stylesheet" id="print-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/print.css" type="text/css" media="print"><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js?ver=2.1.4"></script><script type="text/javascript">
+/* <![CDATA[ */
+var gadwpUAEventsData = {"options":{"event_tracking":"1","event_downloads":"zip|mp3|mpeg|pdf|doc*|ppt*|xls*|jpeg|png|gif|tiff","event_bouncerate":"1","aff_tracking":0,"event_affiliates":"\/out\/","hash_tracking":0,"root_domain":"thehelloworldprogram.test","event_timeout":100,"event_precision":0,"event_formsubmit":0,"ga_pagescrolldepth_tracking":0}};
+/* ]]> */
+</script><script type="text/javascript" src="https://thehelloworldprogram.com/app/plugins/google-analytics-dashboard-for-wp/front/js/tracking-analytics-events.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/modernizr.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/highlight.min.js?ver=1"></script><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33032781-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script></head><body class="archive paged category category-web-development category-10 paged-3 category-paged-3">
+	
+	<header id="header" class="hide-for-small-only"><div class="row">
+			<div class="small-16 medium-12 columns small-only-text-center">
+				<div class="logo">
+					<a href="https://thehelloworldprogram.com/">
+						The <span class="logo-mid">Hello World</span> Program
+					</a>
+				</div>
+			</div>
+			<div class="medium-4 columns hide-for-small-only">
+				<ul id="social-header" class="button-group right"><li>
+						<a class="button small rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank" title="Subscribe to our RSS Feed">
+							<i class="fa fa-rss fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank" title="Follow us on Twitter">
+							<i class="fa fa-twitter fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank" title="Subscribe to our youtube channel">
+							<i class="fa fa-youtube fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank" title="Follow us on Facebook">
+							<i class="fa fa-facebook fa-fw"></i>
+						</a>
+					</li>
+				</ul></div>
+		</div>
+		<div class="row">
+			<div class="medium-13 large-12 columns">
+				<nav id="nav"><ul id="menu-primary" class=""><li id="menu-item-1640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li id="menu-item-1560" class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1562" class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1559" class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li id="menu-item-1561" class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul></nav></div>
+		</div>
+	</header><div id="parallax" data-parallax-speed="10" class="off-canvas-wrap" data-offcanvas><div id="wrapper" class="inner-wrap">
+		
+		<nav class="tab-bar show-for-small-only"><div class="left-small">
+				<a href="#mobile-nav" role="button" aria-expanded="true" aria-controls="mobile-nav" class="left-off-canvas-toggle menu-icon">
+					<span></span>
+				</a>
+			</div>
+			<div class="right tab-bar-section">
+				<div class="logo title"><a href="https://thehelloworldprogram.com/">The <span class="logo-mid">Hello World</span> Program</a></div>
+			</div>
+		</nav><nav class="left-off-canvas-menu" id="mobile-nav"><ul class="off-canvas-list"><li><label>Look around</label></li>
+			</ul><ul id="menu-primary-1" class="off-canvas-list"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul><ul class="off-canvas-list"><li><label>Connect with us!</label></li>
+				<li>
+					<a class="rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank">
+						<i class="fa fa-rss fa-fw"></i> RSS Feed					</a>
+				</li>
+				<li>
+					<a class="twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank">
+						<i class="fa fa-twitter fa-fw"></i> Twitter
+					</a>
+				</li>
+				<li>
+					<a class="youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank">
+						<i class="fa fa-youtube fa-fw"></i> YouTube
+					</a>
+				</li>
+				<li>
+					<a class="facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank">
+						<i class="fa fa-facebook fa-fw"></i> Facebook
+					</a>
+				</li>
+			</ul></nav><a class="exit-off-canvas"></a>
+		
+		<div class="row">
+			<div id="main" class="medium-11 large-12 columns">
+					<section class="section section-web-development"><h1 class="section-title">Learn Web Development</h1>
+			<div class="section-content">
+				<p id="docs-internal-guid-70186426-93bb-eae1-7076-e6144fc6b5c0" dir="ltr">Behind every great website, and many phone applications and games, is HTML. HTML is the essential building block of the web, and is a great first language to learn when starting in web development. It is not so much a programming language as it is a means of tagging and organizing content within a page. To make a website truly come to life, you will eventually need to combine HTML with CSS and JavaScript. While it may look complicated, HTML is not a difficult language. You can learn the basics in less than a day, but it can be a real chore to master everything. Our free videos and tutorials make learning HTML easy and fun.</p>
+
+					<article class="row"><div class="large-5 columns text-center">
+			<p><a href="https://thehelloworldprogram.com/web-development/ordered-unordered-description-lists-html/">
+								<img data-interchange="[https://thehelloworldprogram.com/app/uploads/2014/05/featlist-700x400.jpg,(default)], [https://thehelloworldprogram.com/app/uploads/2014/05/featlist-300x300.jpg,(large)]" title="How to Create Ordered, Unordered, and Description Lists in HTML" alt="How to Create Ordered, Unordered, and Description Lists in HTML"></a></p>
+		</div>
+		<div class="large-11 columns">
+			<h2><a href="https://thehelloworldprogram.com/web-development/ordered-unordered-description-lists-html/">How to Create Ordered, Unordered, and Description Lists in HTML</a></h2>
+			<p>With the increasing popularity of short-form journalism, how can we talk about lists without mentioning listicles? While I enjoy a good top ten list as much as the next person, what I really find amazing are those catchy headlines. Do you want to know the secret to writing amazing listicle headlines? Phrasal template word games! Case in point: Top Ten …</p>
+			<a class="button small right primary" href="https://thehelloworldprogram.com/web-development/ordered-unordered-description-lists-html/">
+									<i class="fa fa-book fa-fw"></i>
+					Continue Reading							</a>
+		</div>
+	</article><article class="row"><div class="large-5 columns text-center">
+			<p><a href="https://thehelloworldprogram.com/web-development/structural-html-markup/">
+								<img data-interchange="[https://thehelloworldprogram.com/app/uploads/2014/05/thumbnail5-700x400.jpg,(default)], [https://thehelloworldprogram.com/app/uploads/2014/05/thumbnail5-300x300.jpg,(large)]" title="Attract Hot Robots with Structural HTML Markup" alt="Attract Hot Robots with Structural HTML Markup"></a></p>
+		</div>
+		<div class="large-11 columns">
+			<h2><a href="https://thehelloworldprogram.com/web-development/structural-html-markup/">Attract Hot Robots with Structural HTML Markup</a></h2>
+			<p>Learn how to use structural HTML markup to create an enticing website. In this episode, Daisy introduces you to the required HTML elements (html, body, and doctype) as well as shows you how to use the h1, h2, p, br, and blockquote tags to format your page.</p>
+			<a class="button small right primary" href="https://thehelloworldprogram.com/web-development/structural-html-markup/">
+									<i class="fa fa-play-circle-o fa-fw"></i>
+					Watch Now							</a>
+		</div>
+	</article><article class="row"><div class="large-5 columns text-center">
+			<p><a href="https://thehelloworldprogram.com/web-development/how-websites-made/">
+								<img data-interchange="[https://thehelloworldprogram.com/app/uploads/2014/05/thumbnail4-700x400.jpg,(default)], [https://thehelloworldprogram.com/app/uploads/2014/05/thumbnail4-300x300.jpg,(large)]" title="How Websites Are Made" alt="How Websites Are Made"></a></p>
+		</div>
+		<div class="large-11 columns">
+			<h2><a href="https://thehelloworldprogram.com/web-development/how-websites-made/">How Websites Are Made</a></h2>
+			<p>Learn about the different technologies involved in making a website, and even build your first web page!</p>
+			<a class="button small right primary" href="https://thehelloworldprogram.com/web-development/how-websites-made/">
+									<i class="fa fa-play-circle-o fa-fw"></i>
+					Watch Now							</a>
+		</div>
+	</article><article class="row"><div class="large-5 columns text-center">
+			<p><a href="https://thehelloworldprogram.com/web-development/add-extra-information-web-page-semantic-markup/">
+								<img data-interchange="[https://thehelloworldprogram.com/app/uploads/2014/05/featured-700x400.jpg,(default)], [https://thehelloworldprogram.com/app/uploads/2014/05/featured-300x300.jpg,(large)]" title="Adding Extra Information to a Web Page with Semantic HTML Markup" alt="Adding Extra Information to a Web Page with Semantic HTML Markup"></a></p>
+		</div>
+		<div class="large-11 columns">
+			<h2><a href="https://thehelloworldprogram.com/web-development/add-extra-information-web-page-semantic-markup/">Adding Extra Information to a Web Page with Semantic HTML Markup</a></h2>
+			<p>The HTML elements we used to create the structure of our first web page not only gave shape to our page, but also told us a lot about the type of content they contained. Heading elements helped us organize sections of our page, and the blockquote element indicated a quotation from an external source. Using the proper HTML elements to …</p>
+			<a class="button small right primary" href="https://thehelloworldprogram.com/web-development/add-extra-information-web-page-semantic-markup/">
+									<i class="fa fa-book fa-fw"></i>
+					Continue Reading							</a>
+		</div>
+	</article><article class="row"><div class="large-5 columns text-center">
+			<p><a href="https://thehelloworldprogram.com/web-development/build-web-page-with-simple-structural-html-markup/">
+								<img data-interchange="[https://thehelloworldprogram.com/app/uploads/2014/04/featured-700x400.jpg,(default)], [https://thehelloworldprogram.com/app/uploads/2014/04/featured-300x300.jpg,(large)]" title="Building a Web Page With Structural HTML Markup" alt="Building a Web Page With Structural HTML Markup"></a></p>
+		</div>
+		<div class="large-11 columns">
+			<h2><a href="https://thehelloworldprogram.com/web-development/build-web-page-with-simple-structural-html-markup/">Building a Web Page With Structural HTML Markup</a></h2>
+			<p>Now that you have a general understanding of the technology behind web applications, lets take a closer look at Hypertext Markup Language (HTML). HTML is used to mark up the content of a web page with elements. Elements are generally made up of an opening tag, some content, and a closing tag. Think of tags as containers that describe the …</p>
+			<a class="button small right primary" href="https://thehelloworldprogram.com/web-development/build-web-page-with-simple-structural-html-markup/">
+									<i class="fa fa-book fa-fw"></i>
+					Continue Reading							</a>
+		</div>
+	</article><article class="row"><div class="large-5 columns text-center">
+			<p><a href="https://thehelloworldprogram.com/web-development/technology-behind-web-applications/">
+								<img data-interchange="[https://thehelloworldprogram.com/app/uploads/2014/03/webtechstamps-700x400.jpg,(default)], [https://thehelloworldprogram.com/app/uploads/2014/03/webtechstamps-300x300.jpg,(large)]" title="An Introduction to the Technology Behind Web Applications" alt="An Introduction to the Technology Behind Web Applications"></a></p>
+		</div>
+		<div class="large-11 columns">
+			<h2><a href="https://thehelloworldprogram.com/web-development/technology-behind-web-applications/">An Introduction to the Technology Behind Web Applications</a></h2>
+			<p>When first delving into web development, the number of programming languages can be overwhelming. It’s true that you will need to learn multiple languages to be able to build dynamic websites, apps, and games, but you don’t need to learn everything all at once. The two essential web languages you will need to learn are HTML and CSS. Nearly every …</p>
+			<a class="button small right primary" href="https://thehelloworldprogram.com/web-development/technology-behind-web-applications/">
+									<i class="fa fa-book fa-fw"></i>
+					Continue Reading							</a>
+		</div>
+	</article><nav class="pagination"><div class="wp-pagenavi" role="navigation">
+<span class="pages">Page 3 of 3</span><a class="previouspostslink" rel="prev" href="https://thehelloworldprogram.com/web-development/page/2/">«</a><a class="page smaller" title="Page 1" href="https://thehelloworldprogram.com/web-development/">1</a><a class="page smaller" title="Page 2" href="https://thehelloworldprogram.com/web-development/page/2/">2</a><span aria-current="page" class="current">3</span>
+</div>				</nav></div>
+		</section></div>
+					<aside id="sidebar" class="medium-5 large-4 columns"><ul class="small-block-grid-1"><li id="advads_ad_widget-2" class="widget thehe-widget"><div class="widget-content">
+	<p class="text-center">
+		<a href="https://gum.co/daisy">
+			<img src="https://thehelloworldprogram.com/app/uploads/2015/06/daisy-web-dev.png" alt="Superusers: The Legendary GNU/Linux Show" title="Superusers: The Legendary GNU/Linux Show"></a>
+	</p>
+	<p>
+		<strong>Daisy's Web Development Diary: Learn HTML</strong>
+		 - Learn how to build a game board with the table element, create forms for ordering sandwiches, link to exotic locations, and more. Begin your web programming journey today!
+	</p>
+	<a href="https://gum.co/daisy" class="button primary expand">
+		<i class="fa fa-shopping-cart fa-fw"></i>
+		Get It Now!
+	</a>
+</div></li>	</ul></aside></div>
+		<footer id="footer" class="row"><div class="small-16 columns">
+				<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4"><li>
+                        <div class="footer-header">
+                            <i class="fa fa-newspaper-o"></i>
+                            Newsletter                        </div>
+                        
+                        <form action="http://thehelloworldprogram.us3.list-manage.com/subscribe/post?u=f392891df22d1bda9bbe37b4c&id=ed5550f168" method="post" class="newsletter" target="_blank" data-abide>
+                            
+                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_f392891df22d1bda9bbe37b4c_ed5550f168" value=""></div>
+
+                            <p>Stay up to date on the latest videos and tutorials with our monthly newsletter</p>
+                            <div class="row collapse">
+                                <div class="small-16 medium-10 large-11 columns">
+                                    <input class="no-bottom-margin" type="email" value="" placeholder="Email Address" name="EMAIL" required><small class="error">The email entered is invalid</small>
+                                </div>
+                                <div class="small-16 medium-6 large-5 columns">
+                                    <input type="submit" class="button primary postfix no-bottom-margin" value="Sign Up" name="subscribe" id="mc-embedded-subscribe"></div>
+                            </div>
+                        </form>
+                        
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-book"></i>
+							Tutorials						</div>
+						<nav id="footnav"><ul id="menu-footer" class=""><li id="menu-item-1564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1564"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1567"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1568"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+<li id="menu-item-1569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1569"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+</ul></nav></li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-info-circle"></i>
+							About Us						</div>
+						<p>The Hello World Program and all associated <a target="_blank" href="http://www.dototot.com">educational videos and tutorials</a> were created by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.dototot.com" property="cc:attributionName" rel="cc:attributionURL" target="_blank">Dototot</a> and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-envelope-o"></i>
+							Get in Touch						</div>
+						<p>
+							Questions? Comments? Suggestions? Send us an email!							<br><a href="mailto:i%6ef%6f%40t%68%65h%65%6clo%77o%72l%64p%72%6fgram%2e%63om">info@thehelloworldprogram.com</a>
+						</p>
+					</li>
+				</ul></div>
+		</footer></div></div>
+	<script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/fastclick.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/placeholder.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/foundation.min.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/jquery.cookie/jquery.cookie.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/js/app.js"></script></body></html>

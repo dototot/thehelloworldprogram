@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" id="arve" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>New Posts - The Hello World Program</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="apple-touch-icon" href="https://thehelloworldprogram.com/apple-touch-icon.png"><meta name="description" content="Computer science, programming, and web development videos and tutorials."><link rel="publisher" href="https://plus.google.com/+Thehelloworldprogram"><meta property="og:locale" content="en_US"><meta property="og:title" content="New Posts - The Hello World Program"><meta property="og:description" content="Computer science, programming, and web development videos and tutorials."><meta property="og:url" content="https://thehelloworldprogram.com/new-posts/"><meta property="og:site_name" content="The Hello World Program"><meta property="og:image" content="https://thehelloworldprogram.com/app/themes/helloworldprogram/img/hello-group.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="Computer science, programming, and web development videos and tutorials."><meta name="twitter:title" content="New Posts - The Hello World Program"><meta name="twitter:site" content="@helloworldshow"><meta name="twitter:image" content="https://thehelloworldprogram.com/app/uploads/2015/05/01-loading.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","url":"https://thehelloworldprogram.com/","sameAs":["https://www.facebook.com/HelloWorldProgram","https://instagram.com/helloworldprogram/","https://plus.google.com/+Thehelloworldprogram","https://www.youtube.com/user/helloworldprogram","https://www.pinterest.com/helloworldshow/","https://twitter.com/helloworldshow"],"@id":"https://thehelloworldprogram.com/#organization","name":"The Hello World Program","logo":"https://thehelloworldprogram.com/app/uploads/2014/09/pressrelease-820x460.jpg"}</script><link rel="dns-prefetch" href="//s.w.org"><script>
+		/**
+  * based on domready (c) Dustin Diaz 2014 - License MIT
+  * https://github.com/ded/domready
+  */
+advanced_ads_ready = ( function() {
+  var fns = [], listener
+    , doc = typeof document === 'object' && document
+    , hack = doc && doc.documentElement.doScroll
+    , domContentLoaded = 'DOMContentLoaded'
+    , loaded = doc && (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState)
+
+  if (!loaded && doc){
+    listener = function () {
+	  doc.removeEventListener(domContentLoaded, listener)
+	  window.removeEventListener( "load", listener );
+	  loaded = 1
+	  while (listener = fns.shift()) listener()
+	}
+	  
+	doc.addEventListener(domContentLoaded, listener )
+	window.addEventListener( 'load', listener );
+  }
+
+  return function (fn) {
+    loaded ? setTimeout(fn, 0) : fns.push(fn)
+  }
+} )();
+</script><link rel="stylesheet" id="wp-block-library-css" href="https://thehelloworldprogram.com/wp/wp-includes/css/dist/block-library/style.css" type="text/css" media="all"><link rel="stylesheet" id="open-sans-font-css" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C700%2C400italic%2C700italic&ver=1.0" type="text/css" media="all"><link rel="stylesheet" id="fontawesome-css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4.3.0" type="text/css" media="all"><link rel="stylesheet" id="highlight-css" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/styles/default.min.css?ver=9.14.2" type="text/css" media="screen"><link rel="stylesheet" id="app-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/app.css" type="text/css" media="all"><link rel="stylesheet" id="print-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/print.css" type="text/css" media="print"><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js?ver=2.1.4"></script><script type="text/javascript">
+/* <![CDATA[ */
+var gadwpUAEventsData = {"options":{"event_tracking":"1","event_downloads":"zip|mp3|mpeg|pdf|doc*|ppt*|xls*|jpeg|png|gif|tiff","event_bouncerate":"1","aff_tracking":0,"event_affiliates":"\/out\/","hash_tracking":0,"root_domain":"thehelloworldprogram.test","event_timeout":100,"event_precision":0,"event_formsubmit":0,"ga_pagescrolldepth_tracking":0}};
+/* ]]> */
+</script><script type="text/javascript" src="https://thehelloworldprogram.com/app/plugins/google-analytics-dashboard-for-wp/front/js/tracking-analytics-events.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/modernizr.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/highlight.min.js?ver=1"></script><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33032781-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script></head><body class="blog paged paged-3">
+	
+	<header id="header" class="hide-for-small-only"><div class="row">
+			<div class="small-16 medium-12 columns small-only-text-center">
+				<div class="logo">
+					<a href="https://thehelloworldprogram.com/">
+						The <span class="logo-mid">Hello World</span> Program
+					</a>
+				</div>
+			</div>
+			<div class="medium-4 columns hide-for-small-only">
+				<ul id="social-header" class="button-group right"><li>
+						<a class="button small rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank" title="Subscribe to our RSS Feed">
+							<i class="fa fa-rss fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank" title="Follow us on Twitter">
+							<i class="fa fa-twitter fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank" title="Subscribe to our youtube channel">
+							<i class="fa fa-youtube fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank" title="Follow us on Facebook">
+							<i class="fa fa-facebook fa-fw"></i>
+						</a>
+					</li>
+				</ul></div>
+		</div>
+		<div class="row">
+			<div class="medium-13 large-12 columns">
+				<nav id="nav"><ul id="menu-primary" class=""><li id="menu-item-1640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li id="menu-item-1560" class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1562" class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1559" class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li id="menu-item-1561" class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul></nav></div>
+		</div>
+	</header><div id="parallax" data-parallax-speed="10" class="off-canvas-wrap" data-offcanvas><div id="wrapper" class="inner-wrap">
+		
+		<nav class="tab-bar show-for-small-only"><div class="left-small">
+				<a href="#mobile-nav" role="button" aria-expanded="true" aria-controls="mobile-nav" class="left-off-canvas-toggle menu-icon">
+					<span></span>
+				</a>
+			</div>
+			<div class="right tab-bar-section">
+				<div class="logo title"><a href="https://thehelloworldprogram.com/">The <span class="logo-mid">Hello World</span> Program</a></div>
+			</div>
+		</nav><nav class="left-off-canvas-menu" id="mobile-nav"><ul class="off-canvas-list"><li><label>Look around</label></li>
+			</ul><ul id="menu-primary-1" class="off-canvas-list"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul><ul class="off-canvas-list"><li><label>Connect with us!</label></li>
+				<li>
+					<a class="rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank">
+						<i class="fa fa-rss fa-fw"></i> RSS Feed					</a>
+				</li>
+				<li>
+					<a class="twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank">
+						<i class="fa fa-twitter fa-fw"></i> Twitter
+					</a>
+				</li>
+				<li>
+					<a class="youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank">
+						<i class="fa fa-youtube fa-fw"></i> YouTube
+					</a>
+				</li>
+				<li>
+					<a class="facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank">
+						<i class="fa fa-facebook fa-fw"></i> Facebook
+					</a>
+				</li>
+			</ul></nav><a class="exit-off-canvas"></a>
+		
+		<div class="row">
+			<div id="main" class="medium-11 large-12 columns">
+			<section class="section "><h1 class="section-title">
+				New Posts			</h1>
+			<div class="section-content">
+
+					<article class="row"><div class="large-5 columns text-center">
+			<p><a href="https://thehelloworldprogram.com/web-development/resizing-photos-for-the-web-with-gimp/">
+								<img data-interchange="[https://thehelloworldprogram.com/app/uploads/2015/05/01-loading-700x400.jpg,(default)], [https://thehelloworldprogram.com/app/uploads/2015/05/01-loading-300x300.jpg,(large)]" title="Resizing Photos for the Web with GIMP" alt="Resizing Photos for the Web with GIMP"></a></p>
+		</div>
+		<div class="large-11 columns">
+			<h2><a href="https://thehelloworldprogram.com/web-development/resizing-photos-for-the-web-with-gimp/">Resizing Photos for the Web with GIMP</a></h2>
+			<p>The internet is not a big truck. It’s not something you can just dump something on. It’s a series of tubes! That infrastructure has a maximum capacity which we are just now fully realizing. Despite this, people expect the websites they visit to be snappy. As you progress down this path of web development, you will begin to seek out …</p>
+			<a class="button small right primary" href="https://thehelloworldprogram.com/web-development/resizing-photos-for-the-web-with-gimp/">
+									<i class="fa fa-book fa-fw"></i>
+					Continue Reading							</a>
+		</div>
+	</article><article class="row"><div class="large-5 columns text-center">
+			<p><a href="https://thehelloworldprogram.com/linux/whatis-man/">
+								<img data-interchange="[https://thehelloworldprogram.com/app/uploads/2014/10/thumbnail3-700x400.jpg,(default)], [https://thehelloworldprogram.com/app/uploads/2014/10/thumbnail3-300x300.jpg,(large)]" title="whatis man?" alt="whatis man?"></a></p>
+		</div>
+		<div class="large-11 columns">
+			<h2><a href="https://thehelloworldprogram.com/linux/whatis-man/">whatis man?</a></h2>
+			<p>Aramis & Adelie read the Superusers comic book and a file reads the fantastic manual using the man command. Adelie elaborates on the gender disparity in technology, Aramis translates, and we say goodbye to our heroes in the exciting conclusion of Superusers: The Legendary GNU/Linux Show!</p>
+			<a class="button small right primary" href="https://thehelloworldprogram.com/linux/whatis-man/">
+									<i class="fa fa-play-circle-o fa-fw"></i>
+					Watch Now							</a>
+		</div>
+	</article><article class="row"><div class="large-5 columns text-center">
+			<p><a href="https://thehelloworldprogram.com/linux/make-kittens-cat-command/">
+								<img data-interchange="[https://thehelloworldprogram.com/app/uploads/2014/10/thumbnail2-700x400.jpg,(default)], [https://thehelloworldprogram.com/app/uploads/2014/10/thumbnail2-300x300.jpg,(large)]" title="Make Kittens with the Cat Command" alt="Make Kittens with the Cat Command"></a></p>
+		</div>
+		<div class="large-11 columns">
+			<h2><a href="https://thehelloworldprogram.com/linux/make-kittens-cat-command/">Make Kittens with the Cat Command</a></h2>
+			<p>Schrodinger the kitten is missing! The Superusers concatenate a replacement with the cat command. Running head & tail verifies that the new file is in fact the spitting image of Schrodinger.</p>
+			<a class="button small right primary" href="https://thehelloworldprogram.com/linux/make-kittens-cat-command/">
+									<i class="fa fa-play-circle-o fa-fw"></i>
+					Watch Now							</a>
+		</div>
+	</article><article class="row"><div class="large-5 columns text-center">
+			<p><a href="https://thehelloworldprogram.com/linux/extreme-file-makeover-cp-mv-edition/">
+								<img data-interchange="[https://thehelloworldprogram.com/app/uploads/2014/10/thumbnail1-700x400.jpg,(default)], [https://thehelloworldprogram.com/app/uploads/2014/10/thumbnail1-300x300.jpg,(large)]" title="Extreme File Makeover cp and mv Edition" alt="Extreme File Makeover cp and mv Edition"></a></p>
+		</div>
+		<div class="large-11 columns">
+			<h2><a href="https://thehelloworldprogram.com/linux/extreme-file-makeover-cp-mv-edition/">Extreme File Makeover cp and mv Edition</a></h2>
+			<p>One file, one operating system, one outstanding goal… Can this file overcome security issues? All this and more in this episode of Extreme File Makeover cp and mv Edition.</p>
+			<a class="button small right primary" href="https://thehelloworldprogram.com/linux/extreme-file-makeover-cp-mv-edition/">
+									<i class="fa fa-play-circle-o fa-fw"></i>
+					Watch Now							</a>
+		</div>
+	</article><article class="row"><div class="large-5 columns text-center">
+			<p><a href="https://thehelloworldprogram.com/linux/touch-rm-oh-good-commands/">
+								<img data-interchange="[https://thehelloworldprogram.com/app/uploads/2014/10/thumbnail-700x400.jpg,(default)], [https://thehelloworldprogram.com/app/uploads/2014/10/thumbnail-300x300.jpg,(large)]" title="touch and rm Oh Such Good Commands" alt="touch and rm Oh Such Good Commands"></a></p>
+		</div>
+		<div class="large-11 columns">
+			<h2><a href="https://thehelloworldprogram.com/linux/touch-rm-oh-good-commands/">touch and rm Oh Such Good Commands</a></h2>
+			<p>Superusers Adelie the penguin and Aramis the GNU add a touch of class to the party directory.</p>
+			<a class="button small right primary" href="https://thehelloworldprogram.com/linux/touch-rm-oh-good-commands/">
+									<i class="fa fa-play-circle-o fa-fw"></i>
+					Watch Now							</a>
+		</div>
+	</article><article class="row"><div class="large-5 columns text-center">
+			<p><a href="https://thehelloworldprogram.com/python/python-list-methods-get-things-done/">
+								<img data-interchange="[https://thehelloworldprogram.com/app/uploads/2016/03/hello_world_byting_python_05.3_list_methods-700x400.jpg,(default)], [https://thehelloworldprogram.com/app/uploads/2016/03/hello_world_byting_python_05.3_list_methods-300x300.jpg,(large)]" title="Python List Methods Get Things Done" alt="Python List Methods Get Things Done"></a></p>
+		</div>
+		<div class="large-11 columns">
+			<h2><a href="https://thehelloworldprogram.com/python/python-list-methods-get-things-done/">Python List Methods Get Things Done</a></h2>
+			<p>Life is full of amazing opportunities. You can explore forests, climb mountains, run with wolves. Or you could learn Python. What do you do when you’re overwhelmed with choices? Creating a Python list and using Python list methods will help you prioritize your goals and achieve success. Getting Things Done with Python List Methods I wrote a to-do list. Things …</p>
+			<a class="button small right primary" href="https://thehelloworldprogram.com/python/python-list-methods-get-things-done/">
+									<i class="fa fa-book fa-fw"></i>
+					Continue Reading							</a>
+		</div>
+	</article><article class="row"><div class="large-5 columns text-center">
+			<p><a href="https://thehelloworldprogram.com/python/python-list-operations/">
+								<img data-interchange="[https://thehelloworldprogram.com/app/uploads/2016/03/hello_world_byting_python_05.2_list_operations-700x400.jpg,(default)], [https://thehelloworldprogram.com/app/uploads/2016/03/hello_world_byting_python_05.2_list_operations-300x300.jpg,(large)]" title="Python List Operations: Concatenation, Multiplication, Slicing & del" alt="Python List Operations: Concatenation, Multiplication, Slicing & del"></a></p>
+		</div>
+		<div class="large-11 columns">
+			<h2><a href="https://thehelloworldprogram.com/python/python-list-operations/">Python List Operations: Concatenation, Multiplication, Slicing & del</a></h2>
+			<p>Lists and strings have a lot in common. They are both sequences and, like pythons, they get longer as you feed them. Like a string, we can concatenate and multiply a Python list. Python List Concatenation & Multiplication Old MacDonald had a farm, E-I-E-I-O. And on this farm there was a python, E-I-E-I-O. At the prompt, create a Python list …</p>
+			<a class="button small right primary" href="https://thehelloworldprogram.com/python/python-list-operations/">
+									<i class="fa fa-book fa-fw"></i>
+					Continue Reading							</a>
+		</div>
+	</article><article class="row"><div class="large-5 columns text-center">
+			<p><a href="https://thehelloworldprogram.com/python/life-like-python-list/">
+								<img data-interchange="[https://thehelloworldprogram.com/app/uploads/2014/10/20141003_python5.1_lists-1-700x400.jpg,(default)], [https://thehelloworldprogram.com/app/uploads/2014/10/20141003_python5.1_lists-1-300x300.jpg,(large)]" title="Life is Like A Python List" alt="Life is Like A Python List"></a></p>
+		</div>
+		<div class="large-11 columns">
+			<h2><a href="https://thehelloworldprogram.com/python/life-like-python-list/">Life is Like A Python List</a></h2>
+			<p>Life is like a Python list. You spend most of it in boxes. Sometimes the box is empty and sometimes the box is filled with different objects. And sometimes it’s a box within a box. I like to think of Python lists as boxes because the brackets look like a container. We make an empty box, or list, like this: …</p>
+			<a class="button small right primary" href="https://thehelloworldprogram.com/python/life-like-python-list/">
+									<i class="fa fa-book fa-fw"></i>
+					Continue Reading							</a>
+		</div>
+	</article><article class="row"><div class="large-5 columns text-center">
+			<p><a href="https://thehelloworldprogram.com/linux/everything-file/">
+								<img data-interchange="[https://thehelloworldprogram.com/app/uploads/2014/09/thumbnail4-700x400.jpg,(default)], [https://thehelloworldprogram.com/app/uploads/2014/09/thumbnail4-300x300.jpg,(large)]" title="Everything is a File" alt="Everything is a File"></a></p>
+		</div>
+		<div class="large-11 columns">
+			<h2><a href="https://thehelloworldprogram.com/linux/everything-file/">Everything is a File</a></h2>
+			<p>Everything is a file in Linux! Whether it be Schroedinger’s cat, Gremlins, the Droste effect, bouncy castles, continental philosophy, the Big Bad Wolf, Emacs, pizza wings on a dodo, this video, LCD Soundsystem, linux voice, or Graham Harman.</p>
+			<a class="button small right primary" href="https://thehelloworldprogram.com/linux/everything-file/">
+									<i class="fa fa-play-circle-o fa-fw"></i>
+					Watch Now							</a>
+		</div>
+	</article><article class="row"><div class="large-5 columns text-center">
+			<p><a href="https://thehelloworldprogram.com/linux/list-doughnut-contents-ls-command/">
+								<img data-interchange="[https://thehelloworldprogram.com/app/uploads/2014/09/3744843647_abfa834657_b-700x400.jpg,(default)], [https://thehelloworldprogram.com/app/uploads/2014/09/3744843647_abfa834657_b-300x300.jpg,(large)]" title="List Doughnut Contents with the ls Command" alt="List Doughnut Contents with the ls Command"></a></p>
+		</div>
+		<div class="large-11 columns">
+			<h2><a href="https://thehelloworldprogram.com/linux/list-doughnut-contents-ls-command/">List Doughnut Contents with the ls Command</a></h2>
+			<p>Trouble is afoot in “the_doughnuts” directory. It seems our friend Homer Price has built himself a newfangled, automatic, doughnut-making machine, and he can’t get it to shut off! On top of that, Ada Lovelace lost her diamond bracelet in the batter, and Homer is certain that it’s encased in one of his circular snack cakes. This looks like a job …</p>
+			<a class="button small right primary" href="https://thehelloworldprogram.com/linux/list-doughnut-contents-ls-command/">
+									<i class="fa fa-book fa-fw"></i>
+					Continue Reading							</a>
+		</div>
+	</article><nav class="pagination"><div class="wp-pagenavi" role="navigation">
+<span class="pages">Page 3 of 9</span><a class="previouspostslink" rel="prev" href="https://thehelloworldprogram.com/advanced_ads/daisys-web-dev-below-post-content/page/2/">«</a><a class="page smaller" title="Page 1" href="https://thehelloworldprogram.com/advanced_ads/daisys-web-dev-below-post-content/">1</a><a class="page smaller" title="Page 2" href="https://thehelloworldprogram.com/advanced_ads/daisys-web-dev-below-post-content/page/2/">2</a><span aria-current="page" class="current">3</span><a class="page larger" title="Page 4" href="https://thehelloworldprogram.com/advanced_ads/daisys-web-dev-below-post-content/page/4/">4</a><a class="page larger" title="Page 5" href="https://thehelloworldprogram.com/advanced_ads/daisys-web-dev-below-post-content/page/5/">5</a><span class="extend">...</span><a class="nextpostslink" rel="next" href="https://thehelloworldprogram.com/advanced_ads/daisys-web-dev-below-post-content/page/4/">»</a><a class="last" href="https://thehelloworldprogram.com/advanced_ads/daisys-web-dev-below-post-content/page/9/">Last »</a>
+</div>				</nav></div>
+		</section></div>
+					<aside id="sidebar" class="medium-5 large-4 columns"><ul class="small-block-grid-1"><li id="advads_ad_widget-2" class="widget thehe-widget"><div class="widget-content">
+	<p class="text-center">
+		<a href="https://gumroad.com/l/tilhtmlj4f">
+			<img src="https://thehelloworldprogram.com/app/uploads/2015/07/tilhtmlj4f_small.jpg"></a>
+	</p>
+	<p>
+		<strong>TIL HTML J4F</strong>
+		Learn how to build a game board with the table element, make sandwiches with forms, conquer dragons with semantic elements, link to exotic locations, and build up a robot's self esteem with structural markup in this beginner friendly introduction to the essential web development language.
+	</p>
+	<a href="https://gumroad.com/l/tilhtmlj4f" class="button primary expand">
+		<i class="fa fa-shopping-cart fa-fw"></i>
+		Get It Now!
+	</a>
+</div></li>	</ul></aside></div>
+		<footer id="footer" class="row"><div class="small-16 columns">
+				<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4"><li>
+                        <div class="footer-header">
+                            <i class="fa fa-newspaper-o"></i>
+                            Newsletter                        </div>
+                        
+                        <form action="http://thehelloworldprogram.us3.list-manage.com/subscribe/post?u=f392891df22d1bda9bbe37b4c&id=ed5550f168" method="post" class="newsletter" target="_blank" data-abide>
+                            
+                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_f392891df22d1bda9bbe37b4c_ed5550f168" value=""></div>
+
+                            <p>Stay up to date on the latest videos and tutorials with our monthly newsletter</p>
+                            <div class="row collapse">
+                                <div class="small-16 medium-10 large-11 columns">
+                                    <input class="no-bottom-margin" type="email" value="" placeholder="Email Address" name="EMAIL" required><small class="error">The email entered is invalid</small>
+                                </div>
+                                <div class="small-16 medium-6 large-5 columns">
+                                    <input type="submit" class="button primary postfix no-bottom-margin" value="Sign Up" name="subscribe" id="mc-embedded-subscribe"></div>
+                            </div>
+                        </form>
+                        
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-book"></i>
+							Tutorials						</div>
+						<nav id="footnav"><ul id="menu-footer" class=""><li id="menu-item-1564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1564"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1567"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1568"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+<li id="menu-item-1569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1569"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+</ul></nav></li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-info-circle"></i>
+							About Us						</div>
+						<p>The Hello World Program and all associated <a target="_blank" href="http://www.dototot.com">educational videos and tutorials</a> were created by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.dototot.com" property="cc:attributionName" rel="cc:attributionURL" target="_blank">Dototot</a> and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-envelope-o"></i>
+							Get in Touch						</div>
+						<p>
+							Questions? Comments? Suggestions? Send us an email!							<br><a href="mailto:%69nf%6f@theh%65l%6c%6fw%6fr%6cd%70%72ogr%61m.com">info@thehelloworldprogram.com</a>
+						</p>
+					</li>
+				</ul></div>
+		</footer></div></div>
+	<script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/fastclick.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/placeholder.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/foundation.min.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/jquery.cookie/jquery.cookie.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/js/app.js"></script></body></html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" id="arve" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Choosing a Text Editor for Web Development - Web Development - The Hello World Program</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="apple-touch-icon" href="https://thehelloworldprogram.com/apple-touch-icon.png"><meta name="description" content="Choosing a Text Editor for Web Development and other computer science, programming, and web development videos and tutorials."><link rel="publisher" href="https://plus.google.com/+Thehelloworldprogram"><meta property="og:locale" content="en_US"><meta property="og:title" content="Choosing a Text Editor for Web Development - Web Development - The Hello World Program"><meta property="og:description" content="Choosing a Text Editor for Web Development and other computer science, programming, and web development videos and tutorials."><meta property="og:url" content="https://thehelloworldprogram.com/web-development/choosing-text-editor-web-development/"><meta property="og:site_name" content="The Hello World Program"><meta property="article:author" content="https://www.facebook.com/jayarnielsen"><meta property="article:section" content="Web Development"><meta property="article:published_time" content="2014-06-03T15:30:12+00:00"><meta property="article:modified_time" content="2014-06-02T18:55:54+00:00"><meta property="og:updated_time" content="2014-06-02T18:55:54+00:00"><meta property="og:image" content="https://thehelloworldprogram.com/app/uploads/2014/06/feattexted.jpg"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="569"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="Choosing a Text Editor for Web Development and other computer science, programming, and web development videos and tutorials."><meta name="twitter:title" content="Choosing a Text Editor for Web Development - Web Development - The Hello World Program"><meta name="twitter:site" content="@helloworldshow"><meta name="twitter:image" content="https://thehelloworldprogram.com/app/uploads/2014/06/feattexted.jpg"><meta name="twitter:creator" content="@jayarnielsen"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","url":"https://thehelloworldprogram.com/","sameAs":["https://www.facebook.com/HelloWorldProgram","https://instagram.com/helloworldprogram/","https://plus.google.com/+Thehelloworldprogram","https://www.youtube.com/user/helloworldprogram","https://www.pinterest.com/helloworldshow/","https://twitter.com/helloworldshow"],"@id":"https://thehelloworldprogram.com/#organization","name":"The Hello World Program","logo":"https://thehelloworldprogram.com/app/uploads/2014/09/pressrelease-820x460.jpg"}</script><link rel="dns-prefetch" href="//s.w.org"><script>
+		/**
+  * based on domready (c) Dustin Diaz 2014 - License MIT
+  * https://github.com/ded/domready
+  */
+advanced_ads_ready = ( function() {
+  var fns = [], listener
+    , doc = typeof document === 'object' && document
+    , hack = doc && doc.documentElement.doScroll
+    , domContentLoaded = 'DOMContentLoaded'
+    , loaded = doc && (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState)
+
+  if (!loaded && doc){
+    listener = function () {
+	  doc.removeEventListener(domContentLoaded, listener)
+	  window.removeEventListener( "load", listener );
+	  loaded = 1
+	  while (listener = fns.shift()) listener()
+	}
+	  
+	doc.addEventListener(domContentLoaded, listener )
+	window.addEventListener( 'load', listener );
+  }
+
+  return function (fn) {
+    loaded ? setTimeout(fn, 0) : fns.push(fn)
+  }
+} )();
+</script><link rel="stylesheet" id="wp-block-library-css" href="https://thehelloworldprogram.com/wp/wp-includes/css/dist/block-library/style.css" type="text/css" media="all"><link rel="stylesheet" id="open-sans-font-css" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C700%2C400italic%2C700italic&ver=1.0" type="text/css" media="all"><link rel="stylesheet" id="fontawesome-css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4.3.0" type="text/css" media="all"><link rel="stylesheet" id="highlight-css" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/styles/default.min.css?ver=9.14.2" type="text/css" media="screen"><link rel="stylesheet" id="app-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/app.css" type="text/css" media="all"><link rel="stylesheet" id="print-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/print.css" type="text/css" media="print"><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js?ver=2.1.4"></script><script type="text/javascript">
+/* <![CDATA[ */
+var gadwpUAEventsData = {"options":{"event_tracking":"1","event_downloads":"zip|mp3|mpeg|pdf|doc*|ppt*|xls*|jpeg|png|gif|tiff","event_bouncerate":"1","aff_tracking":0,"event_affiliates":"\/out\/","hash_tracking":0,"root_domain":"thehelloworldprogram.test","event_timeout":100,"event_precision":0,"event_formsubmit":0,"ga_pagescrolldepth_tracking":0}};
+/* ]]> */
+</script><script type="text/javascript" src="https://thehelloworldprogram.com/app/plugins/google-analytics-dashboard-for-wp/front/js/tracking-analytics-events.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/modernizr.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/highlight.min.js?ver=1"></script><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33032781-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script></head><body class="post-template-default single single-post postid-1766 single-format-standard">
+	
+	<header id="header" class="hide-for-small-only"><div class="row">
+			<div class="small-16 medium-12 columns small-only-text-center">
+				<div class="logo">
+					<a href="https://thehelloworldprogram.com/">
+						The <span class="logo-mid">Hello World</span> Program
+					</a>
+				</div>
+			</div>
+			<div class="medium-4 columns hide-for-small-only">
+				<ul id="social-header" class="button-group right"><li>
+						<a class="button small rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank" title="Subscribe to our RSS Feed">
+							<i class="fa fa-rss fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank" title="Follow us on Twitter">
+							<i class="fa fa-twitter fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank" title="Subscribe to our youtube channel">
+							<i class="fa fa-youtube fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank" title="Follow us on Facebook">
+							<i class="fa fa-facebook fa-fw"></i>
+						</a>
+					</li>
+				</ul></div>
+		</div>
+		<div class="row">
+			<div class="medium-13 large-12 columns">
+				<nav id="nav"><ul id="menu-primary" class=""><li id="menu-item-1640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li id="menu-item-1560" class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1562" class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1559" class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li id="menu-item-1561" class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul></nav></div>
+		</div>
+	</header><div id="parallax" data-parallax-speed="10" class="off-canvas-wrap" data-offcanvas><div id="wrapper" class="inner-wrap">
+		
+		<nav class="tab-bar show-for-small-only"><div class="left-small">
+				<a href="#mobile-nav" role="button" aria-expanded="true" aria-controls="mobile-nav" class="left-off-canvas-toggle menu-icon">
+					<span></span>
+				</a>
+			</div>
+			<div class="right tab-bar-section">
+				<div class="logo title"><a href="https://thehelloworldprogram.com/">The <span class="logo-mid">Hello World</span> Program</a></div>
+			</div>
+		</nav><nav class="left-off-canvas-menu" id="mobile-nav"><ul class="off-canvas-list"><li><label>Look around</label></li>
+			</ul><ul id="menu-primary-1" class="off-canvas-list"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul><ul class="off-canvas-list"><li><label>Connect with us!</label></li>
+				<li>
+					<a class="rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank">
+						<i class="fa fa-rss fa-fw"></i> RSS Feed					</a>
+				</li>
+				<li>
+					<a class="twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank">
+						<i class="fa fa-twitter fa-fw"></i> Twitter
+					</a>
+				</li>
+				<li>
+					<a class="youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank">
+						<i class="fa fa-youtube fa-fw"></i> YouTube
+					</a>
+				</li>
+				<li>
+					<a class="facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank">
+						<i class="fa fa-facebook fa-fw"></i> Facebook
+					</a>
+				</li>
+			</ul></nav><a class="exit-off-canvas"></a>
+		
+		<div class="row">
+			<div id="main" class="medium-11 large-12 columns">
+						
+			<article class="section section-web-development"><h1 class="section-title">Choosing a Text Editor for Web Development</h1>
+				<div class="section-content">
+											
+													<p class="text-center"><img width="920" height="500" src="https://thehelloworldprogram.com/app/uploads/2014/06/feattexted-920x500.jpg" class="featured-image wp-post-image" alt="Choosing a Text Editor for Web Development" title="Choosing a Text Editor for Web Development"></p>
+												<p>One of my favorite things about web development is the extremely low barrier to entry. The only tool you need to build a web page is a text editor. And your brain. The only tools you need to start building a web page are a text editor and your brain. And a web browser. The three tools you need to start building a web page are a text editor, your brain, and a web browser. And a debugging plugin. The four tools you need…</p>
+<p>You know what, lets just focus on the text editor for now. The good news is that there are tons of free text editors to choose from. The bad news is that there are tons of free text editors to choose from. Deciding which one to use is overwhelming, but the wealth of options means you are bound to find one that suits you. While I can’t tell you definitively which one is the best, I can help point you in the right direction.</p>
+<p>The first important distinction we need to make on this journey of discovery is the difference between text editors and word processors. A text editor produces a plain text file with a simple character set. The contents of a plain text file are just that, plain. You cannot visually format plain text with effects like bold or italics. A word processor document, on the other hand, can contain visual modifications like font size, tables, font family, and so forth. <a href="http://www.libreoffice.org/" target="_blank">Libre Office</a> and Microsoft Word are examples of word processors. It is possible to create a plain text document with these programs, but… don’t.</p>
+<p><img class="aligncenter wp-image-1824 size-full" src="https://thehelloworldprogram.com/app/uploads/2014/06/textvsword.jpg" alt="Text editor vs word processor" width="900" height="289" srcset="https://thehelloworldprogram.com/app/uploads/2014/06/textvsword.jpg 900w, https://thehelloworldprogram.com/app/uploads/2014/06/textvsword-460x148.jpg 460w" sizes="(max-width: 900px) 100vw, 900px"></p>
+<p>Your operating system of choice will determine the text editors available to you. Every operating system is bundled with a basic text editor. Linux distros will often include <a href="https://wiki.gnome.org/Apps/Gedit" target="_blank">gedit</a>, Mac OS comes with TextEdit, and Windows features the classic Notepad program. These are perfectly acceptable text editors, however they are not very feature rich. gedit can be transformed into quite the text editing beast, but it takes a good number of plugins to do so.</p>
+<p>At the very least, we should look for a text editor that supports multi document (tabbed) editing, and syntax highlighting. Syntax highlighting improves the readability of your code by displaying the text in different colors according to the category of terms. In an HTML document, for instance, tags, attributes, and content all have a distinct color. <a href="http://notepad-plus-plus.org" target="_blank">Notepad++</a> is a often recommended as a powerful, lightweight text editor for beginners. This is the text editor I learned on, so it’s quite special to me. The downside is that it is only available on Windows. <a href="http://www.geany.org/" target="_blank">Geany</a>, <a href="http://bluefish.openoffice.nl/index.html" target="_blank">Bluefish</a>, and <a href="http://www.openkomodo.com/" target="_blank">Komodo Edit</a> are all excellent alternatives for Linux users. On the Mac OS side, <a href="http://www.peterborgapps.com/smultron/" target="_blank">Smultron</a> is also very similar to Notepad++.</p>
+<p><img class="aligncenter size-full wp-image-1825" src="https://thehelloworldprogram.com/app/uploads/2014/06/syntax.jpg" alt="Syntax Highlighting" width="900" height="300" srcset="https://thehelloworldprogram.com/app/uploads/2014/06/syntax.jpg 900w, https://thehelloworldprogram.com/app/uploads/2014/06/syntax-460x153.jpg 460w" sizes="(max-width: 900px) 100vw, 900px"></p>
+<p>While these are good starting points, newer text editors have made incredible advancements that can boost your productivity once you are comfortable writing code. Oft cited as the favorite of professionals, Sublime Text’s feature set will leave you green with envy. The only problem; it’s not free or open-source. <a href="https://atom.io/" target="_blank">Github’s Atom</a> is a free, open-source alternative to Sublime Text, offering a familiar interface and many of the same features. As of this writing, Atom is only officially available for Mac OS, but <a href="http://www.webupd8.org/2014/05/install-atom-text-editor-in-ubuntu-via-ppa.html" target="_blank">it is possible to install it on Linux</a>.</p>
+<p>Atom isn’t the only text editor taking a page from Sublime Text’s book. <a href="http://www.lighttable.com/" target="_blank">Light Table</a> and <a href="http://brackets.io/" target="_blank">Brackets</a> are two up-and-coming, cross-platform, open-source text editors that look and feel similar to Sublime Text while offering enough new features to stand on their own. Brackets is specifically tailored to web development, and includes some awesome features such as a live preview that updates your browser while you are writing code.</p>
+<p>We’ve only scratched the surface of the available text editors. We didn’t even get to <a href="http://www.vim.org/">Vim</a> or <a href="http://www.gnu.org/software/emacs/">Emacs</a>! Maybe some other time. With the exception of Sublime Text, all of the text editors mentioned are free, so there’s no reason you can’t try all of them and find the one that fits your needs best.</p>
+									</div>
+			</article><div class="section-noheader">
+<h2>Conquer HTML with Daisy's Web Development Diary!</h2>
+<div class="row">
+	<div class="large-7 columns text-center">
+		<a href="https://gumroad.com/l/daisy">
+			<img src="https://thehelloworldprogram.com/app/uploads/2015/06/daisy.gif"></a>
+	</div>
+	<div class="large-9 columns">
+		<p>Defeating dragons, exploring the depths of the ocean, and advising robots about dating are just a few of the many adventures in Daisy's Web Development Diary. Explore the foundational web language, HTML. Learn how to build a game board with the table element, create forms for ordering sandwiches, link to exotic locations, and more.</p>
+<a href="https://gumroad.com/l/daisy" class="button small primary expand no-bottom-margin">
+	<i class="fa fa-shopping-cart fa-fw"></i>			
+	Get It Now!
+</a>	
+
+</div>
+</div>
+</div>
+            <div class="section-noheader">
+                <div class="row">
+                    <div class="medium-6 large-4 columns">
+                        <p class="hidden-for-small-only"><a href="https://thehelloworldprogram.com/author/jay/">
+                            <img src="http://1.gravatar.com/avatar/dbf86d4bb96f2df787e051bb74ab9732?s=250&d=mm&r=g" width="250" height="250" alt="" class="avatar avatar-250 wp-user-avatar wp-user-avatar-250 photo avatar-default"></a></p>
+                    </div>
+                    <div class="medium-10 large-12 columns">
+                        <p>
+                            <em>Choosing a Text Editor for Web Development </em>
+                                                            was posted by Jay                            
+                            on <time datetime="2014-06-03" itemprop="datePublished">June 3rd, 2014</time>.
+                            Jay is one of the three humans that run the behind-the-scene affairs of The Hello World Program.  He is interested in spreading the good robot word over the vast Inter-webs.  His contributions to the show include editing, web programming, design, and music composition.                        </p>
+                    </div>
+                </div>
+            </div>
+
+							<article id="recommended" class="section section-web-development"><div class="section-title">Recommended for You</div>
+					<div class="section-content">
+						<div class="yarpp-related">
+	<ul class="small-block-grid-2 large-block-grid-4 recommended-posts"><li>
+					<a href="https://thehelloworldprogram.com/web-development/build-web-page-with-simple-structural-html-markup/" title="Building a Web Page With Structural HTML Markup">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/04/featured-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Building a Web Page With Structural HTML Markup" title="Building a Web Page With Structural HTML Markup"><span>Building a Web Page With…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/structural-html-markup/" title="Attract Hot Robots with Structural HTML Markup">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/05/thumbnail5-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Attract Hot Robots with Structural HTML Markup" title="Attract Hot Robots with Structural HTML Markup"><span>Attract Hot Robots with Structural…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/html-head-meta-link-script-elements/" title="Don’t Lose Your Head! Find Inner Peace with HTML">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/06/thumbnail7-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Don’t Lose Your Head! Find Inner Peace with HTML" title="Don’t Lose Your Head! Find Inner Peace with HTML"><span>Don’t Lose Your Head! Find…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/connect-html-pages-html-anchor-element/" title="Connect HTML Pages with the Anchor Element">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/06/link-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Connect HTML Pages with the Anchor Element" title="Connect HTML Pages with the Anchor Element"><span>Connect HTML Pages with the…</span>
+					</a>
+				</li>
+						</ul></div>
+					</div>
+				</article></div>
+					<aside id="sidebar" class="medium-5 large-4 columns"><ul class="small-block-grid-1"><li id="advads_ad_widget-2" class="widget thehe-widget"><div class="widget-content">
+	<p class="text-center">
+		<a href="https://gum.co/daisy">
+			<img src="https://thehelloworldprogram.com/app/uploads/2015/06/daisy-web-dev.png" alt="Superusers: The Legendary GNU/Linux Show" title="Superusers: The Legendary GNU/Linux Show"></a>
+	</p>
+	<p>
+		<strong>Daisy's Web Development Diary: Learn HTML</strong>
+		 - Learn how to build a game board with the table element, create forms for ordering sandwiches, link to exotic locations, and more. Begin your web programming journey today!
+	</p>
+	<a href="https://gum.co/daisy" class="button primary expand">
+		<i class="fa fa-shopping-cart fa-fw"></i>
+		Get It Now!
+	</a>
+</div></li>	</ul></aside></div>
+		<footer id="footer" class="row"><div class="small-16 columns">
+				<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4"><li>
+                        <div class="footer-header">
+                            <i class="fa fa-newspaper-o"></i>
+                            Newsletter                        </div>
+                        
+                        <form action="http://thehelloworldprogram.us3.list-manage.com/subscribe/post?u=f392891df22d1bda9bbe37b4c&id=ed5550f168" method="post" class="newsletter" target="_blank" data-abide>
+                            
+                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_f392891df22d1bda9bbe37b4c_ed5550f168" value=""></div>
+
+                            <p>Stay up to date on the latest videos and tutorials with our monthly newsletter</p>
+                            <div class="row collapse">
+                                <div class="small-16 medium-10 large-11 columns">
+                                    <input class="no-bottom-margin" type="email" value="" placeholder="Email Address" name="EMAIL" required><small class="error">The email entered is invalid</small>
+                                </div>
+                                <div class="small-16 medium-6 large-5 columns">
+                                    <input type="submit" class="button primary postfix no-bottom-margin" value="Sign Up" name="subscribe" id="mc-embedded-subscribe"></div>
+                            </div>
+                        </form>
+                        
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-book"></i>
+							Tutorials						</div>
+						<nav id="footnav"><ul id="menu-footer" class=""><li id="menu-item-1564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1564"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1567"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1568"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+<li id="menu-item-1569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1569"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+</ul></nav></li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-info-circle"></i>
+							About Us						</div>
+						<p>The Hello World Program and all associated <a target="_blank" href="http://www.dototot.com">educational videos and tutorials</a> were created by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.dototot.com" property="cc:attributionName" rel="cc:attributionURL" target="_blank">Dototot</a> and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-envelope-o"></i>
+							Get in Touch						</div>
+						<p>
+							Questions? Comments? Suggestions? Send us an email!							<br><a href="mailto:i%6efo@th%65%68%65l%6co%77orld%70rog%72%61m%2ec%6fm">info@thehelloworldprogram.com</a>
+						</p>
+					</li>
+				</ul></div>
+		</footer></div></div>
+	<link rel="stylesheet" id="yarppRelatedCss-css" href="https://thehelloworldprogram.com/app/plugins/yet-another-related-posts-plugin/style/related.css" type="text/css" media="all"><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/fastclick.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/placeholder.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/foundation.min.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/jquery.cookie/jquery.cookie.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/js/app.js"></script></body></html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" id="arve" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Python Operators are Mathematical! - Python - The Hello World Program</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="apple-touch-icon" href="https://thehelloworldprogram.com/apple-touch-icon.png"><meta name="description" content="You don’t have to be an Einstein to be a computer scientist. You only need to understand the basics. Our Python operators tutorial is mathemagical!"><link rel="publisher" href="https://plus.google.com/+Thehelloworldprogram"><meta property="og:locale" content="en_US"><meta property="og:title" content="Python Operators are Mathematical! - Python - The Hello World Program"><meta property="og:description" content="You don’t have to be an Einstein to be a computer scientist. You only need to understand the basics. Our Python operators tutorial is mathemagical!"><meta property="og:url" content="https://thehelloworldprogram.com/python/python-operators/"><meta property="og:site_name" content="The Hello World Program"><meta property="article:author" content="https://www.facebook.com/jared.nielsen.75"><meta property="article:tag" content="expressions"><meta property="article:tag" content="operands"><meta property="article:tag" content="operations"><meta property="article:tag" content="operators"><meta property="article:tag" content="statements"><meta property="article:section" content="Python"><meta property="article:published_time" content="2014-06-09T18:51:18+00:00"><meta property="article:modified_time" content="2014-12-08T19:57:40+00:00"><meta property="og:updated_time" content="2014-12-08T19:57:40+00:00"><meta property="og:image" content="https://thehelloworldprogram.com/app/themes/helloworldprogram/img/hello-group.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="You don’t have to be an Einstein to be a computer scientist. You only need to understand the basics. Our Python operators tutorial is mathemagical!"><meta name="twitter:title" content="Python Operators are Mathematical! - Python - The Hello World Program"><meta name="twitter:site" content="@helloworldshow"><meta name="twitter:image" content="https://thehelloworldprogram.com/app/uploads/2014/06/20140609_python_bytes02.1-1.jpg"><meta name="twitter:creator" content="@jarednielsen"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","url":"https://thehelloworldprogram.com/","sameAs":["https://www.facebook.com/HelloWorldProgram","https://instagram.com/helloworldprogram/","https://plus.google.com/+Thehelloworldprogram","https://www.youtube.com/user/helloworldprogram","https://www.pinterest.com/helloworldshow/","https://twitter.com/helloworldshow"],"@id":"https://thehelloworldprogram.com/#organization","name":"The Hello World Program","logo":"https://thehelloworldprogram.com/app/uploads/2014/09/pressrelease-820x460.jpg"}</script><link rel="dns-prefetch" href="//s.w.org"><script>
+		/**
+  * based on domready (c) Dustin Diaz 2014 - License MIT
+  * https://github.com/ded/domready
+  */
+advanced_ads_ready = ( function() {
+  var fns = [], listener
+    , doc = typeof document === 'object' && document
+    , hack = doc && doc.documentElement.doScroll
+    , domContentLoaded = 'DOMContentLoaded'
+    , loaded = doc && (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState)
+
+  if (!loaded && doc){
+    listener = function () {
+	  doc.removeEventListener(domContentLoaded, listener)
+	  window.removeEventListener( "load", listener );
+	  loaded = 1
+	  while (listener = fns.shift()) listener()
+	}
+	  
+	doc.addEventListener(domContentLoaded, listener )
+	window.addEventListener( 'load', listener );
+  }
+
+  return function (fn) {
+    loaded ? setTimeout(fn, 0) : fns.push(fn)
+  }
+} )();
+</script><link rel="stylesheet" id="wp-block-library-css" href="https://thehelloworldprogram.com/wp/wp-includes/css/dist/block-library/style.css" type="text/css" media="all"><link rel="stylesheet" id="open-sans-font-css" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C700%2C400italic%2C700italic&ver=1.0" type="text/css" media="all"><link rel="stylesheet" id="fontawesome-css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4.3.0" type="text/css" media="all"><link rel="stylesheet" id="highlight-css" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/styles/default.min.css?ver=9.14.2" type="text/css" media="screen"><link rel="stylesheet" id="app-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/app.css" type="text/css" media="all"><link rel="stylesheet" id="print-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/print.css" type="text/css" media="print"><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js?ver=2.1.4"></script><script type="text/javascript">
+/* <![CDATA[ */
+var gadwpUAEventsData = {"options":{"event_tracking":"1","event_downloads":"zip|mp3|mpeg|pdf|doc*|ppt*|xls*|jpeg|png|gif|tiff","event_bouncerate":"1","aff_tracking":0,"event_affiliates":"\/out\/","hash_tracking":0,"root_domain":"thehelloworldprogram.test","event_timeout":100,"event_precision":0,"event_formsubmit":0,"ga_pagescrolldepth_tracking":0}};
+/* ]]> */
+</script><script type="text/javascript" src="https://thehelloworldprogram.com/app/plugins/google-analytics-dashboard-for-wp/front/js/tracking-analytics-events.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/modernizr.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/highlight.min.js?ver=1"></script><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33032781-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script></head><body class="post-template-default single single-post postid-1625 single-format-standard">
+	
+	<header id="header" class="hide-for-small-only"><div class="row">
+			<div class="small-16 medium-12 columns small-only-text-center">
+				<div class="logo">
+					<a href="https://thehelloworldprogram.com/">
+						The <span class="logo-mid">Hello World</span> Program
+					</a>
+				</div>
+			</div>
+			<div class="medium-4 columns hide-for-small-only">
+				<ul id="social-header" class="button-group right"><li>
+						<a class="button small rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank" title="Subscribe to our RSS Feed">
+							<i class="fa fa-rss fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank" title="Follow us on Twitter">
+							<i class="fa fa-twitter fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank" title="Subscribe to our youtube channel">
+							<i class="fa fa-youtube fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank" title="Follow us on Facebook">
+							<i class="fa fa-facebook fa-fw"></i>
+						</a>
+					</li>
+				</ul></div>
+		</div>
+		<div class="row">
+			<div class="medium-13 large-12 columns">
+				<nav id="nav"><ul id="menu-primary" class=""><li id="menu-item-1640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li id="menu-item-1560" class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1562" class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1559" class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li id="menu-item-1561" class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul></nav></div>
+		</div>
+	</header><div id="parallax" data-parallax-speed="10" class="off-canvas-wrap" data-offcanvas><div id="wrapper" class="inner-wrap">
+		
+		<nav class="tab-bar show-for-small-only"><div class="left-small">
+				<a href="#mobile-nav" role="button" aria-expanded="true" aria-controls="mobile-nav" class="left-off-canvas-toggle menu-icon">
+					<span></span>
+				</a>
+			</div>
+			<div class="right tab-bar-section">
+				<div class="logo title"><a href="https://thehelloworldprogram.com/">The <span class="logo-mid">Hello World</span> Program</a></div>
+			</div>
+		</nav><nav class="left-off-canvas-menu" id="mobile-nav"><ul class="off-canvas-list"><li><label>Look around</label></li>
+			</ul><ul id="menu-primary-1" class="off-canvas-list"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul><ul class="off-canvas-list"><li><label>Connect with us!</label></li>
+				<li>
+					<a class="rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank">
+						<i class="fa fa-rss fa-fw"></i> RSS Feed					</a>
+				</li>
+				<li>
+					<a class="twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank">
+						<i class="fa fa-twitter fa-fw"></i> Twitter
+					</a>
+				</li>
+				<li>
+					<a class="youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank">
+						<i class="fa fa-youtube fa-fw"></i> YouTube
+					</a>
+				</li>
+				<li>
+					<a class="facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank">
+						<i class="fa fa-facebook fa-fw"></i> Facebook
+					</a>
+				</li>
+			</ul></nav><a class="exit-off-canvas"></a>
+		
+		<div class="row">
+			<div id="main" class="medium-11 large-12 columns">
+						
+			<article class="section section-python"><h1 class="section-title">Python Operators are Mathematical!</h1>
+				<div class="section-content">
+											
+													<p class="text-center"><img width="900" height="500" src="https://thehelloworldprogram.com/app/uploads/2014/06/20140609_python_bytes02.1-1-900x500.jpg" class="featured-image wp-post-image" alt="Python Operators are Mathematical!" title="Python Operators are Mathematical!" srcset="https://thehelloworldprogram.com/app/uploads/2014/06/20140609_python_bytes02.1-1.jpg 900w, https://thehelloworldprogram.com/app/uploads/2014/06/20140609_python_bytes02.1-1-460x256.jpg 460w" sizes="(max-width: 900px) 100vw, 900px"></p>
+												<p>Not only is math essential to programming, it’s also fascinating. Especially when you have a super-powerful calculator like Python to do the heavy-lifting for you. In this tutorial you will learn how to use Python operators to perform basic mathematical operations. You don’t have to be an Einstein to be a computer scientist (though it wouldn’t hurt). You only need to understand the basics. Then you can fake your math chops just like the rest of us. If you are just joining us, you may want to start at the beginning with our <a title="And Now For Something Completely Different… An Introduction to the Python Programming Language" href="https://thehelloworldprogram.com/python/now-something-completely-different/">Introduction to Python</a>.</p>
+<h2>Python operators, operands and operations</h2>
+<p>Imagine you are in an operating room at Rossum’s Universal Robot Hospital. Dr. Plus, Dr. Minus, Dr. Slash and Dr. Asterisk are working on a patient.</p>
+<p id="docs-internal-guid-9934e914-4862-afdd-f445-6193e7bab25d" dir="ltr">Our robot patient needs to maintain a certain voltage to continue running, currently 12 V. The Drs. operate.</p>
+<p dir="ltr">Dr. Plus increases the voltage by 108.</p>
+<pre class="lang:python decode:true">>>>12 + 108
+120</pre>
+<p>Dr. Minus makes a minor adjustment:</p>
+<pre class="lang:python decode:true">>>>120 - 10
+110</pre>
+<p>Dr. Asterisk has determined that the robot is European and multiplies the voltage by a factor of 2:</p>
+<pre class="lang:default decode:true">>>>110 * 2
+220</pre>
+<p>At the last moment, Dr. Slash rushes in and saves the patient from circuit overload:</p>
+<pre class="lang:default decode:true">>>>220 / 44
+5.0</pre>
+<h2>Commercial Break: Floats, Integers & Division</h2>
+<p>Why did 220/44 return 5.0 rather than simply 5? Just to make your head explode, Python 3 has two division operators.<br>
+A single slash, ‘/’, is true division. The other operator is called floor division and consists of two slashes, ‘//’. True division returns what is called in computer science a floating point. In Python we refer to these as floats. You can think of a float as a number with a decimal point bobbing about inside it. Or, because true division is a single slash, ‘/’, it is <i>lighter</i> than floor division and therefore floats. It’s really useful when working with exponents. Floor division on the other hand, because it is composed of two slashes, is heavier, and bottoms out at the nearest integer. For example:</p>
+<pre class="lang:python decode:true">>>> 5/2
+2.5
+
+>>> 5//2
+2
+
+>>> -5/2
+-2.5
+
+>>> -5//2
+-3</pre>
+<p>What’s an integer? It’s any positive or negative whole number, including zero. You may find that you don’t want a float. You can fix that with the int() function.</p>
+<pre class="lang:python decode:true">>>> int(2.5)
+2
+
+>>> int(-2.5)
+-2</pre>
+<p>And you can convert integers to floats with the float() function.</p>
+<pre class="lang:python decode:true">>>> float(5)
+5.0</pre>
+<p>But we’re getting ahead of ourselves…</p>
+<h2>We Now Return You to Rossum’s Universal Robot Hospital</h2>
+<p>With our patient near the end of its consumer life cycle, an expert is called in.</p>
+<blockquote><p>“Paging Dr. Powers, Dr. Powers…”</p></blockquote>
+<p>Dr. Powers saunters into the operating room and performs his specialty: exponentiation.</p>
+<pre class="lang:default decode:true">>>> 5 ** 2
+25</pre>
+<p>You can think of exponentiation as “times times”. In the above example, 5**2 is the same as 5 * 5. And 5**3 can be thought of as 5 * 5 * 5.</p>
+<p>This metaphorical medical drama illustrates the basic mathematical constructs used in any programming language: operators, operands, and operations. An operator is a special symbol indicating a specific computation. An operand is a value on which an operator performs. And an operation is any statement in which one or more operands are operated upon by an operator.</p>
+<p>Let’s dissect this on our operating table:</p>
+<table style="height: 184px; width: 346px;" border="1" width="346" cellspacing="1" cellpadding="5"><tbody><tr><td>Operator</td>
+<td>English</td>
+<td>Operand</td>
+<td>Operation</td>
+<td>Result</td>
+</tr><tr><td>+</td>
+<td>Addition</td>
+<td>12, 108</td>
+<td>12 + 108</td>
+<td>120</td>
+</tr><tr><td>–</td>
+<td>Subtraction</td>
+<td>120, 10</td>
+<td>120 -10</td>
+<td>110</td>
+</tr><tr><td>*</td>
+<td>Multiplication</td>
+<td>110, 2</td>
+<td>110 * 2</td>
+<td>220</td>
+</tr><tr><td>/</td>
+<td>Division</td>
+<td>220, 44</td>
+<td>220 / 44</td>
+<td>5</td>
+</tr><tr><td>**</td>
+<td>Exponentiation</td>
+<td>5, 2</td>
+<td>5**2</td>
+<td>25</td>
+</tr></tbody></table><p id="docs-internal-guid-4701b4ef-48f1-1281-fe5f-3fb72c1072df" dir="ltr">I said above that math is fascinating. Let me prove it with this magic trick. I will transform any whole number into the number 3. Follow along with your Python prompt.</p>
+<p>Pick a number, any number, and enter it in your Python prompt. I’m going to pick lucky number 7.</p>
+<pre class="lang:python decode:true">>>>7</pre>
+<p>Add 5 and hit Enter.</p>
+<pre class="lang:python decode:true">>>>7 + 5
+12</pre>
+<p>Multiply the result by 2.</p>
+<pre class="lang:python decode:true">>>>12 * 2
+24</pre>
+<p>Subtract 4.</p>
+<pre class="lang:python decode:true">>>>24 - 4
+20</pre>
+<p>Divide by 2.</p>
+<pre class="lang:python decode:true">>>> 20 / 2
+10</pre>
+<p>Subtract the original number.</p>
+<pre class="lang:python decode:true">>>> 10 - 7
+3</pre>
+<p>Mathematical! Or should I say, mathemagical? Use this magic link to learn our next trick: <a title="Python Operators: Order & Precedence" href="https://thehelloworldprogram.com/python/python-operators-order-precedence/">operator precedence</a>.</p>
+									</div>
+			</article><div class="section-noheader">
+<div class="row">
+	<div class="large-8 columns text-center">
+		<div class="arve-wrapper" data-mode="normal" data-provider="youtube" id="arve-bsXqCi4zp-s" style="max-width:915px;" itemscope itemtype="http://schema.org/VideoObject"><div class="arve-embed-container" style="padding-bottom:56.250000%"><iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="arve-iframe fitvidsignore" frameborder="0" name sandbox="allow-scripts allow-same-origin allow-presentation allow-popups" scrolling="no" src="https://www.youtube-nocookie.com/embed/bsXqCi4zp-s?iv_load_policy=3&modestbranding=1&rel=0&autohide=1&playsinline=1&autoplay=0" width="480" height="270"></iframe></div></div>	</div>
+	<div class="large-8 columns">
+		<h2>Hands-on Computer Science</h2>
+		<p>Learn computer science, programming, and web development with us, your educational and entertaining super friends.</p>
+		<a href="http://www.youtube.com/subscription_center?add_user=helloworldprogram" class="button primary expand no-bottom-margin">
+			<i class="fa fa-youtube fa-fw"></i>			
+			Subscribe to our YouTube Channel
+		</a>
+	</div>
+</div>
+</div>
+            <div class="section-noheader">
+                <div class="row">
+                    <div class="medium-6 large-4 columns">
+                        <p class="hidden-for-small-only"><a href="https://thehelloworldprogram.com/author/jared/">
+                            <img src="https://thehelloworldprogram.com/app/uploads/2015/06/jared-300x300.jpg" width="250" height="250" alt="Jared" class="avatar avatar-250 wp-user-avatar wp-user-avatar-250 alignnone photo"></a></p>
+                    </div>
+                    <div class="medium-10 large-12 columns">
+                        <p>
+                            <em>Python Operators are Mathematical! </em>
+                                                            was posted by Jared                            
+                            on <time datetime="2014-06-09" itemprop="datePublished">June 9th, 2014</time>.
+                            Jared likes to make things. He really wants you to watch The Hello World Program so you can learn the skills you need to build an awesome future. His contributions to the show include puppetry, 3D animation, doodling and speaking in a bad British accent. And yes, that is a fox sitting on his face.                        </p>
+                    </div>
+                </div>
+            </div>
+
+							<article id="recommended" class="section section-python"><div class="section-title">Recommended for You</div>
+					<div class="section-content">
+						<div class="yarpp-related">
+	<ul class="small-block-grid-2 large-block-grid-4 recommended-posts"><li>
+					<a href="https://thehelloworldprogram.com/python/python-program-idle/" title="Writing, Saving and Running Python Programs with IDLE">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/06/20140531_python_bytes01.03featured1-1-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Writing, Saving and Running Python Programs with IDLE" title="Writing, Saving and Running Python Programs with IDLE"><span>Writing, Saving and Running Python…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/python/python-operators-order-precedence/" title="Python Operators: Order & Precedence">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/06/20140620_python_bytes2.2_rur-1-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Python Operators: Order & Precedence" title="Python Operators: Order & Precedence"><span>Python Operators: Order & Precedence</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/python/life-like-python-list/" title="Life is Like A Python List">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/10/20141003_python5.1_lists-1-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Life is Like A Python List" title="Life is Like A Python List"><span>Life is Like A Python…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/python/writing-python-functions-structure/" title="Writing Python Functions Part 1: Structure">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2015/05/byting_python_06.2_functions_02-1-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Writing Python Functions Part 1: Structure" title="Writing Python Functions Part 1: Structure"><span>Writing Python Functions Part 1:…</span>
+					</a>
+				</li>
+						</ul></div>
+					</div>
+				</article></div>
+					<aside id="sidebar" class="medium-5 large-4 columns"><ul class="small-block-grid-1"><li id="advads_ad_widget-2" class="widget thehe-widget"><div class="widget-content">
+	<p class="text-center">
+		<a href="https://gumroad.com/l/tilhtmlj4f">
+			<img src="https://thehelloworldprogram.com/app/uploads/2015/07/tilhtmlj4f_small.jpg"></a>
+	</p>
+	<p>
+		<strong>TIL HTML J4F</strong>
+		Learn how to build a game board with the table element, make sandwiches with forms, conquer dragons with semantic elements, link to exotic locations, and build up a robot's self esteem with structural markup in this beginner friendly introduction to the essential web development language.
+	</p>
+	<a href="https://gumroad.com/l/tilhtmlj4f" class="button primary expand">
+		<i class="fa fa-shopping-cart fa-fw"></i>
+		Get It Now!
+	</a>
+</div></li>	</ul></aside></div>
+		<footer id="footer" class="row"><div class="small-16 columns">
+				<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4"><li>
+                        <div class="footer-header">
+                            <i class="fa fa-newspaper-o"></i>
+                            Newsletter                        </div>
+                        
+                        <form action="http://thehelloworldprogram.us3.list-manage.com/subscribe/post?u=f392891df22d1bda9bbe37b4c&id=ed5550f168" method="post" class="newsletter" target="_blank" data-abide>
+                            
+                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_f392891df22d1bda9bbe37b4c_ed5550f168" value=""></div>
+
+                            <p>Stay up to date on the latest videos and tutorials with our monthly newsletter</p>
+                            <div class="row collapse">
+                                <div class="small-16 medium-10 large-11 columns">
+                                    <input class="no-bottom-margin" type="email" value="" placeholder="Email Address" name="EMAIL" required><small class="error">The email entered is invalid</small>
+                                </div>
+                                <div class="small-16 medium-6 large-5 columns">
+                                    <input type="submit" class="button primary postfix no-bottom-margin" value="Sign Up" name="subscribe" id="mc-embedded-subscribe"></div>
+                            </div>
+                        </form>
+                        
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-book"></i>
+							Tutorials						</div>
+						<nav id="footnav"><ul id="menu-footer" class=""><li id="menu-item-1564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1564"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1567"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1568"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+<li id="menu-item-1569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1569"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+</ul></nav></li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-info-circle"></i>
+							About Us						</div>
+						<p>The Hello World Program and all associated <a target="_blank" href="http://www.dototot.com">educational videos and tutorials</a> were created by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.dototot.com" property="cc:attributionName" rel="cc:attributionURL" target="_blank">Dototot</a> and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-envelope-o"></i>
+							Get in Touch						</div>
+						<p>
+							Questions? Comments? Suggestions? Send us an email!							<br><a href="mailto:%69n%66%6f@t%68eh%65%6c%6c%6fwo%72ldp%72ogr%61m.c%6fm">info@thehelloworldprogram.com</a>
+						</p>
+					</li>
+				</ul></div>
+		</footer></div></div>
+	<link rel="stylesheet" id="advanced-responsive-video-embedder-css" href="https://thehelloworldprogram.com/app/plugins/advanced-responsive-video-embedder/public/arve.css" type="text/css" media="all"><link rel="stylesheet" id="yarppRelatedCss-css" href="https://thehelloworldprogram.com/app/plugins/yet-another-related-posts-plugin/style/related.css" type="text/css" media="all"><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/fastclick.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/placeholder.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/foundation.min.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/jquery.cookie/jquery.cookie.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/js/app.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/plugins/advanced-responsive-video-embedder/public/arve.js"></script></body></html>

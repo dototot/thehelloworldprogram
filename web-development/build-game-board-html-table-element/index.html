@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" id="arve" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Build a Game Board with the HTML Table Element - Web Development - The Hello World Program</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="apple-touch-icon" href="https://thehelloworldprogram.com/apple-touch-icon.png"><meta name="description" content="Build a Game Board with the HTML Table Element and other computer science, programming, and web development videos and tutorials."><link rel="publisher" href="https://plus.google.com/+Thehelloworldprogram"><meta property="og:locale" content="en_US"><meta property="og:title" content="Build a Game Board with the HTML Table Element - Web Development - The Hello World Program"><meta property="og:description" content="Build a Game Board with the HTML Table Element and other computer science, programming, and web development videos and tutorials."><meta property="og:url" content="https://thehelloworldprogram.com/web-development/build-game-board-html-table-element/"><meta property="og:site_name" content="The Hello World Program"><meta property="article:author" content="https://www.facebook.com/jayarnielsen"><meta property="article:tag" content="HTML"><meta property="article:section" content="Web Development"><meta property="article:published_time" content="2014-06-17T18:02:38+00:00"><meta property="article:modified_time" content="2014-06-18T02:59:32+00:00"><meta property="og:updated_time" content="2014-06-18T02:59:32+00:00"><meta property="og:image" content="https://thehelloworldprogram.com/app/uploads/2014/06/allyerbasecloseup.jpg"><meta property="og:image:width" content="900"><meta property="og:image:height" content="500"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="Build a Game Board with the HTML Table Element and other computer science, programming, and web development videos and tutorials."><meta name="twitter:title" content="Build a Game Board with the HTML Table Element - Web Development - The Hello World Program"><meta name="twitter:site" content="@helloworldshow"><meta name="twitter:image" content="https://thehelloworldprogram.com/app/uploads/2014/06/allyerbasecloseup.jpg"><meta name="twitter:creator" content="@jayarnielsen"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","url":"https://thehelloworldprogram.com/","sameAs":["https://www.facebook.com/HelloWorldProgram","https://instagram.com/helloworldprogram/","https://plus.google.com/+Thehelloworldprogram","https://www.youtube.com/user/helloworldprogram","https://www.pinterest.com/helloworldshow/","https://twitter.com/helloworldshow"],"@id":"https://thehelloworldprogram.com/#organization","name":"The Hello World Program","logo":"https://thehelloworldprogram.com/app/uploads/2014/09/pressrelease-820x460.jpg"}</script><link rel="dns-prefetch" href="//s.w.org"><script>
+		/**
+  * based on domready (c) Dustin Diaz 2014 - License MIT
+  * https://github.com/ded/domready
+  */
+advanced_ads_ready = ( function() {
+  var fns = [], listener
+    , doc = typeof document === 'object' && document
+    , hack = doc && doc.documentElement.doScroll
+    , domContentLoaded = 'DOMContentLoaded'
+    , loaded = doc && (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState)
+
+  if (!loaded && doc){
+    listener = function () {
+	  doc.removeEventListener(domContentLoaded, listener)
+	  window.removeEventListener( "load", listener );
+	  loaded = 1
+	  while (listener = fns.shift()) listener()
+	}
+	  
+	doc.addEventListener(domContentLoaded, listener )
+	window.addEventListener( 'load', listener );
+  }
+
+  return function (fn) {
+    loaded ? setTimeout(fn, 0) : fns.push(fn)
+  }
+} )();
+</script><link rel="stylesheet" id="wp-block-library-css" href="https://thehelloworldprogram.com/wp/wp-includes/css/dist/block-library/style.css" type="text/css" media="all"><link rel="stylesheet" id="open-sans-font-css" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C700%2C400italic%2C700italic&ver=1.0" type="text/css" media="all"><link rel="stylesheet" id="fontawesome-css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4.3.0" type="text/css" media="all"><link rel="stylesheet" id="highlight-css" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/styles/default.min.css?ver=9.14.2" type="text/css" media="screen"><link rel="stylesheet" id="app-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/app.css" type="text/css" media="all"><link rel="stylesheet" id="print-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/print.css" type="text/css" media="print"><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js?ver=2.1.4"></script><script type="text/javascript">
+/* <![CDATA[ */
+var gadwpUAEventsData = {"options":{"event_tracking":"1","event_downloads":"zip|mp3|mpeg|pdf|doc*|ppt*|xls*|jpeg|png|gif|tiff","event_bouncerate":"1","aff_tracking":0,"event_affiliates":"\/out\/","hash_tracking":0,"root_domain":"thehelloworldprogram.test","event_timeout":100,"event_precision":0,"event_formsubmit":0,"ga_pagescrolldepth_tracking":0}};
+/* ]]> */
+</script><script type="text/javascript" src="https://thehelloworldprogram.com/app/plugins/google-analytics-dashboard-for-wp/front/js/tracking-analytics-events.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/modernizr.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/highlight.min.js?ver=1"></script><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33032781-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script></head><body class="post-template-default single single-post postid-1929 single-format-standard">
+	
+	<header id="header" class="hide-for-small-only"><div class="row">
+			<div class="small-16 medium-12 columns small-only-text-center">
+				<div class="logo">
+					<a href="https://thehelloworldprogram.com/">
+						The <span class="logo-mid">Hello World</span> Program
+					</a>
+				</div>
+			</div>
+			<div class="medium-4 columns hide-for-small-only">
+				<ul id="social-header" class="button-group right"><li>
+						<a class="button small rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank" title="Subscribe to our RSS Feed">
+							<i class="fa fa-rss fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank" title="Follow us on Twitter">
+							<i class="fa fa-twitter fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank" title="Subscribe to our youtube channel">
+							<i class="fa fa-youtube fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank" title="Follow us on Facebook">
+							<i class="fa fa-facebook fa-fw"></i>
+						</a>
+					</li>
+				</ul></div>
+		</div>
+		<div class="row">
+			<div class="medium-13 large-12 columns">
+				<nav id="nav"><ul id="menu-primary" class=""><li id="menu-item-1640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li id="menu-item-1560" class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1562" class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1559" class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li id="menu-item-1561" class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul></nav></div>
+		</div>
+	</header><div id="parallax" data-parallax-speed="10" class="off-canvas-wrap" data-offcanvas><div id="wrapper" class="inner-wrap">
+		
+		<nav class="tab-bar show-for-small-only"><div class="left-small">
+				<a href="#mobile-nav" role="button" aria-expanded="true" aria-controls="mobile-nav" class="left-off-canvas-toggle menu-icon">
+					<span></span>
+				</a>
+			</div>
+			<div class="right tab-bar-section">
+				<div class="logo title"><a href="https://thehelloworldprogram.com/">The <span class="logo-mid">Hello World</span> Program</a></div>
+			</div>
+		</nav><nav class="left-off-canvas-menu" id="mobile-nav"><ul class="off-canvas-list"><li><label>Look around</label></li>
+			</ul><ul id="menu-primary-1" class="off-canvas-list"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul><ul class="off-canvas-list"><li><label>Connect with us!</label></li>
+				<li>
+					<a class="rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank">
+						<i class="fa fa-rss fa-fw"></i> RSS Feed					</a>
+				</li>
+				<li>
+					<a class="twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank">
+						<i class="fa fa-twitter fa-fw"></i> Twitter
+					</a>
+				</li>
+				<li>
+					<a class="youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank">
+						<i class="fa fa-youtube fa-fw"></i> YouTube
+					</a>
+				</li>
+				<li>
+					<a class="facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank">
+						<i class="fa fa-facebook fa-fw"></i> Facebook
+					</a>
+				</li>
+			</ul></nav><a class="exit-off-canvas"></a>
+		
+		<div class="row">
+			<div id="main" class="medium-11 large-12 columns">
+						
+			<article class="section section-web-development"><h1 class="section-title">Build a Game Board with the HTML Table Element</h1>
+				<div class="section-content">
+											
+													<p class="text-center"><img width="900" height="500" src="https://thehelloworldprogram.com/app/uploads/2014/06/allyerbasecloseup-900x500.jpg" class="featured-image wp-post-image" alt="Build a Game Board with the HTML Table Element" title="Build a Game Board with the HTML Table Element" srcset="https://thehelloworldprogram.com/app/uploads/2014/06/allyerbasecloseup.jpg 900w, https://thehelloworldprogram.com/app/uploads/2014/06/allyerbasecloseup-460x256.jpg 460w" sizes="(max-width: 900px) 100vw, 900px"></p>
+												<p>HTML tables have gained some (deservedly) negative notoriety over the years for being used to build web page layouts. Should you ever come across a website built with tables, scream and run around in circles until it crawls back into the hole from whence it came. The truth is, tables have limited application. They are meant for creating boring old grids, and only for creating boring old grids. An example of this might be a calendar or–shudder–an expense report.</p><div class="thehe-post-content-top" id="thehe-1910829161"><div class="panel callout radius">
+    <div class="row">
+        <div class="medium-6 columns text-center">
+            <a href="https://gumroad.com/l/tilhtmlj4f">
+                <img src="https://thehelloworldprogram.com/app/uploads/2015/07/tilhtmlj4f_small.jpg"></a>
+        </div>
+        <div class="medium-10 columns">
+            <h3>TIL HTML J4F, And So Can You!</h3>
+            <p>Read <em>Build a Game Board with the HTML Table Element</em> and 16 other revised and expanded HTML tutorials on the go with our convenient E-book (available in PDF, EPUB, and MOBI).</p>
+            <p>Learn how to build a game board with the table element, make sandwiches with forms, conquer dragons with semantic elements, link to exotic locations, and build up a robot's self esteem with structural markup in this beginner friendly introduction to the essential web development language.</p>
+            <a class="button primary expand no-bottom-margin" href="https://gumroad.com/l/tilhtmlj4f">
+                <i class="fa fa-download fa-fw"></i>
+                Download the Complete E-book Now!
+            </a>
+        </div>
+    </div>
+</div></div>
+<p><img class="aligncenter size-full wp-image-1930" src="https://thehelloworldprogram.com/app/uploads/2014/06/tables.jpg" alt="tables" width="874" height="301" srcset="https://thehelloworldprogram.com/app/uploads/2014/06/tables.jpg 874w, https://thehelloworldprogram.com/app/uploads/2014/06/tables-460x158.jpg 460w" sizes="(max-width: 874px) 100vw, 874px"></p>
+<p>Riveting, isn’t it? Don’t fall asleep just yet. Tables may not be sexy, but they are good for organizing data in grids with references on two axes. A grid is made up of rows and columns of cells, which is perfect for building the board for my favorite game that I just made up, All Your Base!</p>
+<p><img class="aligncenter size-full wp-image-1934" src="https://thehelloworldprogram.com/app/uploads/2014/06/all-your-grid.jpg" alt="all your grid" width="900" height="503" srcset="https://thehelloworldprogram.com/app/uploads/2014/06/all-your-grid.jpg 900w, https://thehelloworldprogram.com/app/uploads/2014/06/all-your-grid-460x257.jpg 460w" sizes="(max-width: 900px) 100vw, 900px"></p>
+<p>HTML tables are built row by row with the tr tag. Inside of each table row are table data–or td–elements. Each td element acts as a cell in our table. For table headings, we can use a th tag instead of a td tag. Generally, table headings run across the top row of a table to describe the content in the column, but we can also add a th tag to the beginning of each row to describe the content of said row. The complete HTML code for our game board should look like this:</p>
+<pre class="lang:xhtml decode:true" title="All Your Base Table"><table>
+	<tr>
+		<th></th>
+		<th>A</th>
+		<th>B</th>
+		<th>C</th>
+		<th>D</th>
+		<th>E</th>
+	</tr>
+	<tr>
+		<th>1</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>2</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>3</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>4</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<th>5</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</table></pre>
+<p>Even though All Your Base is played on a five by five grid, each row of our table has six table cells because the first cell of each row is a heading. That’s also why we had to put an empty cell on the first row of headings.</p>
+<p>Using our headings, we can now decide how to place our game pieces on the board. There are three pieces of varying size we need to place on our grid: camp, fortress, and station. The camp only fills one table cell, but the fortress fills two, and the station is a whopping three table cells large. Lets start with the camp, because that one’s easy. I always put my camp in lucky cell D-1. That means it should go in the fourth cell of the first row.</p>
+<pre class="lang:xhtml decode:true"><tr>
+	<th>1</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td>Camp</td>
+	<td></td>
+</tr></pre>
+<p><img class="aligncenter size-full wp-image-1935" src="https://thehelloworldprogram.com/app/uploads/2014/06/table-row.jpg" alt="table row" width="900" height="472" srcset="https://thehelloworldprogram.com/app/uploads/2014/06/table-row.jpg 900w, https://thehelloworldprogram.com/app/uploads/2014/06/table-row-460x241.jpg 460w" sizes="(max-width: 900px) 100vw, 900px"></p>
+<p>The other two pieces are tricky because they are bigger than one table cell. We’ll need to span multiple cells in order to get them to fit. I think we should place the fortress horizontally across cells B-2 and C-2. To do this, we’ll need to use the colspan attribute to merge the second and third cells of the second row.</p>
+<pre class="lang:xhtml decode:true"><tr>
+	<th>2</th>
+	<td></td>
+	<td colspan="2">Fortress</td>
+	<td></td>
+	<td></td>
+</tr></pre>
+<p>Because the colspan attribute makes one cell act like two cells, we also had to remove one of the td elements from this row.</p>
+<p><img class="aligncenter size-full wp-image-1936" src="https://thehelloworldprogram.com/app/uploads/2014/06/colspan.jpg" alt="colspan" width="900" height="465" srcset="https://thehelloworldprogram.com/app/uploads/2014/06/colspan.jpg 900w, https://thehelloworldprogram.com/app/uploads/2014/06/colspan-460x238.jpg 460w" sizes="(max-width: 900px) 100vw, 900px"></p>
+<p>Here’s where it gets really challenging; placing the station vertically across cells E-3, E-4, and E-5. Here’s a hint: we can make a table cell span multiple rows with the rowspan attribute. Remember how we had to remove a cell to accommodate the rowspan attribute, then think about how you might apply this when using the colspan attribute.</p>
+<pre class="lang:xhtml decode:true"><tr>
+	<th>3</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td rowspan="3">Station</td>
+</tr>
+<tr>
+	<th>4</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<th>5</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr></pre>
+<p>When we make a cell span three rows, we have to take one cell out of the next two rows to make way for the rowspan. It’s a little confusing at first, so try playing around with different positions for your game pieces until you have a handle on the rowspan and colspan attributes.<img class="aligncenter size-full wp-image-1937" src="https://thehelloworldprogram.com/app/uploads/2014/06/rowspan.jpg" alt="rowspan" width="900" height="463" srcset="https://thehelloworldprogram.com/app/uploads/2014/06/rowspan.jpg 900w, https://thehelloworldprogram.com/app/uploads/2014/06/rowspan-460x237.jpg 460w" sizes="(max-width: 900px) 100vw, 900px"></p>
+<p>Cool! We’re all set up to play! I bet you are wondering what the rules of All Your Base are. Well, it’s basically just a rip off of Battleship…</p>
+									</div>
+			</article><div class="section-noheader">
+<h2>Conquer HTML with Daisy's Web Development Diary!</h2>
+<div class="row">
+	<div class="large-7 columns text-center">
+		<a href="https://gumroad.com/l/daisy">
+			<img src="https://thehelloworldprogram.com/app/uploads/2015/06/daisy.gif"></a>
+	</div>
+	<div class="large-9 columns">
+		<p>Defeating dragons, exploring the depths of the ocean, and advising robots about dating are just a few of the many adventures in Daisy's Web Development Diary. Explore the foundational web language, HTML. Learn how to build a game board with the table element, create forms for ordering sandwiches, link to exotic locations, and more.</p>
+<a href="https://gumroad.com/l/daisy" class="button small primary expand no-bottom-margin">
+	<i class="fa fa-shopping-cart fa-fw"></i>			
+	Get It Now!
+</a>	
+
+</div>
+</div>
+</div>
+            <div class="section-noheader">
+                <div class="row">
+                    <div class="medium-6 large-4 columns">
+                        <p class="hidden-for-small-only"><a href="https://thehelloworldprogram.com/author/jay/">
+                            <img src="http://1.gravatar.com/avatar/dbf86d4bb96f2df787e051bb74ab9732?s=250&d=mm&r=g" width="250" height="250" alt="" class="avatar avatar-250 wp-user-avatar wp-user-avatar-250 photo avatar-default"></a></p>
+                    </div>
+                    <div class="medium-10 large-12 columns">
+                        <p>
+                            <em>Build a Game Board with the HTML Table Element </em>
+                                                            was posted by Jay                            
+                            on <time datetime="2014-06-17" itemprop="datePublished">June 17th, 2014</time>.
+                            Jay is one of the three humans that run the behind-the-scene affairs of The Hello World Program.  He is interested in spreading the good robot word over the vast Inter-webs.  His contributions to the show include editing, web programming, design, and music composition.                        </p>
+                    </div>
+                </div>
+            </div>
+
+							<article id="recommended" class="section section-web-development"><div class="section-title">Recommended for You</div>
+					<div class="section-content">
+						<div class="yarpp-related">
+	<ul class="small-block-grid-2 large-block-grid-4 recommended-posts"><li>
+					<a href="https://thehelloworldprogram.com/web-development/add-extra-information-web-page-semantic-markup/" title="Adding Extra Information to a Web Page with Semantic HTML Markup">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/05/featured-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Adding Extra Information to a Web Page with Semantic HTML Markup" title="Adding Extra Information to a Web Page with Semantic HTML Markup"><span>Adding Extra Information to a…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/html-document-flow-display-methods/" title="HTML Document Flow and Element Display Methods">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/05/Featured-image-Ross-Elliott-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of HTML Document Flow and Element Display Methods" title="HTML Document Flow and Element Display Methods"><span>HTML Document Flow and Element…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/html-unorderd-ordered-description-lists/" title="Top Three Stylish Lists for Your HTML">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/06/thumbnail1-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Top Three Stylish Lists for Your HTML" title="Top Three Stylish Lists for Your HTML"><span>Top Three Stylish Lists for…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/html-head-meta-link-script-elements/" title="Don’t Lose Your Head! Find Inner Peace with HTML">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/06/thumbnail7-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of Don’t Lose Your Head! Find Inner Peace with HTML" title="Don’t Lose Your Head! Find Inner Peace with HTML"><span>Don’t Lose Your Head! Find…</span>
+					</a>
+				</li>
+						</ul></div>
+					</div>
+				</article></div>
+					<aside id="sidebar" class="medium-5 large-4 columns"><ul class="small-block-grid-1"><li id="advads_ad_widget-2" class="widget thehe-widget"><div class="widget-content">
+	<p class="text-center">
+		<a href="https://gum.co/daisy">
+			<img src="https://thehelloworldprogram.com/app/uploads/2015/06/daisy-web-dev.png" alt="Superusers: The Legendary GNU/Linux Show" title="Superusers: The Legendary GNU/Linux Show"></a>
+	</p>
+	<p>
+		<strong>Daisy's Web Development Diary: Learn HTML</strong>
+		 - Learn how to build a game board with the table element, create forms for ordering sandwiches, link to exotic locations, and more. Begin your web programming journey today!
+	</p>
+	<a href="https://gum.co/daisy" class="button primary expand">
+		<i class="fa fa-shopping-cart fa-fw"></i>
+		Get It Now!
+	</a>
+</div></li>	</ul></aside></div>
+		<footer id="footer" class="row"><div class="small-16 columns">
+				<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4"><li>
+                        <div class="footer-header">
+                            <i class="fa fa-newspaper-o"></i>
+                            Newsletter                        </div>
+                        
+                        <form action="http://thehelloworldprogram.us3.list-manage.com/subscribe/post?u=f392891df22d1bda9bbe37b4c&id=ed5550f168" method="post" class="newsletter" target="_blank" data-abide>
+                            
+                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_f392891df22d1bda9bbe37b4c_ed5550f168" value=""></div>
+
+                            <p>Stay up to date on the latest videos and tutorials with our monthly newsletter</p>
+                            <div class="row collapse">
+                                <div class="small-16 medium-10 large-11 columns">
+                                    <input class="no-bottom-margin" type="email" value="" placeholder="Email Address" name="EMAIL" required><small class="error">The email entered is invalid</small>
+                                </div>
+                                <div class="small-16 medium-6 large-5 columns">
+                                    <input type="submit" class="button primary postfix no-bottom-margin" value="Sign Up" name="subscribe" id="mc-embedded-subscribe"></div>
+                            </div>
+                        </form>
+                        
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-book"></i>
+							Tutorials						</div>
+						<nav id="footnav"><ul id="menu-footer" class=""><li id="menu-item-1564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1564"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1567"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1568"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+<li id="menu-item-1569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1569"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+</ul></nav></li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-info-circle"></i>
+							About Us						</div>
+						<p>The Hello World Program and all associated <a target="_blank" href="http://www.dototot.com">educational videos and tutorials</a> were created by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.dototot.com" property="cc:attributionName" rel="cc:attributionURL" target="_blank">Dototot</a> and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-envelope-o"></i>
+							Get in Touch						</div>
+						<p>
+							Questions? Comments? Suggestions? Send us an email!							<br><a href="mailto:info%40th%65%68el%6c%6f%77orl%64%70%72o%67%72am%2e%63om">info@thehelloworldprogram.com</a>
+						</p>
+					</li>
+				</ul></div>
+		</footer></div></div>
+	<link rel="stylesheet" id="yarppRelatedCss-css" href="https://thehelloworldprogram.com/app/plugins/yet-another-related-posts-plugin/style/related.css" type="text/css" media="all"><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/fastclick.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/placeholder.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/foundation.min.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/jquery.cookie/jquery.cookie.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/js/app.js"></script></body></html>

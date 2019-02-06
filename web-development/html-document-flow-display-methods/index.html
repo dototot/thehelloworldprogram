@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" id="arve" prefix="og: http://ogp.me/ns#"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>HTML Document Flow and Element Display Methods - Web Development - The Hello World Program</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="apple-touch-icon" href="https://thehelloworldprogram.com/apple-touch-icon.png"><meta name="description" content="HTML Document Flow and Element Display Methods and other computer science, programming, and web development videos and tutorials."><link rel="publisher" href="https://plus.google.com/+Thehelloworldprogram"><meta property="og:locale" content="en_US"><meta property="og:title" content="HTML Document Flow and Element Display Methods - Web Development - The Hello World Program"><meta property="og:description" content="HTML Document Flow and Element Display Methods and other computer science, programming, and web development videos and tutorials."><meta property="og:url" content="https://thehelloworldprogram.com/web-development/html-document-flow-display-methods/"><meta property="og:site_name" content="The Hello World Program"><meta property="article:author" content="https://www.facebook.com/jayarnielsen"><meta property="article:tag" content="HTML"><meta property="article:section" content="Web Development"><meta property="article:published_time" content="2014-06-01T17:00:16+00:00"><meta property="article:modified_time" content="2014-06-01T17:04:49+00:00"><meta property="og:updated_time" content="2014-06-01T17:04:49+00:00"><meta property="og:image" content="https://thehelloworldprogram.com/app/uploads/2014/05/Featured-image-Ross-Elliott.jpg"><meta property="og:image:width" content="1024"><meta property="og:image:height" content="569"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:description" content="HTML Document Flow and Element Display Methods and other computer science, programming, and web development videos and tutorials."><meta name="twitter:title" content="HTML Document Flow and Element Display Methods - Web Development - The Hello World Program"><meta name="twitter:site" content="@helloworldshow"><meta name="twitter:image" content="https://thehelloworldprogram.com/app/uploads/2014/05/Featured-image-Ross-Elliott.jpg"><meta name="twitter:creator" content="@jayarnielsen"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","url":"https://thehelloworldprogram.com/","sameAs":["https://www.facebook.com/HelloWorldProgram","https://instagram.com/helloworldprogram/","https://plus.google.com/+Thehelloworldprogram","https://www.youtube.com/user/helloworldprogram","https://www.pinterest.com/helloworldshow/","https://twitter.com/helloworldshow"],"@id":"https://thehelloworldprogram.com/#organization","name":"The Hello World Program","logo":"https://thehelloworldprogram.com/app/uploads/2014/09/pressrelease-820x460.jpg"}</script><link rel="dns-prefetch" href="//s.w.org"><script>
+		/**
+  * based on domready (c) Dustin Diaz 2014 - License MIT
+  * https://github.com/ded/domready
+  */
+advanced_ads_ready = ( function() {
+  var fns = [], listener
+    , doc = typeof document === 'object' && document
+    , hack = doc && doc.documentElement.doScroll
+    , domContentLoaded = 'DOMContentLoaded'
+    , loaded = doc && (hack ? /^loaded|^c/ : /^loaded|^i|^c/).test(doc.readyState)
+
+  if (!loaded && doc){
+    listener = function () {
+	  doc.removeEventListener(domContentLoaded, listener)
+	  window.removeEventListener( "load", listener );
+	  loaded = 1
+	  while (listener = fns.shift()) listener()
+	}
+	  
+	doc.addEventListener(domContentLoaded, listener )
+	window.addEventListener( 'load', listener );
+  }
+
+  return function (fn) {
+    loaded ? setTimeout(fn, 0) : fns.push(fn)
+  }
+} )();
+</script><link rel="stylesheet" id="wp-block-library-css" href="https://thehelloworldprogram.com/wp/wp-includes/css/dist/block-library/style.css" type="text/css" media="all"><link rel="stylesheet" id="open-sans-font-css" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C700%2C400italic%2C700italic&ver=1.0" type="text/css" media="all"><link rel="stylesheet" id="fontawesome-css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css?ver=4.3.0" type="text/css" media="all"><link rel="stylesheet" id="highlight-css" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/styles/default.min.css?ver=9.14.2" type="text/css" media="screen"><link rel="stylesheet" id="app-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/app.css" type="text/css" media="all"><link rel="stylesheet" id="print-css" href="https://thehelloworldprogram.com/app/themes/helloworldprogram/css/print.css" type="text/css" media="print"><script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js?ver=2.1.4"></script><script type="text/javascript">
+/* <![CDATA[ */
+var gadwpUAEventsData = {"options":{"event_tracking":"1","event_downloads":"zip|mp3|mpeg|pdf|doc*|ppt*|xls*|jpeg|png|gif|tiff","event_bouncerate":"1","aff_tracking":0,"event_affiliates":"\/out\/","hash_tracking":0,"root_domain":"thehelloworldprogram.test","event_timeout":100,"event_precision":0,"event_formsubmit":0,"ga_pagescrolldepth_tracking":0}};
+/* ]]> */
+</script><script type="text/javascript" src="https://thehelloworldprogram.com/app/plugins/google-analytics-dashboard-for-wp/front/js/tracking-analytics-events.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/modernizr.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.14.2/build/highlight.min.js?ver=1"></script><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-33032781-1', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script></head><body class="post-template-default single single-post postid-1762 single-format-standard">
+	
+	<header id="header" class="hide-for-small-only"><div class="row">
+			<div class="small-16 medium-12 columns small-only-text-center">
+				<div class="logo">
+					<a href="https://thehelloworldprogram.com/">
+						The <span class="logo-mid">Hello World</span> Program
+					</a>
+				</div>
+			</div>
+			<div class="medium-4 columns hide-for-small-only">
+				<ul id="social-header" class="button-group right"><li>
+						<a class="button small rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank" title="Subscribe to our RSS Feed">
+							<i class="fa fa-rss fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank" title="Follow us on Twitter">
+							<i class="fa fa-twitter fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank" title="Subscribe to our youtube channel">
+							<i class="fa fa-youtube fa-fw"></i>
+						</a>
+					</li>
+					<li>
+						<a class="button small facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank" title="Follow us on Facebook">
+							<i class="fa fa-facebook fa-fw"></i>
+						</a>
+					</li>
+				</ul></div>
+		</div>
+		<div class="row">
+			<div class="medium-13 large-12 columns">
+				<nav id="nav"><ul id="menu-primary" class=""><li id="menu-item-1640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li id="menu-item-1560" class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1562" class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1559" class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li id="menu-item-1561" class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul></nav></div>
+		</div>
+	</header><div id="parallax" data-parallax-speed="10" class="off-canvas-wrap" data-offcanvas><div id="wrapper" class="inner-wrap">
+		
+		<nav class="tab-bar show-for-small-only"><div class="left-small">
+				<a href="#mobile-nav" role="button" aria-expanded="true" aria-controls="mobile-nav" class="left-off-canvas-toggle menu-icon">
+					<span></span>
+				</a>
+			</div>
+			<div class="right tab-bar-section">
+				<div class="logo title"><a href="https://thehelloworldprogram.com/">The <span class="logo-mid">Hello World</span> Program</a></div>
+			</div>
+		</nav><nav class="left-off-canvas-menu" id="mobile-nav"><ul class="off-canvas-list"><li><label>Look around</label></li>
+			</ul><ul id="menu-primary-1" class="off-canvas-list"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1640"><a href="https://thehelloworldprogram.com/wp/">Home</a></li>
+<li class="computer-science menu-item menu-item-type-post_type menu-item-object-page menu-item-1560"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li class="linux menu-item menu-item-type-post_type menu-item-object-page menu-item-1562"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li class="web-development menu-item menu-item-type-post_type menu-item-object-page menu-item-1559"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+<li class="python menu-item menu-item-type-post_type menu-item-object-page menu-item-1561"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+</ul><ul class="off-canvas-list"><li><label>Connect with us!</label></li>
+				<li>
+					<a class="rss" href="https://thehelloworldprogram.com/feed/" rel="nofollow" target="_blank">
+						<i class="fa fa-rss fa-fw"></i> RSS Feed					</a>
+				</li>
+				<li>
+					<a class="twitter" href="https://twitter.com/helloworldshow" rel="nofollow" target="_blank">
+						<i class="fa fa-twitter fa-fw"></i> Twitter
+					</a>
+				</li>
+				<li>
+					<a class="youtube" href="http://www.youtube.com/helloworldprogram" rel="nofollow" target="_blank">
+						<i class="fa fa-youtube fa-fw"></i> YouTube
+					</a>
+				</li>
+				<li>
+					<a class="facebook" href="http://www.facebook.com/HelloWorldProgram" rel="nofollow" target="_blank">
+						<i class="fa fa-facebook fa-fw"></i> Facebook
+					</a>
+				</li>
+			</ul></nav><a class="exit-off-canvas"></a>
+		
+		<div class="row">
+			<div id="main" class="medium-11 large-12 columns">
+						
+			<article class="section section-web-development"><h1 class="section-title">HTML Document Flow and Element Display Methods</h1>
+				<div class="section-content">
+											
+													<p class="text-center"><img width="920" height="500" src="https://thehelloworldprogram.com/app/uploads/2014/05/Featured-image-Ross-Elliott-920x500.jpg" class="featured-image wp-post-image" alt="HTML Document Flow and Element Display Methods" title="HTML Document Flow and Element Display Methods"></p>
+												<p>As you familiarize yourself with the many HTML elements, you will surely notice the various ways in which your browser displays them. Sometimes an element takes up a whole line of your document and sometimes it gets squished together with whatever other content surrounds it. While there are quite a few methods for displaying HTML elements, the ones you will encounter most often are inline and block.</p><div class="thehe-post-content-top" id="thehe-1012250413"><div class="panel callout radius">
+    <div class="row">
+        <div class="medium-6 columns text-center">
+            <a href="https://gumroad.com/l/tilhtmlj4f">
+                <img src="https://thehelloworldprogram.com/app/uploads/2015/07/tilhtmlj4f_small.jpg"></a>
+        </div>
+        <div class="medium-10 columns">
+            <h3>TIL HTML J4F, And So Can You!</h3>
+            <p>Read <em>HTML Document Flow and Element Display Methods</em> and 16 other revised and expanded HTML tutorials on the go with our convenient E-book (available in PDF, EPUB, and MOBI).</p>
+            <p>Learn how to build a game board with the table element, make sandwiches with forms, conquer dragons with semantic elements, link to exotic locations, and build up a robot's self esteem with structural markup in this beginner friendly introduction to the essential web development language.</p>
+            <a class="button primary expand no-bottom-margin" href="https://gumroad.com/l/tilhtmlj4f">
+                <i class="fa fa-download fa-fw"></i>
+                Download the Complete E-book Now!
+            </a>
+        </div>
+    </div>
+</div></div>
+<p>I’ve mentioned before that <a title="An Introduction to the Technology Behind Web Applications" href="https://thehelloworldprogram.com/web-development/technology-behind-web-applications/">HTML elements are like containers that describe the content inside of them</a>, so lets imagine these two display methods as two kinds of containers: cardboard boxes and plastic wrap. Because I love overextending a metaphor, lets also say that our web page is an attic that we are organizing with these containers. Without any boxes, the contents of our attic would all run together in one heaping mass of chaos. We’ll need the rigidity of the cardboard boxes to <a title="Building a Web Page With Structural HTML Markup" href="https://thehelloworldprogram.com/web-development/build-web-page-with-simple-structural-html-markup/">give structure to our pile</a>… er, web page. A web page is essentially a stack of boxes. We know that the contents of a box belong together because there is a layer of cardboard surrounding it. Block-level elements are like invisible cardboard boxes. Take the paragraph tag, for instance. This is a box that contains ideas in the form of sentences. New ideas could be grouped in another paragraph tag, thus disrupting the flow of the document and indicating a shift in subject. To tie it in with our storage metaphor, we wouldn’t want to mix our ironic neck ties with our 8-track tapes, so we should group each of these things in their own box.</p>
+<p><img class="aligncenter size-large wp-image-1786" src="https://thehelloworldprogram.com/app/uploads/2014/05/box1.jpg" alt="html p tags" width="800" height="373" srcset="https://thehelloworldprogram.com/app/uploads/2014/05/box1.jpg 800w, https://thehelloworldprogram.com/app/uploads/2014/05/box1-460x214.jpg 460w" sizes="(max-width: 800px) 100vw, 800px"></p>
+<p>We can further organize our pile by fitting more boxes inside of a box. A list is a block-level elements that contain a stack of block-level elements. A list separates itself from the flow of the overall content and each list item separates itself from the flow of the other list items. It’s like a box filled with board game boxes.</p>
+<p><img class="aligncenter size-large wp-image-1787" src="https://thehelloworldprogram.com/app/uploads/2014/05/box2.jpg" alt="html ul tag" width="800" height="350" srcset="https://thehelloworldprogram.com/app/uploads/2014/05/box2.jpg 800w, https://thehelloworldprogram.com/app/uploads/2014/05/box2-460x201.jpg 460w" sizes="(max-width: 800px) 100vw, 800px"></p>
+<p>Say you’re looking for a box to contain everything that once was rolling around in your junk drawer. <em>This stuff isn’t necessarily a paragraph or a list</em>, you say to yourself. <em>What I really need is a generic, block-level container</em>. What you need is the div element. The div element is a generic, semantically neutral container. It doesn’t really mean anything to your browser, so to be honest, it isn’t all that useful until you dive into CSS.</p>
+<p>If we wanted to contain something within one of our boxes without disrupting the flow of our packing, we’d need to use plastic wrap… I mean an inline element. Inline elements are flexible and go with the flow, even if our rigid parent container forces the content inside to wrap to a new line. Because of their fluidity, inline elements are worthless for providing structure. Often their purpose is to alter the appearance of your text and <a title="Adding Extra Information to a Web Page with Semantic HTML Markup" href="https://thehelloworldprogram.com/web-development/add-extra-information-web-page-semantic-markup/">add semantic meaning to the content</a>. Lets say we’ve packed a box of boring plastic dishes, but we have one fine china saucer that we want to stand out from the rest. We wouldn’t want to put that in it’s own box, but we might want to wrap it in something like a strong tag. This won’t disrupt the flow of the content in our dishes container, but it will add some separation to our saucers.</p>
+<p><img class="aligncenter size-large wp-image-1788" src="https://thehelloworldprogram.com/app/uploads/2014/05/box3.jpg" alt="html inline element" width="800" height="344" srcset="https://thehelloworldprogram.com/app/uploads/2014/05/box3.jpg 800w, https://thehelloworldprogram.com/app/uploads/2014/05/box3-460x198.jpg 460w" sizes="(max-width: 800px) 100vw, 800px"></p>
+<p>As we continue organizing our fantasy attic, we come across an image element of Sam, our dog that I just made up. This bizarre hybrid element is both an inline element and a block-level element called an inline-block element. Inline-block elements have a rigid width and height like block-level elements, but they don’t disrupt the flow of our document, like inline elements. Images might seem like a block-level element in our stack if they are sandwiched between two block-level elements.</p>
+<p><img class="aligncenter size-large wp-image-1789" src="https://thehelloworldprogram.com/app/uploads/2014/05/box4.jpg" alt="inline block element" width="800" height="345" srcset="https://thehelloworldprogram.com/app/uploads/2014/05/box4.jpg 800w, https://thehelloworldprogram.com/app/uploads/2014/05/box4-460x198.jpg 460w" sizes="(max-width: 800px) 100vw, 800px"></p>
+<p>However, if we try to stack the image on top of another inline-block element it becomes apparent that images are not block-level elements.</p>
+<p><img class="aligncenter size-large wp-image-1790" src="https://thehelloworldprogram.com/app/uploads/2014/05/box5.jpg" alt="two inline block elements" width="800" height="348" srcset="https://thehelloworldprogram.com/app/uploads/2014/05/box5.jpg 800w, https://thehelloworldprogram.com/app/uploads/2014/05/box5-460x200.jpg 460w" sizes="(max-width: 800px) 100vw, 800px"></p>
+<p>If we wanted our inline-block element to break the flow of the document, we’d need to wrap them in a block-level element like “figure”.</p>
+<p><img class="aligncenter size-large wp-image-1791" src="https://thehelloworldprogram.com/app/uploads/2014/05/box6.jpg" alt="inline block element wrapped in block level element" width="800" height="350" srcset="https://thehelloworldprogram.com/app/uploads/2014/05/box6.jpg 800w, https://thehelloworldprogram.com/app/uploads/2014/05/box6-460x201.jpg 460w" sizes="(max-width: 800px) 100vw, 800px"></p>
+<p>With our attic completely organized, we can finally put our feet up and reflect on the lessons learned today. The three main display methods in HTML are block, inline, and inline-block. Block level elements are like cardboard boxes that group content inside of a container. Inline elements are more fluid, like plastic wrap, and adapt to the flow of the document. Inline-block elements are a little of both. They are not as fluid because they have a rigid height and width, but they do not disrupt the flow of the document. There are several other display methods we haven’t covered, but these are less common and many of them are only useful with CSS. Besides, I’m pretty exhausted after all of that packing.</p>
+<p><small>Featured image credit: Ross Elliott</small></p>
+									</div>
+			</article><div class="section-noheader">
+<h2>Conquer HTML with Daisy's Web Development Diary!</h2>
+<div class="row">
+	<div class="large-7 columns text-center">
+		<a href="https://gumroad.com/l/daisy">
+			<img src="https://thehelloworldprogram.com/app/uploads/2015/06/daisy.gif"></a>
+	</div>
+	<div class="large-9 columns">
+		<p>Defeating dragons, exploring the depths of the ocean, and advising robots about dating are just a few of the many adventures in Daisy's Web Development Diary. Explore the foundational web language, HTML. Learn how to build a game board with the table element, create forms for ordering sandwiches, link to exotic locations, and more.</p>
+<a href="https://gumroad.com/l/daisy" class="button small primary expand no-bottom-margin">
+	<i class="fa fa-shopping-cart fa-fw"></i>			
+	Get It Now!
+</a>	
+
+</div>
+</div>
+</div>
+            <div class="section-noheader">
+                <div class="row">
+                    <div class="medium-6 large-4 columns">
+                        <p class="hidden-for-small-only"><a href="https://thehelloworldprogram.com/author/jay/">
+                            <img src="http://1.gravatar.com/avatar/dbf86d4bb96f2df787e051bb74ab9732?s=250&d=mm&r=g" width="250" height="250" alt="" class="avatar avatar-250 wp-user-avatar wp-user-avatar-250 photo avatar-default"></a></p>
+                    </div>
+                    <div class="medium-10 large-12 columns">
+                        <p>
+                            <em>HTML Document Flow and Element Display Methods </em>
+                                                            was posted by Jay                            
+                            on <time datetime="2014-06-01" itemprop="datePublished">June 1st, 2014</time>.
+                            Jay is one of the three humans that run the behind-the-scene affairs of The Hello World Program.  He is interested in spreading the good robot word over the vast Inter-webs.  His contributions to the show include editing, web programming, design, and music composition.                        </p>
+                    </div>
+                </div>
+            </div>
+
+							<article id="recommended" class="section section-web-development"><div class="section-title">Recommended for You</div>
+					<div class="section-content">
+						<div class="yarpp-related">
+	<ul class="small-block-grid-2 large-block-grid-4 recommended-posts"><li>
+					<a href="https://thehelloworldprogram.com/web-development/technology-behind-web-applications/" title="An Introduction to the Technology Behind Web Applications">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/03/webtechstamps-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of An Introduction to the Technology Behind Web Applications" title="An Introduction to the Technology Behind Web Applications"><span>An Introduction to the Technology…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/ordered-unordered-description-lists-html/" title="How to Create Ordered, Unordered, and Description Lists in HTML">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/05/featlist-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of How to Create Ordered, Unordered, and Description Lists in HTML" title="How to Create Ordered, Unordered, and Description Lists in HTML"><span>How to Create Ordered, Unordered,…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/html-video-audio-elements/" title="The Quick Brown Fox Rocks Audio and Video with HTML">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/07/thumbnail-1-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of The Quick Brown Fox Rocks Audio and Video with HTML" title="The Quick Brown Fox Rocks Audio and Video with HTML"><span>The Quick Brown Fox Rocks…</span>
+					</a>
+				</li>
+												<li>
+					<a href="https://thehelloworldprogram.com/web-development/html-audio-video-media-players/" title="HTML5 Audio and Video Media Players">
+						<img width="300" height="300" src="https://thehelloworldprogram.com/app/uploads/2014/06/video-featured-300x300.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Thumbnail of HTML5 Audio and Video Media Players" title="HTML5 Audio and Video Media Players"><span>HTML5 Audio and Video Media…</span>
+					</a>
+				</li>
+						</ul></div>
+					</div>
+				</article></div>
+					<aside id="sidebar" class="medium-5 large-4 columns"><ul class="small-block-grid-1"><li id="advads_ad_widget-2" class="widget thehe-widget"><div class="widget-content">
+	<p class="text-center">
+		<a href="https://gum.co/daisy">
+			<img src="https://thehelloworldprogram.com/app/uploads/2015/06/daisy-web-dev.png" alt="Superusers: The Legendary GNU/Linux Show" title="Superusers: The Legendary GNU/Linux Show"></a>
+	</p>
+	<p>
+		<strong>Daisy's Web Development Diary: Learn HTML</strong>
+		 - Learn how to build a game board with the table element, create forms for ordering sandwiches, link to exotic locations, and more. Begin your web programming journey today!
+	</p>
+	<a href="https://gum.co/daisy" class="button primary expand">
+		<i class="fa fa-shopping-cart fa-fw"></i>
+		Get It Now!
+	</a>
+</div></li>	</ul></aside></div>
+		<footer id="footer" class="row"><div class="small-16 columns">
+				<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4"><li>
+                        <div class="footer-header">
+                            <i class="fa fa-newspaper-o"></i>
+                            Newsletter                        </div>
+                        
+                        <form action="http://thehelloworldprogram.us3.list-manage.com/subscribe/post?u=f392891df22d1bda9bbe37b4c&id=ed5550f168" method="post" class="newsletter" target="_blank" data-abide>
+                            
+                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_f392891df22d1bda9bbe37b4c_ed5550f168" value=""></div>
+
+                            <p>Stay up to date on the latest videos and tutorials with our monthly newsletter</p>
+                            <div class="row collapse">
+                                <div class="small-16 medium-10 large-11 columns">
+                                    <input class="no-bottom-margin" type="email" value="" placeholder="Email Address" name="EMAIL" required><small class="error">The email entered is invalid</small>
+                                </div>
+                                <div class="small-16 medium-6 large-5 columns">
+                                    <input type="submit" class="button primary postfix no-bottom-margin" value="Sign Up" name="subscribe" id="mc-embedded-subscribe"></div>
+                            </div>
+                        </form>
+                        
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-book"></i>
+							Tutorials						</div>
+						<nav id="footnav"><ul id="menu-footer" class=""><li id="menu-item-1564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1564"><a href="https://thehelloworldprogram.com/computer-science/">Learn Computer Science</a></li>
+<li id="menu-item-1567" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1567"><a href="https://thehelloworldprogram.com/linux/">Learn Linux</a></li>
+<li id="menu-item-1568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1568"><a href="https://thehelloworldprogram.com/python/">Learn Python</a></li>
+<li id="menu-item-1569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1569"><a href="https://thehelloworldprogram.com/web-development/">Learn Web Development</a></li>
+</ul></nav></li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-info-circle"></i>
+							About Us						</div>
+						<p>The Hello World Program and all associated <a target="_blank" href="http://www.dototot.com">educational videos and tutorials</a> were created by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.dototot.com" property="cc:attributionName" rel="cc:attributionURL" target="_blank">Dototot</a> and are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 License</a>. <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+					</li>
+					<li>
+						<div class="footer-header">
+							<i class="fa fa-envelope-o"></i>
+							Get in Touch						</div>
+						<p>
+							Questions? Comments? Suggestions? Send us an email!							<br><a href="mailto:%69%6e%66o@th%65he%6clo%77%6f%72ldp%72%6fgram.%63om">info@thehelloworldprogram.com</a>
+						</p>
+					</li>
+				</ul></div>
+		</footer></div></div>
+	<link rel="stylesheet" id="yarppRelatedCss-css" href="https://thehelloworldprogram.com/app/plugins/yet-another-related-posts-plugin/style/related.css" type="text/css" media="all"><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/fastclick.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/vendor/placeholder.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/foundation/js/foundation.min.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/bower_components/jquery.cookie/jquery.cookie.js"></script><script type="text/javascript" src="https://thehelloworldprogram.com/app/themes/helloworldprogram/js/app.js"></script></body></html>
