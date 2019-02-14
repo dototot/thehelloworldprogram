@@ -1,6 +1,10 @@
 // Foundation JavaScript
 // $(document).foundation();
 // Documentation can be found at: https://foundation.zurb.com/docs
+document.querySelectorAll('pre[class^="lang:xhtml"').forEach(function(element) {
+    element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+});
+
 document.querySelectorAll('pre').forEach((block) => {
   hljs.highlightBlock(block);
 });
