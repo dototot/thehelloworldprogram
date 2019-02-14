@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="//thehelloworldprogram.com/main-sitemap.xsl"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemapindex xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
 	<sitemap>
 		<loc>https://thehelloworldprogram.com/post-sitemap.xml</loc>
 		<lastmod>2016-04-07T14:06:06-06:00</lastmod>

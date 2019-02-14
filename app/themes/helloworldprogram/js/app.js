@@ -1,6 +1,6 @@
 // Foundation JavaScript
 // $(document).foundation();
-// Documentation can be found at: http://foundation.zurb.com/docs
+// Documentation can be found at: https://foundation.zurb.com/docs
 document.querySelectorAll('pre').forEach((block) => {
   hljs.highlightBlock(block);
 });

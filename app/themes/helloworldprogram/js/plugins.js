@@ -27,9 +27,9 @@
 /**
  * @name jQuery placehold (https://github.com/jgarber623/jquery-placehold)
  * @author Jason Garber
- * @copyright (cc) Jason Garber (http://sixtwothree.org and http://www.viget.com)
+ * @copyright (cc) Jason Garber (https://sixtwothree.org and https://www.viget.com)
  *
- * Licensed under the CC-GNU GPL (http://creativecommons.org/licenses/GPL/2.0/)
+ * Licensed under the CC-GNU GPL (https://creativecommons.org/licenses/GPL/2.0/)
  */
 
 ;(function($) {

@@ -1,5 +1,5 @@
 body {font-family: Georgia,"Times New Roman",serif;}
 #header, #footer, #discussion, #recommended {display: none;}
 a:link, a:visited {background: transparent;color: inherit;text-decoration: none;}
-a:link[href^="http://"]:after, a[href^="http://"]:visited:after {content: " (" attr(href) ") ";color: #222;}
-a[href^="http://"] {color: blue;}
+a:link[href^="https://"]:after, a[href^="https://"]:visited:after {content: " (" attr(href) ") ";color: #222;}
+a[href^="https://"] {color: blue;}
