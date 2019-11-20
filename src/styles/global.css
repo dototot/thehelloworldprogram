@@ -1,0 +1,55 @@
+html {
+  font-size: 1em;
+  color: var(--color-black);
+  font-weight: var(--body-font-weight);
+  font-family: var(--body-font-family);
+  line-height: 1.75em;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: var(--color-black);
+  background-color: var(--color-white);
+  font-family: ;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--header-font-weight);
+  line-height: 1.25em;
+}
+
+a {
+  color: var(--color-blue);
+}
+
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+
+  & iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

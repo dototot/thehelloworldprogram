@@ -1,0 +1,25 @@
+:root {
+  /* Layout & Spacing */
+  --layout-width: 60rem;
+  --column-gap: 2rem;
+
+  /* Colors */
+  --color-red: #ff007f;
+  --color-green: #00ff7f;
+  --color-blue: #007fff;
+  --color-blue-lightest: #bddcfc;
+  --color-purple: #7e00fe;
+  --color-turquoise: #00fbf8;
+  --color-black: #444;
+  --color-white: #fcfcfc;
+
+  /* Typography */
+  --body-font-family: "Open Sans", sans-serif;
+  --body-font-weight: 400;
+  --header-font-weight: 200;
+}
+
+/* Breakpoints
+-------------- */
+@custom-media --small-viewport screen and (min-width: 600px);
+@custom-media --medium-viewport screen and (min-width: 800px);

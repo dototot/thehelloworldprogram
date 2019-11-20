@@ -1,0 +1,25 @@
+.posts {
+  margin: var(--column-gap) 0;
+  display: grid;
+  grid-gap: var(--column-gap);
+  grid-template-columns: 1fr;
+
+  & h2 a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  & article > *:last-child {
+    margin-bottom: 0;
+  }
+
+  & p {
+    text-align: justify;
+  }
+}
+
+@media (--small-viewport) {
+  .posts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
