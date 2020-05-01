@@ -9,13 +9,16 @@ exports.createPages = ({ actions, graphql }) => {
       graphql(`
         {
           allMarkdownRemark(
-            sort: { order: ASC, fields: [frontmatter___date] }
+            sort: { order: ASC, fields: [frontmatter___order] }
             limit: 1000
           ) {
             edges {
               node {
                 fields {
                   slug
+                }
+                frontmatter {
+                  category
                 }
               }
             }
@@ -32,9 +35,7 @@ exports.createPages = ({ actions, graphql }) => {
         const categoryTemplate = path.resolve("./src/templates/category.js")
 
         Object.entries({
-          tutorials: "tutorial",
-          "puppet-patterns": "puppet pattern",
-          "et-cetera": "et cetera",
+          'computer-science': "Computer Science",
         }).forEach(([path, category]) => {
           createPage({
             path,
@@ -47,7 +48,7 @@ exports.createPages = ({ actions, graphql }) => {
 
         posts.forEach(({ node }, index) => {
           createPage({
-            path: node.fields.slug,
+            path: `${node.fields.slug}`,
             component: blogTemplate,
             context: {
               slug: node.fields.slug,

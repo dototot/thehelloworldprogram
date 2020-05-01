@@ -11,11 +11,12 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          description
         }
       }
     }
   `)
-  const { title } = data.site.siteMetadata
+  const { title, description } = data.site.siteMetadata
   return (
     <>
       <div className={css.layout}>
@@ -23,20 +24,14 @@ const Layout = ({ children }) => {
           <figure>
             <Link to="/">
               <img src={logoSvg} alt={title} />
-              <figcaption>{title} &bull; Engaging Education</figcaption>
+              <figcaption>{title} &bull; {description}</figcaption>
             </Link>
           </figure>
           <nav className={css.nav}>
             <button onClick={() => setOpen(!isOpen)}>Menu</button>
             <ul className={isOpen ? css.open : css.closed}>
               <li>
-                <Link to="/puppet-patterns">Puppet Patterns</Link>
-              </li>
-              <li>
-                <Link to="/tutorials">Tutorials</Link>
-              </li>
-              <li>
-                <Link to="et-cetera">Et Cetera</Link>
+                <Link to="/computer-science">Learn Computer Science</Link>
               </li>
             </ul>
           </nav>
@@ -46,9 +41,8 @@ const Layout = ({ children }) => {
         <hr className={css.bottomBar} />
         <footer className={css.footer}>
           <p>
-            Dototot is a creative media company and think tank specializing in
-            educational material. The contents of this website are licensed
-            under a{" "}
+            Hands-on computer science, programming, and web development. Brought to you by <a href="https://dototot.com" target="_blank" rel="nofollow">Dototot</a>.
+            The contents of this website are licensed under a{" "}
             <a
               href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
               target="_blankt"
