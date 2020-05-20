@@ -1,9 +1,10 @@
 ---
 title: Three Undeniable Reasons to Use Free, Open Source Software
 author: "Jared Nielsen"
-image: 20130715_whyOpenSource1.jpg
 category: "Computer Science"
-order: 1
+type: post
+image: 20130715_whyOpenSource1.jpg
+order: 99
 ---
 
 Free, open source software(or FOSS) is software that respects your freedoms and makes its source code available. Chances are you’re already using free, open-source software without even knowing it. In case you need more convincing, here are three undeniable reasons why you should start using FOSS now.

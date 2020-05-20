@@ -11,7 +11,6 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
-          description
         }
       }
     }
@@ -24,7 +23,7 @@ const Layout = ({ children }) => {
           <figure>
             <Link to="/">
               <img src={logoSvg} alt={title} />
-              <figcaption>{title} &bull; {description}</figcaption>
+              <figcaption>{title}</figcaption>
             </Link>
           </figure>
           <nav className={css.nav}>
@@ -41,8 +40,12 @@ const Layout = ({ children }) => {
         <hr className={css.bottomBar} />
         <footer className={css.footer}>
           <p>
-            Hands-on computer science, programming, and web development. Brought to you by <a href="https://dototot.com" target="_blank" rel="nofollow">Dototot</a>.
-            The contents of this website are licensed under a{" "}
+            Hands-on computer science, programming, and web development. Brought
+            to you by{" "}
+            <a href="https://dototot.com" target="_blank" rel="nofollow">
+              Dototot
+            </a>
+            . The contents of this website are licensed under a{" "}
             <a
               href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
               target="_blankt"

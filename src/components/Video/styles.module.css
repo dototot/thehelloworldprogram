@@ -1,0 +1,25 @@
+.video {
+  position: relative;
+  padding-top: 56.25%;
+  display: none;
+
+  & .reactPlayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.poster {
+  cursor: pointer;
+}
+
+.isStarted {
+  & .video {
+    display: block;
+  }
+
+  & .poster {
+    display: none;
+  }
+}

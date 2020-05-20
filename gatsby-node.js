@@ -19,23 +19,25 @@ exports.createPages = ({ actions, graphql }) => {
                 }
                 frontmatter {
                   category
+                  type
                 }
               }
             }
           }
         }
-      `).then(result => {
+      `).then((result) => {
         if (result.errors) {
           console.log(result.errors)
           return reject(result.errors)
         }
 
         const posts = result.data.allMarkdownRemark.edges
-        const blogTemplate = path.resolve("./src/templates/blog-post.js")
+        const postTemplate = path.resolve("./src/templates/blog-post.js")
+        const videoTemplate = path.resolve("./src/templates/blog-video.js")
         const categoryTemplate = path.resolve("./src/templates/category.js")
 
         Object.entries({
-          'computer-science': "Computer Science",
+          "computer-science": "Computer Science",
         }).forEach(([path, category]) => {
           createPage({
             path,
@@ -49,7 +51,8 @@ exports.createPages = ({ actions, graphql }) => {
         posts.forEach(({ node }, index) => {
           createPage({
             path: `${node.fields.slug}`,
-            component: blogTemplate,
+            component:
+              node.frontmatter.type === "video" ? videoTemplate : postTemplate,
             context: {
               slug: node.fields.slug,
             },
