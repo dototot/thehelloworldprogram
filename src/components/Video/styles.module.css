@@ -12,6 +12,18 @@
 
 .poster {
   cursor: pointer;
+  position: relative;
+
+  & span {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    background: var(--color-blue);
+    color: var(--color-white);
+    border-radius: 5px;
+    padding: 1rem;
+    transform: translate(50%, -50%);
+  }
 }
 
 .isStarted {

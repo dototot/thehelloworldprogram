@@ -19,6 +19,7 @@ const Video = ({ poster, ...props }) => {
             aspectRatio: 16 / 9,
           }}
         />
+        <span>Click To Play Video</span>
       </div>
       <div className={css.video}>
         <ReactPlayer

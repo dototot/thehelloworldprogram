@@ -20,7 +20,7 @@ function BlogPost({ data }) {
             <h1>{post.frontmatter.title}</h1>
             <ul>
               <li className="capitalize">{post.frontmatter.category}</li>
-              <li>By Dototot</li>
+              <li>Part 1 of 10</li>
             </ul>
           </div>
         </header>
