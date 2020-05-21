@@ -1,10 +1,9 @@
 ---
 title: What is Computer Science
 category: "Computer Science"
-type: video
 video: https://youtu.be/bJKltx0MFmI
 image: Compsci-1-Thumb.jpg
-order: 1
+lesson: 1
 ---
 
 Wikipedia will tell you that **computer science** is “the scientific and practical approach to computation and its applications.” What? That looks like a dog chasing its tail! So the next question we ask: what is the scientific and practical approach to computation and its applications?” Computer science, obviously!

@@ -1,6 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
 import Layout from "../components/Layout"
+import Video from "../components/Video"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import css from "./blog-post.module.css"
@@ -12,17 +13,25 @@ function BlogPost({ data }) {
       <SEO title={post.frontmatter.title} />
       <article>
         <header className={css.header}>
-          <Img
-            sizes={{
-              ...post.frontmatter.image.childImageSharp.fluid,
-              aspectRatio: 960 / 520,
-            }}
-          />
+          {post.frontmatter.video ? (
+            <Video
+              url={post.frontmatter.video}
+              poster={post.frontmatter.image.childImageSharp.fluid}
+            />
+          ) : (
+            <Img
+              sizes={{
+                ...post.frontmatter.image.childImageSharp.fluid,
+                aspectRatio: 960 / 520,
+              }}
+            />
+          )}
+
           <div class={css.title}>
             <h1>{post.frontmatter.title}</h1>
             <ul>
               <li className="capitalize">{post.frontmatter.category}</li>
-              <li>By {post.frontmatter.author}</li>
+              <li>Lesson {post.frontmatter.lesson} of 10</li>
             </ul>
           </div>
         </header>
@@ -38,14 +47,15 @@ function BlogPost({ data }) {
 export default BlogPost
 
 export const query = graphql`
-  query PostQuery($slug: String!) {
+  query VideoQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       excerpt
       frontmatter {
+        lesson
         title
-        author
         category
+        video
         image {
           childImageSharp {
             fluid(maxWidth: 960) {

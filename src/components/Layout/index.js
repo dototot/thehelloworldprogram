@@ -30,7 +30,10 @@ const Layout = ({ children }) => {
             <button onClick={() => setOpen(!isOpen)}>Menu</button>
             <ul className={isOpen ? css.open : css.closed}>
               <li>
-                <Link to="/computer-science">Learn Computer Science</Link>
+                <Link to="/computer-science">Computer Science</Link>
+              </li>
+              <li>
+                <Link to="/linux">Linux</Link>
               </li>
             </ul>
           </nav>

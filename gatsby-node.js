@@ -9,7 +9,7 @@ exports.createPages = ({ actions, graphql }) => {
       graphql(`
         {
           allMarkdownRemark(
-            sort: { order: ASC, fields: [frontmatter___order] }
+            sort: { order: ASC, fields: [frontmatter___lesson] }
             limit: 1000
           ) {
             edges {
@@ -19,7 +19,6 @@ exports.createPages = ({ actions, graphql }) => {
                 }
                 frontmatter {
                   category
-                  type
                 }
               }
             }
@@ -33,11 +32,11 @@ exports.createPages = ({ actions, graphql }) => {
 
         const posts = result.data.allMarkdownRemark.edges
         const postTemplate = path.resolve("./src/templates/blog-post.js")
-        const videoTemplate = path.resolve("./src/templates/blog-video.js")
         const categoryTemplate = path.resolve("./src/templates/category.js")
 
         Object.entries({
           "computer-science": "Computer Science",
+          linux: "Linux",
         }).forEach(([path, category]) => {
           createPage({
             path,
@@ -51,8 +50,7 @@ exports.createPages = ({ actions, graphql }) => {
         posts.forEach(({ node }, index) => {
           createPage({
             path: `${node.fields.slug}`,
-            component:
-              node.frontmatter.type === "video" ? videoTemplate : postTemplate,
+            component: postTemplate,
             context: {
               slug: node.fields.slug,
             },

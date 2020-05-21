@@ -14,7 +14,12 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        defaultQuality: 90,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -50,6 +55,8 @@ module.exports = {
               // base for generating different widths of each image.
               tracedSVG: true,
               maxWidth: 960,
+              linkImagesToOriginal: false,
+              quality: 90,
             },
           },
         ],
