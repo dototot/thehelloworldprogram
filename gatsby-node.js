@@ -20,6 +20,10 @@ exports.createPages = ({ actions, graphql }) => {
     {
       from: "/computer-science/three-great-reasons-to-use-free-open-source-software",
       to: "https://dototot.com/three-great-reasons-to-use-free-open-source-software"
+    },
+    {
+      from: "/computer-science/computer",
+      to: "/computer-science/how-does-a-computer-work"
     }
   ]
 
