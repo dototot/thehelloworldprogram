@@ -12,6 +12,14 @@ exports.createPages = ({ actions, graphql }) => {
     {
       from: "/web-development/technology-behind-web-applications",
       to: "/web-development/how-websites-made",
+    },
+    {
+      from: "/python/why-python-should-be-the-first-programming-language-you-learn",
+      to: "https://dototot.com/why-python-should-be-the-first-programming-language-you-learn"
+    },
+    {
+      from: "/computer-science/three-great-reasons-to-use-free-open-source-software",
+      to: "https://dototot.com/three-great-reasons-to-use-free-open-source-software"
     }
   ]
 
