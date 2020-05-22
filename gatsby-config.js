@@ -17,7 +17,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sharp",
       options: {
-        defaultQuality: 90,
+        defaultQuality: 80,
       },
     },
     {
@@ -56,7 +56,7 @@ module.exports = {
               tracedSVG: true,
               maxWidth: 960,
               linkImagesToOriginal: false,
-              quality: 90,
+              quality: 80,
             },
           },
         ],

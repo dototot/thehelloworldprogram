@@ -1,6 +1,6 @@
 ---
 title: What is Computer Science
-category: "Computer Science"
+category: Computer Science
 video: https://youtu.be/bJKltx0MFmI
 image: Compsci-1-Thumb.jpg
 lesson: 1
