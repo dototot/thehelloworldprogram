@@ -2,7 +2,23 @@ const path = require("path")
 const { createFilePath, createFileNode } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
+
+  const redirects = [
+    {
+      from: "/linux/getting-help-built-in-bash-shell-commands",
+      to: "/linux/help",
+    },
+  ]
+
+  redirects.forEach(redirect => {
+    createRedirect({
+      fromPath: redirect.from,
+      isPermanent: true,
+      redirectInBrowser: true,
+      toPath: redirect.to,
+    })
+  })
 
   return new Promise((resolve, reject) => {
     resolve(
