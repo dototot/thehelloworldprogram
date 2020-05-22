@@ -65,7 +65,8 @@ exports.createPages = ({ actions, graphql }) => {
         Object.entries({
           "computer-science": "Computer Science",
           linux: "Linux",
-          "web-development": "Web Development"
+          "web-development": "Web Development",
+          python: "Python"
         }).forEach(([path, category]) => {
           createPage({
             path,
