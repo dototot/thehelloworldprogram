@@ -9,6 +9,10 @@ exports.createPages = ({ actions, graphql }) => {
       from: "/linux/getting-help-built-in-bash-shell-commands",
       to: "/linux/help",
     },
+    {
+      from: "/web-development/technology-behind-web-applications",
+      to: "/web-development/how-websites-made",
+    }
   ]
 
   redirects.forEach(redirect => {
@@ -53,6 +57,7 @@ exports.createPages = ({ actions, graphql }) => {
         Object.entries({
           "computer-science": "Computer Science",
           linux: "Linux",
+          "web-development": "Web Development"
         }).forEach(([path, category]) => {
           createPage({
             path,

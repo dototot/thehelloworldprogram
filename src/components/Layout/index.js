@@ -35,6 +35,9 @@ const Layout = ({ children }) => {
               <li>
                 <Link to="/linux">Linux</Link>
               </li>
+              <li>
+                <Link to="/web-development">Web Development</Link>
+              </li>
             </ul>
           </nav>
         </header>
