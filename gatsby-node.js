@@ -22,6 +22,14 @@ exports.createPages = ({ actions, graphql }) => {
       to: "/web-development/structural-html-markup",
     },
     {
+      from: "/web-development/ordered-unordered-description-lists-html",
+      to: "/web-development/ordered-unordered-description-lists",
+    },
+    {
+      from: "/web-development/html-unorderd-ordered-description-lists",
+      to: "/web-development/ordered-unordered-description-lists",
+    },
+    {
       from:
         "/computer-science/three-great-reasons-to-use-free-open-source-software",
       to: "/computer-science/free-open-source-software",
