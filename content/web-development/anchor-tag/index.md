@@ -19,13 +19,13 @@ We can turn any text or image into a link by simply wrapping it in the `html|<a>
 <a href="../"><img src="../../img/beach.jpg" /></a>
 <!-- Absolute paths -->
 <a href="/beach/ocean"><img src="/img/ocean.jpg" /></a>
-<a href="https://www.afosfanclub.com">A Flock of Seagulls</a>
+<a href="http://www.afosfanclub.com">A Flock of Seagulls</a>
 ```
 
-Notice that we must include the “https://” when linking to a web address. If we tried to use “www.afosfanclub.com”, the link wouldn’t work. The “www” part, on the other hand, is optional. An anchor element with the href attribute of “https://afosfanclub.com” would work just swimmingly. Sometimes when linking to external websites, you will want it to open in a new window or tab. There are several methods for doing this, but the easiest way is with the target attribute. Setting the target attribute to “\_blank” will cause the link to open in a new browser window.
+Notice that we must include the `http://` when linking to a web address. If we tried to use `www.afosfanclub.com`, the link wouldn’t work. The `www` part, on the other hand, is optional. An anchor element with the href attribute of `http://afosfanclub.com` would work just swimmingly. Sometimes when linking to external websites, you will want it to open in a new window or tab. There are several methods for doing this, but the easiest way is with the target attribute. Setting the target attribute to “\_blank” will cause the link to open in a new browser window.
 
 ```html
-<a target="_blank" href="https://www.afosfanclub.com">
+<a target="_blank" href="http://www.afosfanclub.com">
   A Flock of Seagulls (link opens in a new window)
 </a>
 ```

@@ -38,6 +38,10 @@ exports.createPages = ({ actions, graphql }) => {
       to: "/web-development/anchor-tag",
     },
     {
+      from: "/web-development/add-photos-graphics-web-page-html-img-element",
+      to: "/web-development/html-image-element",
+    },
+    {
       from:
         "/computer-science/three-great-reasons-to-use-free-open-source-software",
       to: "/computer-science/free-open-source-software",
