@@ -30,6 +30,14 @@ exports.createPages = ({ actions, graphql }) => {
       to: "/web-development/ordered-unordered-description-lists",
     },
     {
+      from: "/web-development/create-links-html-anchor-tag",
+      to: "/web-development/anchor-tag",
+    },
+    {
+      from: "/web-development/connect-html-pages-html-anchor-element",
+      to: "/web-development/anchor-tag",
+    },
+    {
       from:
         "/computer-science/three-great-reasons-to-use-free-open-source-software",
       to: "/computer-science/free-open-source-software",
