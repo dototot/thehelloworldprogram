@@ -40,6 +40,14 @@ exports.createPages = ({ actions, graphql }) => {
       from: "/linux/locate-find-waldo-bash-shell",
       to: "https://dototot.com/locate-find-waldo-bash-shell",
     },
+    {
+      from: "/linux/list-doughnut-contents-ls-command",
+      to: "https://dototot.com/list-doughnut-contents-ls-command",
+    },
+    {
+      from: "/linux/touch-rm-ls-cp-files-linuxunix-bash-shell-petting-zoo",
+      to: "https://dototot.com/touch-rm-ls-cp-files-bash-shell-petting-zoo",
+    },
   ]
 
   redirects.forEach((redirect) => {
