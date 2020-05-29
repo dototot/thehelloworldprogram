@@ -42,6 +42,10 @@ exports.createPages = ({ actions, graphql }) => {
       to: "/web-development/html-image-element",
     },
     {
+      from: "/web-development/build-game-board-html-table-element",
+      to: "/web-development/html-tables",
+    },
+    {
       from:
         "/computer-science/three-great-reasons-to-use-free-open-source-software",
       to: "/computer-science/free-open-source-software",
