@@ -14,20 +14,27 @@ exports.createPages = ({ actions, graphql }) => {
       to: "/web-development/how-websites-made",
     },
     {
-      from: "/python/why-python-should-be-the-first-programming-language-you-learn",
-      to: "https://dototot.com/why-python-should-be-the-first-programming-language-you-learn"
+      from:
+        "/python/why-python-should-be-the-first-programming-language-you-learn",
+      to:
+        "https://dototot.com/why-python-should-be-the-first-programming-language-you-learn",
     },
     {
-      from: "/computer-science/three-great-reasons-to-use-free-open-source-software",
-      to: "/computer-science/free-open-source-software"
+      from:
+        "/computer-science/three-great-reasons-to-use-free-open-source-software",
+      to: "/computer-science/free-open-source-software",
     },
     {
       from: "/computer-science/computer",
-      to: "/computer-science/how-does-a-computer-work"
-    }
+      to: "/computer-science/how-does-a-computer-work",
+    },
+    {
+      from: "/computer-science/what-is-a-vector-graphic",
+      to: "/computer-science/graphics",
+    },
   ]
 
-  redirects.forEach(redirect => {
+  redirects.forEach((redirect) => {
     createRedirect({
       fromPath: redirect.from,
       isPermanent: true,
@@ -65,13 +72,17 @@ exports.createPages = ({ actions, graphql }) => {
         const posts = result.data.allMarkdownRemark.edges
         const postTemplate = path.resolve("./src/templates/blog-post.js")
         const categoryTemplate = path.resolve("./src/templates/category.js")
+        const lessonCount = {}
 
         Object.entries({
           "computer-science": "Computer Science",
           linux: "Linux",
           "web-development": "Web Development",
-          python: "Python"
+          python: "Python",
         }).forEach(([path, category]) => {
+          lessonCount[category] = posts.filter(
+            ({ node }) => node.frontmatter.category === category
+          ).length
           createPage({
             path,
             component: categoryTemplate,
@@ -87,6 +98,7 @@ exports.createPages = ({ actions, graphql }) => {
             component: postTemplate,
             context: {
               slug: node.fields.slug,
+              totalLessons: lessonCount[node.frontmatter.category],
             },
           })
         })
