@@ -15,12 +15,6 @@ exports.createPages = ({ actions, graphql }) => {
     },
     {
       from:
-        "/python/why-python-should-be-the-first-programming-language-you-learn",
-      to:
-        "https://dototot.com/why-python-should-be-the-first-programming-language-you-learn",
-    },
-    {
-      from:
         "/computer-science/three-great-reasons-to-use-free-open-source-software",
       to: "/computer-science/free-open-source-software",
     },
@@ -31,6 +25,20 @@ exports.createPages = ({ actions, graphql }) => {
     {
       from: "/computer-science/what-is-a-vector-graphic",
       to: "/computer-science/graphics",
+    },
+    {
+      from:
+        "/python/why-python-should-be-the-first-programming-language-you-learn",
+      to:
+        "https://dototot.com/why-python-should-be-the-first-programming-language-you-learn",
+    },
+    {
+      from: "/linux/why-you-should-install-linux-now",
+      to: "https://dototot.com/why-you-should-install-linux-now",
+    },
+    {
+      from: "/linux/locate-find-waldo-bash-shell",
+      to: "https://dototot.com/locate-find-waldo-bash-shell",
     },
   ]
 
