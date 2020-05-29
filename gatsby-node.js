@@ -14,6 +14,14 @@ exports.createPages = ({ actions, graphql }) => {
       to: "/web-development/how-websites-made",
     },
     {
+      from: "/web-development/add-extra-information-web-page-semantic-markup",
+      to: "/web-development/semantic-html-markup",
+    },
+    {
+      from: "/web-development/build-web-page-with-simple-structural-html-markup",
+      to: "/web-development/structural-html-markup",
+    },
+    {
       from:
         "/computer-science/three-great-reasons-to-use-free-open-source-software",
       to: "/computer-science/free-open-source-software",

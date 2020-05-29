@@ -40,10 +40,11 @@ module.exports = {
           {
             resolve: "gatsby-remark-prismjs",
             options: {
+              inlineCodeMarker: '|',
               prompt: {
                 global: true,
                 user: "dot",
-                host: "ot",
+                host: "ot"
               },
             },
           },
