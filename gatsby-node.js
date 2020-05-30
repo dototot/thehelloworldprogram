@@ -18,7 +18,8 @@ exports.createPages = ({ actions, graphql }) => {
       to: "/web-development/semantic-html-markup",
     },
     {
-      from: "/web-development/build-web-page-with-simple-structural-html-markup",
+      from:
+        "/web-development/build-web-page-with-simple-structural-html-markup",
       to: "/web-development/structural-html-markup",
     },
     {
@@ -48,6 +49,10 @@ exports.createPages = ({ actions, graphql }) => {
     {
       from: "/web-development/html-forms-inputs-buttons-fieldsets-legends",
       to: "/web-development/html-form-elements",
+    },
+    {
+      from: "/web-development/html-audio-video-media-players",
+      to: "/web-development/html-video-audio-elements",
     },
     {
       from:
