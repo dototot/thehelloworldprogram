@@ -16,7 +16,7 @@ HTML 5 introduced the audio and video elements, moving us one step closer to a F
 <video src="video/quickfox.mp4" width="400" height="225"></video>
 ```
 
-You probably [recognize that src attribute from the img element](https://thehelloworldprogram.com/web-development/add-photos-graphics-web-page-html-img-element/ "Add Photos and Graphics to a Web Page with the HTML img Element"). With videos, the src attribute is a relative or absolute path to a video file. In its most basic form, the video element looks just like the img element in our browser. By default we’ll see the first frame of the video, which is probably not the most enticing image. We can use the poster attribute to set a custom image for display while the video is downloading and before it is played.
+You probably [recognize that src attribute from the img element](https://thehelloworldprogram.com/web-development/html-image-element/ "Add Photos and Graphics to a Web Page with the HTML img Element"). With videos, the src attribute is a relative or absolute path to a video file. In its most basic form, the video element looks just like the img element in our browser. By default we’ll see the first frame of the video, which is probably not the most enticing image. We can use the poster attribute to set a custom image for display while the video is downloading and before it is played.
 
 ```html
 <video

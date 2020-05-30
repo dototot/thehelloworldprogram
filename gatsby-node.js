@@ -55,6 +55,10 @@ exports.createPages = ({ actions, graphql }) => {
       to: "/web-development/html-video-audio-elements",
     },
     {
+      from: "/web-development/html-head-title-meta-link-script-elements",
+      to: "/web-development/html-head-meta-link-script-elements",
+    },
+    {
       from:
         "/computer-science/three-great-reasons-to-use-free-open-source-software",
       to: "/computer-science/free-open-source-software",
