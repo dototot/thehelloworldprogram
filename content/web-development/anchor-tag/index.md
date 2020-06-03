@@ -56,5 +56,9 @@ Clicking this link will make the browser “jump” down to the sea-shell div, s
 Every sea shell has a story to tell, if you’re listening. When everything on the top suddenly stops seaming interesting, we can make a link back home.
 
 ```html
-<a href="/">Go Home</a></pre>
+<a href="/">Go Home</a>
+```
+
+```
+
 ```
