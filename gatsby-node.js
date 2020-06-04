@@ -134,13 +134,34 @@ exports.createPages = ({ actions, graphql }) => {
         const postTemplate = path.resolve("./src/templates/blog-post.js")
         const categoryTemplate = path.resolve("./src/templates/category.js")
         const lessonCount = {}
+        const categories = [
+          {
+            path: "computer-science",
+            category: "Computer Science",
+            description:
+              "We use computers daily to simplify intricate tasks, facilitate cross-cultural communication, and entertain ourselves. From the early mechanical work of Charles Babbage and Ada Lovelace, the field of computer science has expanded to include a diversity of subjects from hardware, software, robots, artificial intelligence, graphics, networks, and more. With our videos and tutorials, you will learn to think like a computer and approach complex problems with a new perspective. Master the tools and technology that are shaping the future.",
+          },
+          {
+            path: "linux",
+            category: "Linux",
+            description:
+              "Explore the fastest-growing computer operating system and learn the basic commands you need to take greater control of your computer. Linux is a free, open source operating system that powers smartphones, web servers, supercomputers, and even space stations. In short… Linux is everywhere! Become a superuser today with our free videos and tutorials.",
+          },
+          {
+            path: "web-development",
+            category: "Web Development",
+            description:
+              "Behind every great website, and many phone applications and games, is HTML. HTML is the essential building block of the web, and is a great first language to learn when starting in web development. It is not so much a programming language as it is a means of tagging and organizing content within a page. To make a website truly come to life, you will eventually need to combine HTML with CSS and JavaScript. While it may look complicated, HTML is not a difficult language. You can learn the basics in less than a day, but it can be a real chore to master everything. Our free videos and tutorials make learning HTML easy and fun.",
+          },
+          {
+            path: "python",
+            category: "Python",
+            description:
+              "Python is a fast, flexible, beginner-friendly programming language. It’s gradual learning curve and readability make it an excellent choice for launching your adventures in coding. Python is also amazingly powerful. NASA, Google and Disney, to name a few, use it for everything from web applications to robots. Take a byte of Python and quickly learn to think like a programmer with our free videos and tutorials.",
+          },
+        ]
 
-        Object.entries({
-          "computer-science": "Computer Science",
-          linux: "Linux",
-          "web-development": "Web Development",
-          python: "Python",
-        }).forEach(([path, category]) => {
+        categories.forEach(({ path, category, description }) => {
           lessonCount[category] = posts.filter(
             ({ node }) => node.frontmatter.category === category
           ).length
@@ -149,6 +170,7 @@ exports.createPages = ({ actions, graphql }) => {
             component: categoryTemplate,
             context: {
               category,
+              description,
             },
           })
         })

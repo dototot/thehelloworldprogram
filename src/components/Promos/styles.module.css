@@ -1,0 +1,11 @@
+.promos {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--column-gap);
+}
+
+@media (--small-viewport) {
+  .promos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

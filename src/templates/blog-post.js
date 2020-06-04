@@ -2,6 +2,7 @@ import React from "react"
 import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import Video from "../components/Video"
+import Promos from "../components/Promos"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import css from "./blog-post.module.css"
@@ -42,6 +43,7 @@ const BlogPost = ({
         className={css.postContent}
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
+      <Promos />
     </article>
   </Layout>
 )

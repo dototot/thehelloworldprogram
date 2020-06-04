@@ -117,7 +117,7 @@
     transition: border linear 0.1s;
 
     &:hover {
-      border-bottom: 2px solid var(--color-blue);
+      border-bottom: 2px solid var(--color-green);
     }
   }
 }
@@ -126,26 +126,26 @@
 .bottomBar {
   border: 0;
   border-radius: 0.1rem;
-  height: 0.3rem;
+  height: 0.5rem;
 }
 
 .topBar {
   margin: 0 0 1.5rem;
   background: linear-gradient(
-    to right,
+    to bottom,
     var(--color-red),
-    75%,
-    var(--color-purple) 75%
+    60%,
+    var(--color-yellow) 60%
   );
 }
 
 .bottomBar {
   margin: 1.5rem 0;
   background: linear-gradient(
-    to right,
-    var(--color-red),
-    25%,
-    var(--color-purple) 25%
+    to bottom,
+    var(--color-green),
+    40%,
+    var(--color-blue) 40%
   );
 }
 

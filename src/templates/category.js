@@ -2,11 +2,14 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import PostGrid from "../components/PostGrid"
+import SectionHeading from "../components/SectionHeading"
 import SEO from "../components/seo"
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data, pageContext: { category, description } }) => (
   <Layout>
     <SEO title="Post Archive" />
+    <SectionHeading>Learn {category}</SectionHeading>
+    <p>{description}</p>
     <PostGrid edges={data.allMarkdownRemark.edges} />
   </Layout>
 )
