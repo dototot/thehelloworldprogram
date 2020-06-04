@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/`,
   siteMetadata: {
     title: `The Hello World Program`,
     description: `Hands-on Computer Science`,
