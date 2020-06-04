@@ -1,0 +1,29 @@
+.videoSeries {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--column-gap);
+
+  & h3 span {
+    background: var(--color-red);
+    border-radius: 0.2rem;
+    color: var(--color-white);
+    padding: 0.15rem 0.25rem;
+    font-size: 0.5em;
+    font-weight: 700;
+    vertical-align: super;
+    margin-left: 0.25rem;
+  }
+
+  & p {
+    text-align: justify;
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+@media (--small-viewport) {
+  .videoSeries {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
