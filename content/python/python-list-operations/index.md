@@ -128,7 +128,3 @@ This little piggy ate a hedgehog slice,
 And this little piggy had none.
 
 [And this little piggy went wee wee wee all the way to the next Python list lesson](https://thehelloworldprogram.com/).
-
-```
-
-```

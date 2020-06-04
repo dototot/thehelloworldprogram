@@ -59,7 +59,3 @@ These are a few of Python’s built-in functions.  Built-in functions are proce
 ![Python Functions](./byting_python_06_functions_03.png)
 
 Was our tutorial function successful? Let us know in the comments below. The [next tutorial puts the FUN in function](https://thehelloworldprogram.com/python/writing-python-functions-structure/).
-
-```
-
-```

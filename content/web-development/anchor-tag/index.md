@@ -58,7 +58,3 @@ Every sea shell has a story to tell, if you’re listening. When everything on t
 ```html
 <a href="/">Go Home</a>
 ```
-
-```
-
-```

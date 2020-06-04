@@ -110,7 +110,3 @@ Here’s one more example:
 ```
 
 Get your hands dirty in our [next tutorial on list concatenation, multiplication, and slicing](https://thehelloworldprogram.com/python/python-list-operations/).
-
-```
-
-```
