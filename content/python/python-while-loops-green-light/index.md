@@ -16,19 +16,19 @@ That’s also how while loops work in programming. This is what a Python while l
 
 ```python
 >>> while light == ‘green’:
-…    go()
-…
+    go()
+
 ```
 
 We can think of while loops like repeating if statements:
 
 ```python
 >>> if light == ‘green’:
-…    go()
+    go()
 >>> if light == ‘green’:
-…    go()
+    go()
 >>> if light == ‘green’:
-…    go()
+    go()
 ```
 
 You get the idea…
@@ -39,8 +39,7 @@ While loops are useful when we want to maintain a state until a certain conditio
 
 If you love playing video games, like I do, and if you’re as bad at games as I am, then you probably see this all the time:
 
-<pre class="">Continue? 10, 9, 8, 7, 6...
-```
+> Continue? 10, 9, 8, 7, 6...
 
 This very simple countdown is a while loop. You can write it like this:
 
@@ -76,4 +75,3 @@ while count < 10:
 ```
 
 Python while loops are a simple means to introduce complexity into your programs. If you choose to Continue, [join us in the next tutorial where we build upon the count example and write an interactive program](https://thehelloworldprogram.com/python/python-loop-control/).
-```

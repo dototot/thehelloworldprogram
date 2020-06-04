@@ -12,7 +12,7 @@ The Python interpreter reads a program just like you are reading this page: one 
 
 For example, the following program, too_soon.py:
 
-````python
+```python
 too_soon()
 
 def too_soon():
@@ -84,5 +84,3 @@ print("It's my party and I'll DRY if I want to...")
 When I call the party() function, my friends know that it’s both August 4th and my birthday. Calling the global variable outside the party function returns the date, August 4th, because everyone has access to the date. But calling the local variable outside the party() function returns an error because no one outside the party() function knows it’s my birthday.
 
 Speaking of party, [there’s cake in the next chapter](https://thehelloworldprogram.com/python/python-boolean-logic-not-as-scary-as-it-sounds/).
-`
-````
